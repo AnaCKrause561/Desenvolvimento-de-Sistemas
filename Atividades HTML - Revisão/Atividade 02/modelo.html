@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floricultura Mundo da Alice</title>
+</head>
+
+<body>
+
+<!-- TOPO -->
+<header>
+    <video width="100%" height="250px" controls>
+        <source src="Imagens/video_inicio.mp4" type="video/mp4">
+    </video>
+
+    <h1 align="center">🌸 Floricultura Mundo da Alice</h1>
+
+    <nav align="center">
+        <a href="#inicio">Início</a> |
+        <a href="#produtos">Produtos</a> |
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <hr>
+</header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main>
+
+    <!-- CONTEÚDO + LATERAL -->
+    <section id="inicio">
+        <h2>Bem-vindo</h2>
+
+        <div>
+
+            <!-- CONTEÚDO PRINCIPAL -->
+            <article>
+                <h3>Sobre nós</h3>
+
+                <p>
+                    <strong>Flores</strong> para <em>todos os momentos</em><br>
+                    Trabalhamos com <b>rosas</b>, <i>girassóis</i> e <u>orquídeas</u>
+                </p>
+
+                <p>
+                    Promoção: <mark>20% OFF</mark> <small>(limitado)</small><br>
+                    De <del>R$50</del> por <ins>R$40</ins>
+                </p>
+
+                <blockquote>“Onde florescem flores, há esperança.”</blockquote>
+                <q>Compre flores hoje!</q>
+
+                <pre>
+<code>console.log("Flores lindas!");</code>
+                </pre>
+            </article>
+
+            <!-- BARRA LATERAL -->
+            <aside>
+                <h4>Dica</h4>
+                <p><span>Cuide bem</span> das suas plantas 🌼</p>
+            </aside>
+
+        </div>
+
+        <hr>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos">
+        <h2>Produtos</h2>
+
+        <article>
+            <h3>Flores disponíveis</h3>
+
+            <ul>
+                <li>Rosas</li>
+                <li>Girassóis</li>
+            </ul>
+
+            <ol>
+                <li>Escolha</li>
+                <li>Compre</li>
+            </ol>
+
+            <dl>
+                <dt>Rosa</dt>
+                <dd>Flor do amor</dd>
+            </dl>
+        </article>
+
+        <figure>
+            <img src="Imagens/rosa.jpg" width="200" usemap="#mapa">
+            <figcaption>Rosa vermelha</figcaption>
+        </figure>
+
+        <map name="mapa">
+            <area shape="rect" coords="0,0,100,100" href="#contato">
+        </map>
+
+        <table border="1">
+            <caption>Preços</caption>
+
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>Flor</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Rosa</td>
+                    <td>R$40</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="2">Promoções válidas</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <br>
+
+        <audio controls>
+            <source src="Imagens/audio.mp3" type="audio/mp3">
+        </audio>
+
+        <br><br>
+
+        <iframe width="300" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+
+        <br><br>
+
+        <embed src="Imagens/rosa.jpg" width="200">
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+        <h2>Contato</h2>
+
+        <article>
+            <form>
+                <fieldset>
+                    <legend>Fale conosco</legend>
+
+                    <label>Nome:</label>
+                    <input type="text" list="nomes">
+
+                    <datalist id="nomes">
+                        <option value="Ana">
+                        <option value="Maria">
+                    </datalist>
+
+                    <br><br>
+
+                    <label>Mensagem:</label><br>
+                    <textarea></textarea>
+
+                    <br><br>
+
+                    <label>Flor:</label>
+                    <select>
+                        <optgroup label="Flores">
+                            <option>Rosa</option>
+                        </optgroup>
+                    </select>
+
+                    <br><br>
+
+                    <button>Enviar</button>
+                    <output>Enviado!</output>
+                </fieldset>
+            </form>
+        </article>
+    </section>
+
+    <!-- EXTRAS -->
+    <section>
+        <h2>Extras</h2>
+
+        <p>Data: <time>2026-04-24</time></p>
+
+        <progress value="60" max="100"></progress>
+        <br><br>
+
+        <meter value="0.7"></meter>
+
+        <details>
+            <summary>Mais informações</summary>
+            <p>Entregamos em Dois Vizinhos</p>
+        </details>
+
+        <canvas id="c" width="200" height="100"></canvas>
+
+        <script>
+            var c = document.getElementById("c");
+            var ctx = c.getContext("2d");
+            ctx.fillRect(10,10,100,50);
+        </script>
+
+        <noscript>Ative o JavaScript</noscript>
+
+        <template>
+            <p>Modelo reutilizável</p>
+        </template>
+    </section>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+    <hr>
+    <p align="center">© 2026 Floricultura Mundo da Alice</p>
+    <address>Dois Vizinhos - PR</address>
+</footer>
+
+</body>
+</html>
