@@ -1,72 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floricultura Mundo da Alice</title>
+    <title>Guia de Estudos </title>
+    <link rel="icon" href="/Atividade 02/Imagens/icone.png">
 </head>
 
 <body>
-    <header>
-        <video width="100%" height="250px" controls>
-        <source src="Imagens/video_inicio.mp4" type="video/mp4">
-        </video>
-        <hr>
 
-        <h1 align="center">🌸 Floricultura Mundo da Alice</h1>
-    </br>
-        <nav align="center">
-            <a href="#inicio">Início</a> |
-            <a href="#produtos">Produtos</a> |
-            <a href="#contato">Contato</a>
-        </nav>
-    <hr>
-    </br>
-    </header> 
- 
-    
+<head>
+<h1> Guia de Estudos HTML </h1>
+
+<nav>
+    <a href="#Estrutura"> Estrutura </a> |
+    <a href="Texto"> Texto </a> |
+    <a href="#links">Links</a> |
+    <a href="#tabela">Tabela</a> |
+    <a href="#formulario">Formulário</a>
+    <br> <hr>
+</nav>
+</head>
+
 <main>
 
-    <section id="inicio">
-        <h2>Bem-vindo ao Mundo da Alice</h2>
+<!-- 1. ESTRUTURA -->
+<section id="estrutura">
+    <h2>1. Estrutura Básica</h2>
+    <p>HTML organiza o conteúdo do site.</p>
 
-        <div>
+    <br> <hr>
+</section>
 
-            <!-- INICIO -->
-            <article>
-                <h3>Sobre nós</h3>
+<!-- 2. CABEÇALHOS E PARÁGRAFOS -->
+<section id="texto">
+    <h2>2. Cabeçalhos e Parágrafos</h2>
 
-                <p>
-                    <strong>Flores</strong> para <em>todos os momentos</em><br>
-                    Trabalhamos com <b>rosas</b>, <i>girassóis</i> e <u>orquídeas</u>
-                </p>
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <h3>H3</h3>
 
-                <p>
-                    Promoção: <mark>20% OFF</mark> <small>(limitado)</small><br>
-                    De <del>R$50</del> por <ins>R$40</ins>
-                </p>
+    <p>Parágrafo</p>
 
-                <blockquote>“Onde florescem flores, há esperança.”</blockquote>
-                <q>Compre flores hoje!</q>
+    <br> <hr>
+</section>
 
-                <pre>
-                <code>console.log("Flores lindas!");</code>
-                </pre>
-            </article>
+<!-- 3. FORMATAÇÃO -->
+<section id="texto">
+    <h2>3. Formatação de Texto</h2>
 
-            <!-- BARRA LATERAL -->
-            <aside>
-                <h4>Dica</h4>
-                <p><span>Cuide bem</span> das suas plantas 🌼</p>
-            </aside>
+<p>
+    <b>Negrito</b>,
+    <i>Itálico</i>,
+    <u>Sublinhado</u>
+</p>    
 
-        </div>
+<p>
+    <strong>Importante (mais escuro)</strong>,
+    <em>Ênfase</em>
+</p>
 
-        <hr>
-    </section>
+<p>
+    <mark>Destaque Texto</mark>,
+    <small>Texto Pequeno</small>
+</p>
 
+<p>
+     X<sup>2</sup> e H<sub>2</sub>O
+</p>
 
+<p>
+    <ins>Inserido</ins> e <del>Removido</del>
+</p>
 
+<code>console.log("teste")</code>
+
+<pre>
+Texto com 
+espaço preservado
+</pre>
+
+<blockquote>Citação grande</blockquote>
+<q>Citação pequena</q>
+<br> <hr>
+</section>
+
+<!-- 4. LINKS E IMAGENS -->
+<section id="texto">
+    <h2>4. Links e Imagens</h2>
+
+    <a href="https://google.com" target="_blank">Ir para Google</a><br>
+    <a href="#estrutura">Ir para Estrutura</a>
+
+<figure>
+    <img src="Imagens/pc.jpg" height="155" width="180" alt="Computador">
+    <figcaption>Exemplo de imagem</figcaption>
+</figure>
+<br> <hr>
+</section>
+
+<!-- 5. MULTIMÍDIA -->
+<section>
+    <h2>5. Multimídia</h2>
+
+    <audio controls>
+        <source src="Imagens/Tentei Te Esquecer.mp3">
+    </audio>
+
+    <video controls>
+        <source src="Imagens/video_inicio.mp4">
+    </video>
+
+    <embed src="Imagens/Atividade_02_HTML (1).pdf">
+    
+    <iframe width="250" height="150"
+        src="https://g1.globo.com/">
+    </iframe>
+<br> <hr>
+</section>
+
+<!-- 6. TABELA -->
+<section id="tabela">
+    <h2>6. Tabela</h2>
+
+    <table border="1">
+        <caption>Tabela</caption>
+
+        <thead>
+            <tr>
+                <th>Identificação</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Nome</td>
+                <td>Idade</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Ana</td>
+                <td>24</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br> <hr>
+</section>
+
+<!-- 7. LISTAS -->
+<section>
+    <h2>7. Listas</h2>
+
+    <ul>
+        <li>Bolinha</li>
+    </ul>
+
+    <ol>
+        <li>Números</li>
+    </ol>
+    <br>
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>Linguagem de marcação</dd>
+    </dl>
+    <br> <hr>
+</section>
+
+<!-- 8. FORMULÁRIO -->
+<section id="formulario">
+    <h2>8. Formulário</h2>
+
+<form>
+    <label for="name">Nome:</label><br>
+    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required><br><br>
+
+    <label for="tipo">Tipo:</label><br>
+    <input type="radio" id="comentario" name="tipo" value="comentario" checked>
+    <label for="comentario">Sim</label>
+    <input type="radio" id="reclamacao" name="tipo" value="reclamacao">
+    <label for="reclamacao">Não</label><br><br>
+
+    <label for="mensagem">Mensagem:</label><br>
+    <textarea id="mensagem" name="mensagem" rows="5" cols="40" placeholder="Escreva aqui..." required></textarea><br><br>
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpar">
+
+</form>
+<br> <hr>
+</section>
+
+<!-- 9. AGRUPAMENTO -->
+<section>
+    <h2>9. Agrupamento</h2>
+
+    <div>Bloco</div>
+    <span>Texto</span>
+
+    <header>Topo</header>
+    <footer>Rodapé</footer>
+
+    <main>Principal</main>
+    <selection>Seção</selection>
+    <article>Conteúdo</article>
+    <aside>Lateral</aside>
+
+    <nav>Menu</nav>
+
+    <address>Contato</address>
+
+    <details>
+        <summary>Ver mais</summary>
+        Conteúdo oculto
+    </details>
+<br> <hr>
+</section>
+
+<!-- 10. EXTRAS -->
+<section>
+    <h2>10. Extras</h2>
+
+    <time datetime="2026-04-27">Hoje</time><br>
+
+    <progress value="50" max="100"></progress><br>
+
+    <meter value="0.7"></meter>
+
+    <canvas width="200" height="100"></canvas>
+    <br> <hr>
+</section>
+
+<!-- 11. MAPA -->
+<section>
+    <h2>11. Mapa de Imagem</h2>
+
+    <img src="Imagens/pc.jpg"  height="155" width="180" alt="Computador" usemap="#mapa">
+
+    <map name="mapa">
+        <area shape="rect" coords="0,0,100,100" href="#">
+    </map>
+    <br> <hr>
+</section>
+
+<!-- 12. TEMPLATE -->
+<section>
+    <h2>12. Template</h2>
+
+    <template>
+        <p>Conteúdo escondido</p>
+    </template>
+</section>
+
+</main>
+
+<footer>
+    <p>Rodapé</p>
+</footer>
+
+<script>
+    console.log("Funcionando");
+</script>
+
+<noscript>
+    JavaScript desativado
+</noscript>
+
+</main>
 </body>
-
 </html>
