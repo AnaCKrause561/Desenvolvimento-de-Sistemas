@@ -1,0 +1,32 @@
+body{
+    background-color: blueviolet;
+}
+
+/* a */
+#a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
+
+/* b */
+#b {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 22px;
+    color: green;
+}
+
+/* c */
+#c {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 20px;
+    color: blue;
+    font-style: italic;
+}
+
+/* d */
+#d {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    color: yellow;
+    font-weight: 500; /* espessura média */
+}
