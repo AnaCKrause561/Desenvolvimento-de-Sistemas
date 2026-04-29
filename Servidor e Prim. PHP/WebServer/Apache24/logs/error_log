@@ -1,0 +1,35 @@
+[Mon Apr 27 21:50:24.354476 2026] [mpm_winnt:notice] [pid 15164:tid 464] AH00455: Apache/2.4.66 (Win64) configured -- resuming normal operations
+[Mon Apr 27 21:50:24.354476 2026] [mpm_winnt:notice] [pid 15164:tid 464] AH00456: Server built: Dec  6 2025 07:20:52
+[Mon Apr 27 21:50:24.354476 2026] [core:notice] [pid 15164:tid 464] AH00094: Command line: 'C:\\WebServer\\Apache24\\bin\\httpd.exe -d C:/WebServer/Apache24'
+[Mon Apr 27 21:50:24.362381 2026] [mpm_winnt:notice] [pid 15164:tid 464] AH00418: Parent: Created child process 19320
+[Mon Apr 27 21:50:25.039326 2026] [mpm_winnt:notice] [pid 19320:tid 472] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 28 18:39:24.032704 2026] [core:warn] [pid 10208:tid 432] AH00098: pid file C:/WebServer/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Apr 28 18:39:24.037598 2026] [mpm_winnt:notice] [pid 10208:tid 432] AH00455: Apache/2.4.66 (Win64) configured -- resuming normal operations
+[Tue Apr 28 18:39:24.037598 2026] [mpm_winnt:notice] [pid 10208:tid 432] AH00456: Server built: Dec  6 2025 07:20:52
+[Tue Apr 28 18:39:24.037598 2026] [core:notice] [pid 10208:tid 432] AH00094: Command line: 'C:\\WebServer\\Apache24\\bin\\httpd.exe -d C:/WebServer/Apache24'
+[Tue Apr 28 18:39:24.044626 2026] [mpm_winnt:notice] [pid 10208:tid 432] AH00418: Parent: Created child process 276
+[Tue Apr 28 18:39:24.702404 2026] [mpm_winnt:notice] [pid 276:tid 456] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 28 19:51:38.600689 2026] [mpm_winnt:notice] [pid 10208:tid 432] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Apr 28 19:51:40.620900 2026] [mpm_winnt:notice] [pid 276:tid 456] AH00364: Child: All worker threads have exited.
+[Tue Apr 28 19:51:40.684987 2026] [mpm_winnt:notice] [pid 10208:tid 432] AH00430: Parent: Child process 276 exited successfully.
+[Tue Apr 28 20:41:09.592117 2026] [core:warn] [pid 6976:tid 428] AH00098: pid file C:/WebServer/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\WINDOWS\\SYSTEM32\\VCRUNTIME140.dll' 14.29 is not compatible with this PHP build linked with 14.44 in Unknown on line 0
+[Tue Apr 28 20:41:09.636274 2026] [:emerg] [pid 6976:tid 428] AH00020: Configuration Failed, exiting
+[Tue Apr 28 20:42:11.244789 2026] [core:warn] [pid 12300:tid 464] AH00098: pid file C:/WebServer/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  'C:\\WINDOWS\\SYSTEM32\\VCRUNTIME140.dll' 14.29 is not compatible with this PHP build linked with 14.44 in Unknown on line 0
+[Tue Apr 28 20:42:11.276477 2026] [:emerg] [pid 12300:tid 464] AH00020: Configuration Failed, exiting
+[Tue Apr 28 20:44:17.417101 2026] [core:warn] [pid 3396:tid 396] AH00098: pid file C:/WebServer/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:\\WebServer\\PHP_8.4\\ext\\curl (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_curl.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'intl' (tried: C:\\WebServer\\PHP_8.4\\ext\\intl (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_intl.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_pgsql' (tried: C:\\WebServer\\PHP_8.4\\ext\\pdo_pgsql (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_pdo_pgsql.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql' (tried: C:\\WebServer\\PHP_8.4\\ext\\pgsql (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_pgsql.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+[Tue Apr 28 20:44:17.668092 2026] [mpm_winnt:notice] [pid 3396:tid 396] AH00455: Apache/2.4.66 (Win64) PHP/8.4.20 configured -- resuming normal operations
+[Tue Apr 28 20:44:17.668092 2026] [mpm_winnt:notice] [pid 3396:tid 396] AH00456: Server built: Dec  6 2025 07:20:52
+[Tue Apr 28 20:44:17.668092 2026] [core:notice] [pid 3396:tid 396] AH00094: Command line: 'C:\\WebServer\\Apache24\\bin\\httpd.exe -d C:/WebServer/Apache24'
+[Tue Apr 28 20:44:17.668092 2026] [mpm_winnt:notice] [pid 3396:tid 396] AH00418: Parent: Created child process 1748
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: C:\\WebServer\\PHP_8.4\\ext\\curl (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_curl.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'intl' (tried: C:\\WebServer\\PHP_8.4\\ext\\intl (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_intl.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pdo_pgsql' (tried: C:\\WebServer\\PHP_8.4\\ext\\pdo_pgsql (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_pdo_pgsql.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+PHP Warning:  PHP Startup: Unable to load dynamic library 'pgsql' (tried: C:\\WebServer\\PHP_8.4\\ext\\pgsql (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado), C:\\WebServer\\PHP_8.4\\ext\\php_pgsql.dll (N\xc3\xa3o foi poss\xc3\xadvel encontrar o m\xc3\xb3dulo especificado)) in Unknown on line 0
+[Tue Apr 28 20:44:18.808779 2026] [mpm_winnt:notice] [pid 1748:tid 440] AH00354: Child: Starting 64 worker threads.
+[Tue Apr 28 21:00:53.682375 2026] [php:error] [pid 1748:tid 1232] [client ::1:49669] PHP Fatal error:  Uncaught Error: Call to undefined function infophp() in C:\\WebServer\\Apache24\\htdocs\\info.php:2\nStack trace:\n#0 {main}\n  thrown in C:\\WebServer\\Apache24\\htdocs\\info.php on line 2, referer: http://localhost/
