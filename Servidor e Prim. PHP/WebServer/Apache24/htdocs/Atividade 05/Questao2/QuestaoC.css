@@ -25,12 +25,17 @@ main {
     background-color: blue;
     width: 20%;
     height: 800px;
-    text-align: center;
+}
+
+.lateral_direita {
+    background-color: blue;
+    width: 60%;
+    height: 800px;
 }
 
 .container {
     background-color: aqua;
-    width: 80%;
+    width: 60%;
     height: 800px;
 }
 
