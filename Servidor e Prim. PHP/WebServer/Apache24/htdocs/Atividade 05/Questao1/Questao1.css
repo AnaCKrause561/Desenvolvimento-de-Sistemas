@@ -1,0 +1,35 @@
+body{
+    position: static;
+    height: 100hv;
+    margin: 0;
+}
+
+.caixa{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+}
+
+.esquerda_cima{
+    background-color: red;
+    top: 0;
+    left: 0;
+}
+
+.direita_cima{
+    background-color: yellow;
+    top: 0;
+    right: 0;
+}
+
+.esquerda_baixo{
+    background-color: green;
+    bottom: 0;
+    left: 0;
+}
+
+.direita_baixo{
+    background-color: blue;
+    bottom: 0;
+    right: 0;
+}
