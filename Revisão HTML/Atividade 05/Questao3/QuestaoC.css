@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+    background: white;
+    padding: 15px;
+    margin: 0;
+}
+
+h2 {
+    background-color: gray;
+    margin: 0;
+}
+
+.barra {
+    background: #cfd8dc;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin: 0;
+}
+
+.conteudo {
+    display: flex;
+    gap: 20px;
+}
+
+.esquerda {
+    width: 50%;
+}
+
+.direita {
+    width: 50%;
+}
+
+.categoria {
+    font-size: 12px;
+    color: gray;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1a5e8a;
+}
+
+p{
+    font-size: 13px;
+    color: #1a5e8a;
+}
+
+.texto {
+    font-size: 15px;
+    color: #1a5e8a;
+}
+
+ul {
+    padding-left: 15px;
+    font-size: 13px;
+    color: #1a5e8a;
+}
+
+hr {
+    margin: 15px 0;
+}
+
+strong{
+    font-size: 15px;
+    color: gray;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* corta a imagem sem distorcer */
+}

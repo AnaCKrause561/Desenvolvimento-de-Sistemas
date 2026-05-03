@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Cadastro</title>
+    <link rel="stylesheet" href="Questao4.css">
+</head>
+
+<body>
+
+    <!-- TOPO -->
+    <div class="topo">
+        <div class="topo-esq">Não é associado? Faça seu cadastro</div>
+        <div class="topo-dir"></div>
+    </div>
+
+    <form>
+
+        <!-- LINHAS SIMPLES -->
+        <div class="linha">
+            <div class="grupo">
+                <label>Nome</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>Nome Completo</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>CPF</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>E-mail</label>
+                <input type="email">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>Website</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>Endereço</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <!-- LINHAS COM 2 CAMPOS -->
+        <div class="linha">
+            <div class="grupo">
+                <label>Bairro</label>
+                <input type="text">
+            </div>
+
+            <div class="grupo">
+                <label>Cidade</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>CEP</label>
+                <input type="text">
+            </div>
+
+            <div class="grupo">
+                <label>UF</label>
+                <select>
+                    <option></option>
+                    <option>AC</option><option>AL</option><option>AP</option>
+                    <option>AM</option><option>BA</option><option>CE</option>
+                    <option>DF</option><option>ES</option><option>GO</option>
+                    <option>MA</option><option>MT</option><option>MS</option>
+                    <option>MG</option><option>PA</option><option>PB</option>
+                    <option>PR</option><option>PE</option><option>PI</option>
+                    <option>RJ</option><option>RN</option><option>RS</option>
+                    <option>RO</option><option>RR</option><option>SC</option>
+                    <option>SP</option><option>SE</option><option>TO</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>Telefone</label>
+                <input type="text">
+            </div>
+
+            <div class="grupo">
+                <label>Fax</label>
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>Data Nascimento</label>
+                <input type="date">
+            </div>
+
+            <div class="grupo">
+                <label>Sexo</label>
+                <input type="radio" name="sexo"> M
+                <input type="radio" name="sexo"> F
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>Celular</label>
+                <input type="text">
+            </div>
+
+            <div class="grupo">
+                <label>Est. Civil</label>
+                <select>
+                    <option></option>
+                    <option>Solteiro</option>
+                    <option>Casado</option>
+                    <option>Viúvo</option>
+                    <option>Divorciado</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="linha">
+            <div class="grupo">
+                <label>Login</label>
+                <input type="text">
+            </div>
+
+            <div class="grupo">
+                <label>Senha</label>
+                <input type="password">
+            </div>
+        </div>
+
+        <p>Deseja receber informações:</p>
+
+        <div class="checkbox">
+            <label><input type="checkbox"> Tecnologia</label>
+            <label><input type="checkbox"> Esportes</label>
+            <label><input type="checkbox"> Automóveis</label>
+            <label><input type="checkbox"> Culinária</label>
+            <label><input type="checkbox"> Política</label>
+            <label><input type="checkbox"> Policial</label>
+        </div>
+
+        <div class="checkbox">
+            <label><input type="checkbox"> Tempo</label>
+            <label><input type="checkbox"> Cultura</label>
+            <label><input type="checkbox"> Economia</label>
+            <label><input type="checkbox"> Jogos</label>
+        </div>
+        <br>
+
+        <label>
+            <input type="checkbox"> Li as regras de cadastro
+        </label>
+
+        <br><br>
+
+        <button type="submit">Confirmar</button>
+        <button type="reset">Retornar</button>
+
+    </form>
+
+</body>
+</html>

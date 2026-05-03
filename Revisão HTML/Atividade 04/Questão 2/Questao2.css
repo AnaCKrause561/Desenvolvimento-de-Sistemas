@@ -9,6 +9,11 @@ section {
     margin: 5px 0;
 }
 
+/* seção */
+.secao{
+    height: 50px;
+}
+
 /* a. Fundo azul claro */
 .fundo-azul {
     background-color: lightblue;
@@ -53,11 +58,12 @@ h1{
 }
 
 /* g. fundo completo */
-.img_completo {
-    height: 200px;
+.img_completo{
+    /*height: 100px;*/
     background-color: yellow;
     background-image: url("/Atividade\ 04/Imagens/pata.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: scroll;
+    background-attachment: fixed;
+    /*overflow-y: scroll;*/
 }

@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* container central */
+.anuncios {
+    width: 220px;
+    margin: 20px auto;
+}
+
+/* cada card */
+.card {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* imagens */
+.card img {
+    width: 120px;
+    height: 90px;
+    object-fit: contain; /* MOSTRA A IMAGEM INTEIRA */
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+/* título */
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+/* descrição */
+.card p {
+    font-size: 13px;
+    color: gray;
+}
+
+/* preço (parte destacada) */
+span {
+    background-color: #e6e6e6; /* fundo cinza */
+    padding: 5px 10px;         /* espaço interno */
+    margin-top: 8px;           /* espaço acima */
+    font-weight: bold;         /* negrito */
+    display: inline-block;     /* deixa do tamanho do texto */
+}

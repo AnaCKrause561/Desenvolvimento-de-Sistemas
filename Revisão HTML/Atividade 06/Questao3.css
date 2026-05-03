@@ -1,0 +1,183 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dff0df;
+    color: #2e7d32;
+}
+
+/* Container principal */
+.cadastro-container {
+    display: flex;
+    border: 2px solid #4caf50;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #e8f5e9;
+}
+
+.cadastro-container img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* corta a imagem sem distorcer */
+    top: 0;
+    left: 0;
+}
+
+/* Fieldsets */
+fieldset {
+    border: 1px solid #4caf50;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+/* Título */
+legend {
+    font-weight: bold;
+    background-color: #e8f5e9;
+    padding: 0 8px;
+}
+
+/* Linha superior */
+.dados_pessoais {
+    display: flex;
+    position: relative; 
+    gap: 20px;
+}
+
+.dados_pessoais img {
+    width: 80px;
+    height: 80px;
+    display: flex;
+}
+
+.dados_pessoais img[alt="terno"] {
+    top: 60px;
+    left: 250px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.dados_pessoais img[alt="mundo"] {
+    top: 60px;
+    left: 600px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.dados_pessoais fieldset {
+    flex: 1;
+    position: relative;
+    z-index: 1; /* garante que ficam acima das imagens se necessário */
+}
+
+fieldset{
+    position: relative;
+    z-index: 1; /* garante que ficam acima das imagens se necessário */
+}
+
+fieldset img {
+    width: 80px;
+    height: 80px;
+}
+
+fieldset img[alt="meninoesenhor"] {
+    top: 10px;
+    right: 800px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 600px; /* Dá um respiro entre o texto e a imagem */
+    object-fit: contain;
+}
+
+fieldset img[alt="academia"] {
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 600px; /* Dá um respiro entre o texto e a imagem */
+    object-fit: contain;
+}
+
+fieldset img[alt="conversa"] {
+    top: 40px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-left: 600px; /* Dá um respiro entre o texto e a imagem */
+    object-fit: contain;
+}
+
+/* Inputs padrão */
+input, select {
+    width: 90%;      /* Diminui a largura para a imagem aparecer */
+    margin-bottom: 10px; 
+    border: 1px solid #4caf50;
+    padding: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Radios e checkboxes alinhados */
+.faixa_etaria label,
+.esporte label {
+    display: flex;
+    width: 100%;
+    margin-bottom: 2px;
+    /*display: flex;*/
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+/* remover width 100% dos inputs pequenos */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Grid faixa etária */
+.faixa_etaria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 40px;
+}
+
+/* Esportes */
+.esporte {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+/* Comentário */
+textarea {
+    width: 85%; /* Diminuímos aqui para a imagem caber ao lado */
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid #4caf50;
+    border-radius: 4px;
+    padding: 5px;
+    display: block; /* Mudei de flex para block, pois textarea não é container */
+}
+
+
+/* Botões */
+.buttons {
+    margin-top: 10px;
+}
+
+button {
+    background-color: white;
+    border: 1px solid #4caf50;
+    padding: 6px 15px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #c8e6c9;
+}
+

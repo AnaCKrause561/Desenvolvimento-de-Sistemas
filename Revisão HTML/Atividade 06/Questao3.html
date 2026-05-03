@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário 3</title>
+    <link rel="stylesheet" href="Questao3.css">
+</head>
+
+<body>
+    <form class="cadastro-container">
+        <img src="Imagens/homem1.png" alt="homem1">
+        <fieldset>
+            <legend>Cadastro Geral</legend>
+            
+            <!-- Linha superior -->
+            <div class="dados_pessoais">
+                <img src="Imagens/terno.png" alt="terno">
+                <img src="Imagens/mundo.png" alt="mundo">
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+                    <label>Nome completo:</label>
+                    <input type="text">
+
+                    <label>Profissão:</label>
+                    <select>
+                        <option>Selecione sua profissão</option>
+                        <option>Administração</option>
+                        <option>Mecânico</option>
+                        <option>Eletrecista</option>
+                        <option>Desenvolvedor</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Localização</legend>
+
+                    <label>E-mail:</label>
+                    <input type="email">
+
+                    <label>Rua:</label>
+                    <input type="text">
+                </fieldset>
+
+            </div>
+
+            <!-- Faixa Etária -->
+            <fieldset>
+                <legend>Faixa etária</legend>
+                <img src="Imagens/meninoesenhor.png" alt="meninoesenhor">
+
+                <div class="faixa_etaria">
+                    <label><input type="radio" name="idade"> até 20 anos</label>
+                    <label><input type="radio" name="idade"> mais de 40 até 50 anos</label>
+
+                    <label><input type="radio" name="idade"> mais de 20 até 30 anos</label>
+                    <label><input type="radio" name="idade"> mais de 50 até 60 anos</label>
+
+                    <label><input type="radio" name="idade"> mais de 30 até 40 anos</label>
+                    <label><input type="radio" name="idade"> mais de 60</label>
+                </div>
+            </fieldset>
+
+            <!-- Esportes -->
+            <fieldset>
+                <legend>Esportes que pratica</legend>
+                <img src="Imagens/academia.png" alt="academia">
+
+                <div class="esporte">
+                    <label><input type="checkbox"> Futebol de campo</label>
+                    <label><input type="checkbox"> Futebol de salão</label>
+                    <label><input type="checkbox"> Futebol society</label>
+                    <label><input type="checkbox"> Vôlei de quadra</label>
+                    <label><input type="checkbox"> Vôlei de praia</label>
+                    <label><input type="checkbox"> Natação em piscina</label>
+                    <label><input type="checkbox"> Natação em mar aberto</label>
+                </div>
+            </fieldset>
+
+            <!-- Comentário -->
+            <fieldset>
+                <legend>Comentário</legend>
+                <img src="Imagens/conversa.png" alt="conversa">
+
+                <label>Mensagem:</label>
+                <textarea></textarea>
+            </fieldset>
+
+            <!-- Botões -->
+            <div class="buttons">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+
+        </fieldset>
+    </form>
+</body>
+</html>
