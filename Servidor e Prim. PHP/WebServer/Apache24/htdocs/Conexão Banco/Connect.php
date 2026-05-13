@@ -21,7 +21,7 @@
             try
             {
                 $PDO = new PDO("pgsql:host=".$this->host.";port=".$this->port.";dbname=".$this->dbname,$this->user,$this->password);
-                echo "Eu sou boa";
+                ///echo "Eu sou boa";
                 return($PDO);
             }
             catch(PDOException $erro)
