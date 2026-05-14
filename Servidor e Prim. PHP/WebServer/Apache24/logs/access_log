@@ -24,3 +24,35 @@
 ::1 - - [28/Apr/2026:21:14:59 -0300] "-" 408 -
 ::1 - - [28/Apr/2026:21:15:02 -0300] "GET /info.php HTTP/1.1" 200 27
 ::1 - - [28/Apr/2026:21:15:22 -0300] "-" 408 -
+::1 - - [13/May/2026:19:01:41 -0300] "GET / HTTP/1.1" 200 666
+::1 - - [13/May/2026:19:01:41 -0300] "GET /favicon.ico HTTP/1.1" 404 236
+::1 - - [13/May/2026:19:01:43 -0300] "GET /Conex%c3%a3o%20Banco/ HTTP/1.1" 200 525
+::1 - - [13/May/2026:19:29:04 -0300] "GET /Conex%c3%a3o%20Banco/Cadastro_Aluno.php HTTP/1.1" 200 641
+::1 - - [13/May/2026:19:29:13 -0300] "POST /Conex%c3%a3o%20Banco/salvar.php HTTP/1.1" 200 436
+::1 - - [13/May/2026:19:30:59 -0300] "GET /Conex%c3%a3o%20Banco/ HTTP/1.1" 200 525
+::1 - - [13/May/2026:19:30:59 -0300] "GET /Conex%c3%a3o%20Banco/ HTTP/1.1" 200 525
+::1 - - [13/May/2026:19:31:00 -0300] "GET /Conex%c3%a3o%20Banco/Cadastro_Aluno.php HTTP/1.1" 200 641
+::1 - - [13/May/2026:19:31:08 -0300] "POST /Conex%c3%a3o%20Banco/salvar.php HTTP/1.1" 200 436
+::1 - - [13/May/2026:19:32:55 -0300] "GET /Conex%c3%a3o%20Banco/Cadastro_Aluno.php HTTP/1.1" 200 641
+::1 - - [13/May/2026:19:33:09 -0300] "POST /Conex%c3%a3o%20Banco/salvar.php HTTP/1.1" 200 -
+::1 - - [13/May/2026:19:49:23 -0300] "GET /Conex%c3%a3o%20Banco/Cadastro_Aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:32:46 -0300] "GET /Conex%c3%a3o%20Banco/ HTTP/1.1" 200 579
+::1 - - [13/May/2026:21:32:49 -0300] "GET /Conex%c3%a3o%20Banco/Cadastro_Aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:33:03 -0300] "POST /Conex%c3%a3o%20Banco/salvar.php HTTP/1.1" 200 162
+::1 - - [13/May/2026:21:33:35 -0300] "GET /Conex%c3%a3o%20Banco/Cadastro_Aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:33:44 -0300] "POST /Conex%c3%a3o%20Banco/salvar.php HTTP/1.1" 200 283
+::1 - - [13/May/2026:21:33:47 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:34:13 -0300] "POST /Conex%c3%a3o%20Banco/salvar.php HTTP/1.1" 200 283
+::1 - - [13/May/2026:21:34:16 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:34:22 -0300] "POST /Conex%c3%a3o%20Banco/visualizar.php HTTP/1.1" 200 279
+::1 - - [13/May/2026:21:34:49 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:34:49 -0300] "POST /Conex%c3%a3o%20Banco/visualizar.php HTTP/1.1" 200 999
+::1 - - [13/May/2026:21:35:04 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:35:15 -0300] "POST /Conex%c3%a3o%20Banco/visualizar.php HTTP/1.1" 200 999
+::1 - - [13/May/2026:21:36:03 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:36:04 -0300] "POST /Conex%c3%a3o%20Banco/visualizar.php HTTP/1.1" 200 1000
+::1 - - [13/May/2026:21:36:08 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:39:32 -0300] "POST /Conex%c3%a3o%20Banco/salvar.php HTTP/1.1" 200 283
+::1 - - [13/May/2026:21:39:35 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [13/May/2026:21:39:37 -0300] "POST /Conex%c3%a3o%20Banco/visualizar.php HTTP/1.1" 200 1151
+::1 - - [13/May/2026:21:39:38 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770

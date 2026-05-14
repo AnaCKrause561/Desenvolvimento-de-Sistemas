@@ -17,5 +17,10 @@
         <br />
         <input type="submit" name="cadastrar" placeholder="Cadastrar" />
     </form>
+
+    <form method="post" action="visualizar.php">
+        <input type="submit" value="Listar" name="listar" />
+    </form>
+
 </body>
 </html>

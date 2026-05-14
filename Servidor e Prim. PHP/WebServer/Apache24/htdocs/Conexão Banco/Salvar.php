@@ -5,7 +5,34 @@
         require_once("Aluno.php");
         $obj = new Aluno();
         $exec = $obj->cadastrarAluno($_POST["nome"],$_POST["email"]);
-        ///header("Location: cadastro_aluno.php");
+        
+        if($exec == TRUE)
+        {
+            $msg = "Aluno Cadastro com sucesso!";
+        }
+        else
+        {
+            $msg = "Algo deu Errado tente novamente!";
+        }
     }
-
+    else
+    {
+        header("Location: cadastro_aluno.php");
+        exit;
+    }
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=cadastro_aluno.php">
+    <title>Resultado</title>
+</head>
+
+<body>
+    <h2><?= $msg; ?></h2>
+
+    <p>Redirecionando...</p>
+</body>
+</html>

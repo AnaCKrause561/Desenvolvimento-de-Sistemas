@@ -11,7 +11,7 @@
         {
             $this->host = "localhost";
             $this->dbname = "teste";
-            $this->password = "123";
+            $this->password = "admin";
             $this->user = "postgres";
             $this->port = "5432";
         }
