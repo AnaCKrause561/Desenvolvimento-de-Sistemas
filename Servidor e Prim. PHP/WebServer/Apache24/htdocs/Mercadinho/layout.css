@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(135deg, #e8f5e9, beige);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.login{
+
+    width: 350px;
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 30px;
+
+    color: deeppink;
+
+    font-size: 32px;
+}
+
+label{
+    display: block;
+
+    text-align: left;
+
+    margin-bottom: 8px;
+
+    color: #444;
+
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"]{
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+
+    border-color: #2e7d32;
+
+    outline: none;
+
+    box-shadow: 0px 0px 8px rgba(46,125,50,0.4);
+}
+
+input[type="submit"]{
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: deeppink;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover{
+    background-color: deeppink;
+
+    transform: scale(1.02);
+}

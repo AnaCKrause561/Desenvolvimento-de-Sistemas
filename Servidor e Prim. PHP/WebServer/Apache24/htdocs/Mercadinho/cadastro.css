@@ -1,0 +1,108 @@
+body{
+    margin: 0;
+    font-family: Arial;
+    background-color: #f5efef;
+}
+
+/* TOPO */
+
+.topo{
+    background-color: #f8cfe0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+}
+
+.topo h1{
+    color: #e66f95;
+    font-size: 28px;
+}
+
+.logo img{
+    width: 120px;
+}
+
+.usuario{
+    color: #e66f95;
+    font-weight: bold;
+}
+
+/* MENU */
+
+.menu{
+    width: 200px;
+    height: 100vh;
+    background-color: #f8cfe0;
+    padding: 20px;
+    float: left;
+    border-radius: 0 20px 20px 0;
+}
+
+.menu h2{
+    color: #e66f95;
+}
+
+.menu ul{
+    list-style: none;
+    padding: 0;
+}
+
+.menu li{
+    margin: 20px 0;
+    color: #e66f95;
+    font-weight: bold;
+}
+
+/* CONTEÚDO */
+
+.conteudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* CARD */
+
+.card{
+    background-color: #ffdfe8;
+    padding: 40px;
+    border-radius: 25px;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.card h2{
+    text-align: center;
+    color: #e66f95;
+}
+
+.card label{
+    display: block;
+    margin-top: 15px;
+    color: #e66f95;
+    font-weight: bold;
+}
+
+.card input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+.card button{
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ffe58f, #ff8ad6);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
