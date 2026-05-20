@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado LTDA</title>
+</head>
+
+<body>
+    <header>
+        <div class="cabeçalho">
+        </div>
+    </header>
+    <div class="container">
+        <center><img src="public/img/login.png" width="45%" /></center>
+
+    <form method="post" action="autenticarController.php">
+        <table>
+            <tr>
+                <td><label>Usuário:</label></td>
+                <td><input type="text" name="user" placeholder="login" required /></td>
+            </tr>
+
+            <tr>
+                <td><label>Senha:</label></td>
+                <td><input type="password" name="pass" required/></td>
+            </tr>
+
+            <tr>
+                <td class="center" colspan="2"><input type="submit" name="entrar" value="Entrar" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">Não tem uma conta?<a href="#">crie uma!</a></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><a href="#">Não consegue acessar sua conta?</a></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>
