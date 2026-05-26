@@ -1,3 +1,11 @@
+<?php
+      
+    include_once("../models/User.php");
+
+    $obj = new User();
+    $resp = $obj->ListarTodosUsuarios();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,7 +36,6 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Ações</th>
                 </tr>
 
             </thead>
@@ -36,17 +43,16 @@
             <tbody>
 
                 <!-- LOOP PHP -->
-
+                <?php foreach($resp as $usuarios): ?>
                 <tr>
-                    <td>1</td>
-                    <td>João</td>
-                    <td>joao@email.com</td>
+                    <td><?= $usuarios["id_usuarios"]; ?></td>
+                    <td><?= $usuarios["email"]; ?></td>
+                    <td><?= $usuarios["ativo"]; ?></td>
 
-                    <td>
-                        <a href="#" class="editar">Editar</a>
-                        <a href="#" class="excluir">Excluir</a>
-                    </td>
+                    <td><a href="editar_usuario.php?var=<?= $usuarios["id_usuarios"]; ?>" class="editar">Editar</a></td>
+                    <td><a href="#" class="excluir">Excluir</a></td>
                 </tr>
+                <?php endforeach ?>
 
             </tbody>
 

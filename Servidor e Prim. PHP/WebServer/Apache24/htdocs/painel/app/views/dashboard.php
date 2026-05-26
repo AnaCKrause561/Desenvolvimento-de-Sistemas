@@ -13,7 +13,7 @@
         <h1>Sistema MVC</h1>
 
         <nav>
-            <a href="#">Usuários</a>
+            <a href="listar_usuario.php">Usuários</a>
             <a href="#">Sair</a>
         </nav>
 

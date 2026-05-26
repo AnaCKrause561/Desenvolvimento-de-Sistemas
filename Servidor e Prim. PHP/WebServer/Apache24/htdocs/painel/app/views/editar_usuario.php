@@ -1,3 +1,13 @@
+<?php
+    
+    $id = $_GET["var"];
+
+    include_once("../models/User.php");
+
+    $obj = new User();
+    $resp = $obj->ListarUmUsuario($id);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,18 +22,13 @@
 
         <h1>Editar Usuário</h1>
 
-        <form action="#" method="POST">
+        <form action="../controllers/editar_usuario_controller.php" method="POST">
 
-            <input type="hidden" name="id" value="1">
-
-            <div class="input-group">
-                <label>Nome</label>
-                <input type="text" name="nome" value="João">
-            </div>
+            <input type="hidden" name="id" value="<?= $id; ?>">
 
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" name="email" value="joao@email.com">
+                <input type="email" name="email" value="<?= $resp["email"]; ?>">
             </div>
 
             <button type="submit" name="acao" value="editar">
