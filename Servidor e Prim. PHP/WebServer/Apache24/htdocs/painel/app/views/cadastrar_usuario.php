@@ -1,3 +1,15 @@
+<?php
+    session_name("painel");
+    session_start();
+    
+    if(!isset($_SESSION["login"]))
+    {
+        echo '<script>
+                    window.location.href="http://localhost:8080/painel";
+                    </script>';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,12 +24,7 @@
 
         <h1>Cadastrar Usuário</h1>
 
-        <form action="#" method="POST">
-
-            <div class="input-group">
-                <label>Nome</label>
-                <input type="text" name="nome">
-            </div>
+        <form action="../controllers/cadastrar_usuario_controller.php" method="POST">
 
             <div class="input-group">
                 <label>Email</label>
@@ -33,7 +40,15 @@
                 Cadastrar
             </button>
 
+            
+
+
         </form>
+        
+        
+              <a href="listar_usuario.php" class="btn">
+                Voltar
+            </a>
 
     </div>
 

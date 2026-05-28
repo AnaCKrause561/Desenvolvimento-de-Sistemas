@@ -8,5 +8,7 @@
 
         $obj = new User();
         $obj->EditarUsuario($id,$email);
+
+       
     }
 ?>

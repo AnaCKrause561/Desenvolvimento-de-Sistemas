@@ -37,57 +37,88 @@
             }
 
         }
-
         public function ListarTodosUsuarios()
         {
-            $sql = "SELECT * FROM usuarios ORDER BY id_usuarios ASC;";
-            $smtm = $this->pdo->prepare($sql);
-            if($smtm->execute())
-            {
-                $result = $smtm->fetchAll(PDO::FETCH_ASSOC);
-                return($result);
-            }
-            else
-            {
-                return(FALSE);
-            }
-        }
-
-        public function ListarUmUsuario($id_usuario)
-        {
-            $sql = "SELECT * FROM usuarios WHERE :id;";
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':id', $id_usuario);            
+            $sql= "SELECT * FROM usuarios ORDER BY id_usuarios ASC;";
+            $stmt= $this->pdo->prepare($sql);
             if($stmt->execute())
             {
-                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $result= $stmt->fetchAll(PDO::FETCH_ASSOC);
                 return($result);
             }
             else
             {
-                return(FALSE);
+                return (FALSE);
+            }
+        }
+        public function ListarUmUsuario($id_usuarios)
+        {
+            $sql= "SELECT * FROM usuarios WHERE id_usuarios = :id;";
+            $stmt= $this->pdo->prepare($sql);
+            $stmt->bindParam(':id', $id_usuarios);
+            if($stmt->execute())
+            {
+                $result= $stmt->fetch(PDO::FETCH_ASSOC);
+                return($result);
+            }
+            else
+            {
+                return (FALSE);
             }
         }
 
         public function EditarUsuario($id_usuario, $email)
         {
-            $sql = "UPDATE usuarios SET email = :email WHERE id_usuarios = :id;";
+            $sql="UPDATE usuarios SET email = :email WHERE id_usuarios = :id;";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':id', $id_usuario);
             $stmt->bindParam(':email', $email);
             if($stmt->execute())
             {
-                 echo '<script>
-                        alert("Usuário atualizado com sucesso.");
-                        window.location.href="http://localhost/painel/app/views/listar_usuario.php";
+                echo '<script>
+                    alert("Usuário atualizado com sucesso.");
+                    window.location.href="http://localhost:8080/painel/app/views/listar_usuario.php";
                     </script>';
             }
-            else
-            {
+            else{
                 echo "Erro";
             }
         }
 
+        public function ExcluirUsuario($id_usuario)
+        {
+            $sql="DELETE FROM usuarios WHERE id_usuarios = :id;";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':id', $id_usuario);
+            if($stmt->execute())
+            {
+                echo '<script>
+                    alert("Usuário excluido com sucesso.");
+                    window.location.href="http://localhost:8080/painel/app/views/listar_usuario.php";
+                    </script>';
+            }
+            else{
+                echo "Erro";
+            }
+        }
+
+         public function CadastrarUsuario($email, $senha)
+        {
+            $sql="INSERT INTO usuarios (email, senha, ativo) VALUES (:email, :senha, 'true');";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':senha', $senha);
+            if($stmt->execute())
+            {
+                echo '<script>
+                    alert("Usuário cadastrado com sucesso.");
+                    window.location.href="http://localhost:8080/painel/app/views/listar_usuario.php";
+                    </script>';
+            }
+            else{
+                echo "Erro";
+            }
+        }
 
     }
 ?>

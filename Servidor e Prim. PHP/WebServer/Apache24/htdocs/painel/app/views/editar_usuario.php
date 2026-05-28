@@ -1,12 +1,24 @@
 <?php
+    session_name("painel");
+    session_start();
     
-    $id = $_GET["var"];
+    if(!isset($_SESSION["login"]))
+    {
+        echo '<script>
+                    window.location.href="http://localhost:8080/painel";
+                    </script>';
+    }
 
-    include_once("../models/User.php");
+        $id= $_GET["var"];
+ 
+        include_once("../models/User.php");
 
-    $obj = new User();
-    $resp = $obj->ListarUmUsuario($id);
+        $obj = new User();
+        $resp = $obj->ListarUmUsuario($id);
+
+        
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,16 +36,21 @@
 
         <form action="../controllers/editar_usuario_controller.php" method="POST">
 
-            <input type="hidden" name="id" value="<?= $id; ?>">
+            <input type="hidden" name="id" value="<?=$id;?>">
 
             <div class="input-group">
                 <label>Email</label>
-                <input type="email" name="email" value="<?= $resp["email"]; ?>">
+                <input type="email" name="email" value="<?= $resp["email"];?>">
             </div>
+
 
             <button type="submit" name="acao" value="editar">
                 Atualizar
             </button>
+
+            <a href="listar_usuario.php" class="btn">
+                Voltar
+            </a>
 
         </form>
 

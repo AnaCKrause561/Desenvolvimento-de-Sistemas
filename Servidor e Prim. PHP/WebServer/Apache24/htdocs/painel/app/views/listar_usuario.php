@@ -1,10 +1,23 @@
 <?php
-      
-    include_once("../models/User.php");
+    session_name("painel");
+    session_start();
+    
+    if(!isset($_SESSION["login"]))
+    {
+        echo '<script>
+                    window.location.href="http://localhost:8080/painel";
+                    </script>';
+    }
 
-    $obj = new User();
-    $resp = $obj->ListarTodosUsuarios();
+ 
+        include_once("../models/User.php");
+
+        $obj = new User();
+        $resp = $obj->ListarTodosUsuarios();
+
+        
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,7 +35,7 @@
 
             <h1>Usuários</h1>
 
-            <a href="#" class="btn">
+            <a href="cadastrar_usuario.php" class="btn">
                 Novo Usuário
             </a>
 
@@ -36,6 +49,7 @@
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
+                    <th>Ações</th>
                 </tr>
 
             </thead>
@@ -43,22 +57,31 @@
             <tbody>
 
                 <!-- LOOP PHP -->
-                <?php foreach($resp as $usuarios): ?>
+                <?php foreach($resp as $usuarios):?>
                 <tr>
-                    <td><?= $usuarios["id_usuarios"]; ?></td>
-                    <td><?= $usuarios["email"]; ?></td>
-                    <td><?= $usuarios["ativo"]; ?></td>
-
-                    <td><a href="editar_usuario.php?var=<?= $usuarios["id_usuarios"]; ?>" class="editar">Editar</a></td>
-                    <td><a href="#" class="excluir">Excluir</a></td>
+                    <td><?= $usuarios["id_usuarios"]?></td>
+                    <td><?= $usuarios["email"]?></td>
+                    <td><?= $usuarios["ativo"]?></td>
+                    <td><a href="editar_usuario.php?var=<?=$usuarios["id_usuarios"];?>" class="editar">Editar</a></td>
+                    <td><a href="../controllers/excluir_usuario_controllers.php?var=<?=$usuarios["id_usuarios"];?>" class="excluir">Excluir</a></td>
                 </tr>
-                <?php endforeach ?>
+                    <?php endforeach?>
 
+                
             </tbody>
 
+        
+
         </table>
+        </br>
+
+            <a href="dashboard.php" class="btn">
+                Voltar
+            </a>
 
     </div>
+
+ 
 
 </body>
 </html>

@@ -1,8 +1,4 @@
 <?php
-    session_name("painel");
-    session_start();
-    
-
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $email = $_POST["email"];
@@ -11,17 +7,16 @@
         include_once("../models/User.php");
 
         $obj = new User();
-        $resp = $obj->ValidarLogin($email,$senha);
+        $resp = $obj->CadastrarUsuario($email,$senha);
 
         if($resp == TRUE)
         {
-            $_SESSION["login"] = md5($email);
             header("Location: ../views/dashboard.php");
         }
         else
         {
             echo '<script>
-                        alert("Senha ou Usuário inválido, tente novamente.");
+                        alert("Não foi possível cadastrar seu usuário");
                         window.location.href="http://localhost/painel";
                 </script>';
                 

@@ -1,8 +1,4 @@
 <?php
-    session_name("painel");
-    session_start();
-    
-
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $email = $_POST["email"];
@@ -15,7 +11,6 @@
 
         if($resp == TRUE)
         {
-            $_SESSION["login"] = md5($email);
             header("Location: ../views/dashboard.php");
         }
         else

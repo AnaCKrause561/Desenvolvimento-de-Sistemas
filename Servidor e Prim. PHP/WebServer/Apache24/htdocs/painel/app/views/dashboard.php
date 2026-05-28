@@ -1,3 +1,15 @@
+<?php
+    session_name("painel");
+    session_start();
+    
+    if(!isset($_SESSION["login"]))
+    {
+        echo '<script>
+                    window.location.href="http://localhost:8080/painel";
+                    </script>';
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +26,7 @@
 
         <nav>
             <a href="listar_usuario.php">Usuários</a>
-            <a href="#">Sair</a>
+            <a href="../controllers/logoff.php">Sair</a>
         </nav>
 
     </header>
