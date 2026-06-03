@@ -17,7 +17,7 @@
         {
             echo '<script>
                         alert("Senha ou Usuário inválido, tente novamente.");
-                        window.location.href="http://localhost/painel";
+                        window.location.href="http://localhost/Agenda-Avaliação";
                 </script>';
                 
         }
