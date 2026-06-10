@@ -15,7 +15,19 @@
             <h2>Agenda</h2>
             
             <ul>
-                <li></li>
+                <li>Dashboard</li>
+                <li>Contatos</li>
+                <li>Compromissos</li>
+                <li>Perfil</li>
+                <li>Configurações</li>
+                <li>Sair</li>
+            </ul>
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+            <input type="text" placeholder="Buscar contatos, compromissos..." />
+        </main>
 
     </div>
 </body>
