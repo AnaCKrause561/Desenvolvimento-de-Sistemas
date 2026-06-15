@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #111;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+}
+
+/* Pág principal */
+.container{
+    width: 900px;
+    height: 85vh;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Lado esquerda */
+.lado_esquerdo{
+    width: 40%;
+    position: relative;
+    background-image: url('../img/fundo-login.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Camada escura sobre a imagem */
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.60);
+}
+
+/* Conteúdo da esquerda */
+.conteudo_esquerdo{
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+}
+
+/* Título da esquerda */
+.conteudo_esquerdo h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Lado direita */
+.lado_direito{
+    width: 60%;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    align-items: flex-start;
+    padding-bottom: 30px;
+}
+
+/* Formulário */
+.formulario{
+    width: 80%;
+    max-width: 450px;
+    color: white;
+}
+
+/* Texto superior */
+.formulario p{
+    color: #d4d4d4;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Organização dos campos */
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Área da foto de perfil */
+.foto_perfil{
+    display: flex; /* Coloca imagem e campo lado a lado */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaço entre imagem e campo */
+    margin-bottom: 35px; /* Espaço antes do Nome Completo */
+}
+
+/* Imagem de perfil */
+.foto_perfil img{
+    margin-top: 15px;
+    width: 100px; /* Largura */
+    border-radius: 50%; /* Deixa redonda */
+    object-fit: cover; /* Ajusta a imagem */
+    flex-shrink: 0; /* Impede que diminua */
+}
+
+/* Área do campo de foto */
+.campo_foto{
+    display: flex; /* Organiza em coluna */
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Campo de arquivo */
+.campo_foto input[type="file"]{
+    margin-top: 8px;
+    color: white;
+}
+
+/* Labels */
+label{
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Todos os campos */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea{
+    width: 100%;
+    padding: 12px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    font-family: inherit;
+}
+
+/* Cor do placeholder */
+input::placeholder,
+textarea::placeholder{
+    color: #888;
+}
+
+/* Campo selecionado */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus{
+    border-bottom: 1px solid #00c46a;
+}
+
+/* Área de descrição */
+textarea{
+    height: 120px;
+    resize: none;
+    padding-top: 10px;
+}
+
+/* Campo de arquivo */
+input[type="file"]{
+    color: white;
+    margin-top: 5px;
+}
+
+/* Botão cadastrar */
+input[type="submit"]{
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #00c46a;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover do botão */
+input[type="submit"]:hover{
+    background: #00dc76;
+}
+
+/* Texto abaixo do botão */
+.cadastro{
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Link */
+a{
+    color: #00c46a;
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media(max-width: 900px){
+
+    .container{
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .lado_esquerdo,
+    .lado_direito{
+        width: 100%;
+    }
+
+    .lado_esquerdo{
+        min-height: 250px;
+    }
+
+    .formulario{
+        width: 90%;
+        padding: 30px 0;
+    }
+}

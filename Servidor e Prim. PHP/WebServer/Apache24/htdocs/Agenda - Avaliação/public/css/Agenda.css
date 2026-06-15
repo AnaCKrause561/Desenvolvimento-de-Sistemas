@@ -1,153 +1,211 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove espaçamentos internos padrão */
+    box-sizing: border-box; /* Faz width e height considerarem bordas e paddings */
 }
 
-body {
-    background-color: #f2f2f2;
-    font-family: Arial, Helvetica, sans-serif;
+body{
+    background: #111; /* Cor de fundo da página */
+    min-height: 100vh; /* Altura mínima igual à tela toda */
+    display: flex; /* Coloca os lados esquerdo e direito lado a lado */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Fonte utilizada na página */
 }
 
-.container {
-    width: 90%;
-    height: 92vh;
-    margin: 20px auto;
-    display: flex;
-    background-color: whitesmoke;
-    border-radius: 18px;
-    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+/* Container principal -> Responsável por dividir a tela em duas partes */
+.container{
+    width: 800px; /* Largura */
+    height: 85vh; /* Altura */
+    display: flex; /* Coloca os lados esquerdo e direito lado a lado */
+    border-radius: 20px; /* Arredonda as bordas */
+    overflow: hidden; /* Impede que elementos ultrapassem as bordas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* Adiciona sombra ao container */
 }
 
-/* LADO ESQUERDO */
-
-.lado_esquerdo {
-    width: 43%;
-    height: 100%;
-    background: linear-gradient(180deg,
-            #2837d6,
-            #4d46ff);
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
+/* Lado esquerdo -> Exibe a imagem de fundo e informações da agenda */
+.lado_esquerdo{
+    width: 45%; /* Largura */
+    position: relative; /* Permite posicionar elementos internos sobre ele */
+    background-image: url('../img/fundo-login.png');
+    background-size: cover; /* Faz a imagem preencher todo espaço disponível */
+    background-position: center; /* Centraliza a imagem */
+    display: flex; /* Coloca os lados esquerdo e direito lado a lado */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 }
 
-.conteudo_esquerdo {
-    width: 350px;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 25%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: white;
+/* Overlay -> Escurece a imagem para melhorar a leitura do texto */
+.overlay{
+    position: absolute; /* Fica sobre a imagem de fundo */
+    width: 100%; /* Largura */
+    height: 100%; /* Altura */
+    background: rgba(0,0,0,0.55); /* Adiciona uma camada escura transparente */
 }
 
-.conteudo_esquerdo img {
-    display: block;
-    width: 130px;
-    align-self: flex-start;
-    margin-left: 30px;
+/* Conteúdo esquerdo -> Agrupa imagem, título e descrição */
+.conteudo_esquerdo{
+    width: 350px; /* Largura */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: relative; /* Permite controlar a posição do conteúdo */
+    z-index: 1; /* Faz o conteúdo aparecer acima do overlay */
+    color: white; /* Define a cor dos textos */
 }
 
-.conteudo_esquerdo h1 {
-    font-size: 32px;
-    margin-left: 30px;
-    text-align: left;
-    line-height: 1.3;
-    margin-top: 10px;
+/* Imagem -> Ícone principal da área esquerda */
+.conteudo_esquerdo img{
+    width: 100px; /* Tamanho da imagem */
+    margin-left: 30px; /* Espaço da borda esquerda */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
 }
 
-.conteudo_esquerdo p {
-    margin-left: 30px;
-    text-align: left;
-    width: 80%;
+/* Título -> Agenda */
+.conteudo_esquerdo h1{
+    font-size: 28px; /* Tamanho do título */
+    margin-left: 30px; /* Espaço da borda esquerda */
+    line-height: 1.3; /* Espaçamento entre linhas */
+    margin-bottom: 15px; /* Espaço abaixo do título */
 }
 
-/* LADO DIREITO */
-
-.lado_direito {
-    width: 58%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Descrição -> Slogan da agenda */
+.conteudo_esquerdo p{
+    width: 80%; /* Largura */
+    margin-left: 30px; /* Espaço da borda esquerda */
+    font-size: 16px; /* Tamanho da fonte */
+    line-height: 1.7; /* Espaçamento entre linhas */
 }
 
-.formulario {
-    width: 400px;
-    background-color: white;
-    padding: 35px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+/* Lado direito -> Área que contém o formulário de login */
+.lado_direito{
+    width: 65%; /* Ocupa a maior parte do container */
+    background: rgba(0,0,0,0.95); /* Fundo preto com leve transparência */
+    display: flex; /* Coloca os lados esquerdo e direito lado a lado */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
-.formulario h1 {
-    margin-bottom: 10px;
+/* Formulário -> Campos principais */
+.formulario{
+    width: 350px; /* Largura */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    color: white; /* Cor dos textos */
 }
 
-.formulario p {
-    margin-bottom: 25px;
-    color: #555;
+/* Título do formulário -> Boas-vindas */
+.formulario h1{
+    font-size: 26px; /* Tamanho do título */
+    margin-bottom: 10px; /* Espaço abaixo */
 }
 
-/* FORMULÁRIO */
-
-form {
-    display: flex;
-    flex-direction: column;
+/* Subtítulo -> Instrução para o usuário */
+.formulario p{
+    color: #d4d4d4; /* Cor cinza clara */
+    margin-bottom: 25px; /* Espaço abaixo */
 }
 
-label {
-    font-weight: bold;
-    margin-bottom: 8px;
+/* Form -> Organiza os campos em coluna */
+form{
+    display: flex; /* Coloca os lados esquerdo e direito lado a lado */
+    flex-direction: column; /* Coloca os elementos um abaixo do outro */
 }
 
+/* Label -> Nome dos campos */
+label{
+    margin-top: 15px; /* Espaço acima */
+    margin-bottom: 8px; /* Espaço abaixo */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: white; /* Cor do texto */
+}
+
+/* Campos -> Entrada de e-mail e senha */
 input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #dcdcdc;
-    border-radius: 8px;
-    margin-bottom: 8px;
+input[type="password"]{
+    width: 100%; /* Largura */
+    padding: 12px 0; /* Espaçamento interno */
+    background: transparent; /* Fundo transparente */
+    border: none; /* Remove todas as bordas */
+    border-bottom: 1px solid #444; /* Adiciona apenas a borda inferior */
+    color: white; /* Cor do texto digitado */
+    font-size: 16px; /* Tamanho da fonte */
+    outline: none; /* Remove a borda azul padrão ao clicar */
 }
 
-.opcoes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    font-size: 14px;
-    margin-top: 15px;
+/* Focus -> Destaca o campo selecionado, fica mais claro */
+input[type="email"]:focus,
+input[type="password"]:focus{
+    border-bottom: 1px solid #00c46a; /* Muda a cor da linha ao selecionar */
 }
 
-.lembrar {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+/* Placeholder -> Cor do texto de exemplo */
+input::placeholder{
+    color: #888; /* Cor do texto de orientação */
 }
 
-input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: #4d46ff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 15px;
+/* Opções -> Agrupa lembrar-me e esqueceu senha */
+.opcoes{
+    display: flex; /* Coloca os elementos lado a lado */
+    justify-content: space-between; /* Um elemento em cada extremidade */
+    align-items: center; /* Alinha verticalmente */
+    margin-top: 15px; /* Espaço acima */
+    margin-bottom: 20px; /* Espaço abaixo */
+    font-size: 14px; /* Tamanho da fonte */
 }
 
-input[type="submit"]:hover {
-    background-color: #3f39e0;
+/* Lembrar-me -> Alinha checkbox e texto */
+.lembrar{
+    display: flex; /* Coloca os lados esquerdo e direito lado a lado */
+    align-items: center; /* Alinha verticalmente */
+    gap: 5px; /* Espaço entre checkbox e texto */
 }
 
-a {
-    text-decoration: none;
-    color: #4d46ff;
+/* Links -> Estilo dos links da página */
+a{
+    text-decoration: none; /* Remove sublinhado */
+    color: #00c46a; /* Cor verde */
 }
 
-.cadastro {
-    text-align: center;
-    margin-top: 5px;
+/* Botão Entrar -> Realiza o envio do formulário */
+input[type="submit"]{
+    width: 100%; /* Largura */
+    padding: 12px; /* Altura */
+    margin-top: 15px; /* Espaço acima */
+    border: none; /* Remove borda */
+    border-radius: 8px; /* Arredonda os cantos */
+    background: #00c46a; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para mãozinha */
+}
+
+/* Hover do botão -> Efeito ao passar o mouse */
+input[type="submit"]:hover{
+    background: #00dc76; /* Clareia a cor ao passar o mouse */
+}
+
+/* Cadastro -> Texto abaixo do botão */
+.cadastro{
+    text-align: center; /* Centraliza o texto */
+    margin-top: 5px; /* Espaço acima */
+}
+
+/* Responsividade -> Ajusta o layout para celulares e tablets */
+@media(max-width: 900px){
+
+    .container{
+        flex-direction: column; /* Empilha os lados um abaixo do outro */
+        height: auto; /* Altura automática */
+    }
+
+    .lado_esquerdo,
+    .lado_direito{
+        width: 100%; /* Ocupa toda largura da tela */
+    }
+
+    .lado_esquerdo{
+        min-height: 300px; /* Altura mínima da área esquerda */
+    }
+
+    .formulario{
+        width: 90%; /* Ocupa 90% da largura disponível */
+        padding: 30px 0; /* Espaçamento interno superior e inferior */
+    }
 }

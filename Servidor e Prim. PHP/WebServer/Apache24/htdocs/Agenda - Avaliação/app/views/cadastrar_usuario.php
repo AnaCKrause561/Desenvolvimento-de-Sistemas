@@ -1,56 +1,70 @@
-<?php
-    session_name("painel");
-    session_start();
-    
-    if(!isset($_SESSION["login"]))
-    {
-        echo '<script>
-                    window.location.href="http://localhost:8080/agenda";
-                    </script>';
-    }
-?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Usuário</title>
-    <link href="../../public/css/style_cadastrar_usuario.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../public/css/Cadastro.css" />
+    <title>Cadastro</title>
 </head>
+
 <body>
 
-    <div class="box">
+    <div class="container">
 
-        <h1>Cadastrar Usuário</h1>
+        <!-- Lado esquerdo -->
+        <div class="lado_esquerdo">
 
-        <form action="../controllers/cadastrar_usuario_controller.php" method="POST">
+            <div class="overlay"></div>
 
-            <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="email">
+            <div class="conteudo_esquerdo">
+
+                <h1>Cadastre-se!</h1>
+                <p>Preencha os dados ao lado para se cadastrar.</p>
+
             </div>
 
-            <div class="input-group">
-                <label>Senha</label>
-                <input type="password" name="senha">
+        </div>
+
+        <!-- Lado direito -->
+        <div class="lado_direito">
+
+            <div class="formulario">
+
+                <form>
+
+                    <div class="foto_perfil">
+
+                        <img src="../../public/img/login.png" alt="Conecte-se">
+
+                        <div class="campo_foto">
+                            <label>Foto de Perfil</label>
+                            <input type="file" accept="image/*">
+                        </div>
+
+                    </div>
+
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Digite seu nome">
+
+                    <label>E-mail</label>
+                    <input type="email" placeholder="Digite seu e-mail">
+
+                    <label>Telefone</label>
+                    <input type="tel" placeholder="(46) 99999-9999">
+
+                    <label>Descrição Pessoal</label>
+                    <textarea placeholder="Fale um pouco sobre você"></textarea>
+
+                    <input type="submit" value="Cadastrar">
+
+                </form>
+
+                <p class="cadastro">Já possui uma conta? <a href="Agenda-Avaliação/info.html">Entrar</a></p>
             </div>
-
-            <button type="submit" name="acao" value="cadastrar">
-                Cadastrar
-            </button>
-
-            
-
-
-        </form>
-        
-        
-              <a href="listar_usuario.php" class="btn">
-                Voltar
-            </a>
-
+        </div>
     </div>
 
 </body>
+
 </html>

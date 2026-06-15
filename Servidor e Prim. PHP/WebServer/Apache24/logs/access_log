@@ -56,3 +56,483 @@
 ::1 - - [13/May/2026:21:39:35 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
 ::1 - - [13/May/2026:21:39:37 -0300] "POST /Conex%c3%a3o%20Banco/visualizar.php HTTP/1.1" 200 1151
 ::1 - - [13/May/2026:21:39:38 -0300] "GET /Conex%c3%a3o%20Banco/cadastro_aluno.php HTTP/1.1" 200 770
+::1 - - [14/Jun/2026:15:50:59 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:15:50:59 -0300] "GET /favicon.ico HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:15:51:01 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:15:51:04 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 200 1345
+::1 - - [14/Jun/2026:15:51:04 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4796
+::1 - - [14/Jun/2026:15:51:04 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.jpg HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:15:51:19 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:30:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:30:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4796
+::1 - - [14/Jun/2026:16:30:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 200 1823060
+::1 - - [14/Jun/2026:16:31:12 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:36:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 200 1458
+::1 - - [14/Jun/2026:16:36:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:36:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 200 83364
+::1 - - [14/Jun/2026:16:36:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:39:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:39:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4922
+::1 - - [14/Jun/2026:16:39:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:40:10 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:40:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:40:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4922
+::1 - - [14/Jun/2026:16:40:37 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:41:06 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:41:06 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4922
+::1 - - [14/Jun/2026:16:41:06 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:41:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:41:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4922
+::1 - - [14/Jun/2026:16:41:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:41:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4922
+::1 - - [14/Jun/2026:16:41:55 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:42:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:42:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4922
+::1 - - [14/Jun/2026:16:42:37 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:43:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:43:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4922
+::1 - - [14/Jun/2026:16:43:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:43:43 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:47:57 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 200 2059
+::1 - - [14/Jun/2026:16:47:57 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:47:57 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:48:17 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:51:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 200 2028
+::1 - - [14/Jun/2026:16:51:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:51:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3506
+::1 - - [14/Jun/2026:16:51:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.jpg HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:16:53:25 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:53:25 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3524
+::1 - - [14/Jun/2026:16:53:26 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.jpg HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:16:53:45 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:54:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:54:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3524
+::1 - - [14/Jun/2026:16:54:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:54:22 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:56:10 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:56:10 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3804
+::1 - - [14/Jun/2026:16:56:30 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:57:40 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:57:40 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3830
+::1 - - [14/Jun/2026:16:57:40 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:57:54 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:57:54 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3830
+::1 - - [14/Jun/2026:16:58:14 -0300] "-" 408 -
+::1 - - [14/Jun/2026:16:58:15 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:58:15 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3920
+::1 - - [14/Jun/2026:16:58:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:58:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:58:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:58:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:58:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:58:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:59:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:59:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:16:59:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:00:19 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:02:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:02:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 3814
+::1 - - [14/Jun/2026:17:02:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:02:32 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 200 2028
+::1 - - [14/Jun/2026:17:02:32 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:02:52 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:06:19 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:06:19 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:06:19 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4068
+::1 - - [14/Jun/2026:17:06:19 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:07:40 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:07:40 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4141
+::1 - - [14/Jun/2026:17:08:00 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:11:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:11:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4299
+::1 - - [14/Jun/2026:17:11:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:11:48 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:12:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4299
+::1 - - [14/Jun/2026:17:12:26 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:26 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4300
+::1 - - [14/Jun/2026:17:12:33 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:33 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4299
+::1 - - [14/Jun/2026:17:12:47 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:47 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4300
+::1 - - [14/Jun/2026:17:12:56 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:56 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4300
+::1 - - [14/Jun/2026:17:12:58 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:58 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:58 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:12:58 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:13:16 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:13:58 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:13:58 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4423
+::1 - - [14/Jun/2026:17:14:18 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:14:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:14:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4423
+::1 - - [14/Jun/2026:17:15:04 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:15:06 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:15:06 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4423
+::1 - - [14/Jun/2026:17:15:26 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:15:56 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:15:56 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4423
+::1 - - [14/Jun/2026:17:15:56 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:16 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:16:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4399
+::1 - - [14/Jun/2026:17:16:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:38 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:38 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4401
+::1 - - [14/Jun/2026:17:16:48 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:48 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4401
+::1 - - [14/Jun/2026:17:16:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:16:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4400
+::1 - - [14/Jun/2026:17:17:19 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:19:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:19:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4412
+::1 - - [14/Jun/2026:17:21:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:21:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:21:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:21:20 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:22:05 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:22:05 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:22:05 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4426
+::1 - - [14/Jun/2026:17:29:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:29:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4426
+::1 - - [14/Jun/2026:17:29:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:29:41 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:38:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:38:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:38:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4412
+::1 - - [14/Jun/2026:17:38:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:43:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:43:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 4903
+::1 - - [14/Jun/2026:17:43:22 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:46:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:46:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 7557
+::1 - - [14/Jun/2026:17:46:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:46:20 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:57:20 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:57:20 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 7302
+::1 - - [14/Jun/2026:17:57:20 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:57:40 -0300] "-" 408 -
+::1 - - [14/Jun/2026:17:57:53 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:57:53 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:57:53 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 7423
+::1 - - [14/Jun/2026:17:58:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:58:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 7429
+::1 - - [14/Jun/2026:17:58:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html? HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:17:58:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 7423
+::1 - - [14/Jun/2026:17:59:01 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:16:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:18:16:31 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/ HTTP/1.1" 200 448
+::1 - - [14/Jun/2026:18:16:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/ HTTP/1.1" 200 456
+::1 - - [14/Jun/2026:18:16:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 2515
+::1 - - [14/Jun/2026:18:16:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/css/Cadastro.css HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:16:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:16:46 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 2515
+::1 - - [14/Jun/2026:18:16:46 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/css/Cadastro.css HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:16:46 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:17:17 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:17:50 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:18:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:18:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:18:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:18:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:21:15 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 200 2058
+::1 - - [14/Jun/2026:18:21:15 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:21:18 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 2521
+::1 - - [14/Jun/2026:18:21:18 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/css/Cadastro.css HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:21:18 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:21:49 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:21:53 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:21:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:21:58 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1913
+::1 - - [14/Jun/2026:18:21:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/css/Cadastro.css HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:21:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:23:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1931
+::1 - - [14/Jun/2026:18:23:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/css/Cadastro.css HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:23:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:26:48 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:18:26:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:18:26:53 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/ HTTP/1.1" 200 448
+::1 - - [14/Jun/2026:18:26:54 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/ HTTP/1.1" 200 456
+::1 - - [14/Jun/2026:18:27:08 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:27:12 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:18:27:14 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:18:27:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:27:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:27:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1860
+::1 - - [14/Jun/2026:18:27:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/css/Cadastro.css HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:27:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:29:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1866
+::1 - - [14/Jun/2026:18:29:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:18:29:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 1486
+::1 - - [14/Jun/2026:18:30:14 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1872
+::1 - - [14/Jun/2026:18:30:27 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1872
+::1 - - [14/Jun/2026:18:30:47 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:31:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1872
+::1 - - [14/Jun/2026:18:31:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 7423
+::1 - - [14/Jun/2026:18:31:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:32:19 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:34:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1872
+::1 - - [14/Jun/2026:18:34:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:34:31 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1872
+::1 - - [14/Jun/2026:18:34:48 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:39:29 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1832
+::1 - - [14/Jun/2026:18:39:29 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 653
+::1 - - [14/Jun/2026:18:39:49 -0300] "-" 408 -
+::1 - - [14/Jun/2026:18:43:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1832
+::1 - - [14/Jun/2026:18:43:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:18:43:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 7732
+::1 - - [14/Jun/2026:19:01:57 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1621
+::1 - - [14/Jun/2026:19:01:57 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 3479
+::1 - - [14/Jun/2026:19:01:57 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:02:17 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:02:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1621
+::1 - - [14/Jun/2026:19:02:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 3480
+::1 - - [14/Jun/2026:19:02:42 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:07:06 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1621
+::1 - - [14/Jun/2026:19:07:06 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 3560
+::1 - - [14/Jun/2026:19:07:26 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:08:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1621
+::1 - - [14/Jun/2026:19:08:03 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 3560
+::1 - - [14/Jun/2026:19:08:22 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:08:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1690
+::1 - - [14/Jun/2026:19:08:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:08:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/public/img/login.png HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:19:14:46 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1885
+::1 - - [14/Jun/2026:19:14:46 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:14:46 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4387
+::1 - - [14/Jun/2026:19:15:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1885
+::1 - - [14/Jun/2026:19:15:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4386
+::1 - - [14/Jun/2026:19:15:33 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:15:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1886
+::1 - - [14/Jun/2026:19:15:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:15:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:15:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:16:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/login.html HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:19:16:12 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:19:16:14 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:19:16:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:16:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 6745
+::1 - - [14/Jun/2026:19:16:32 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:16:51 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:17:04 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:17:24 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:18:09 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:19:18:12 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:19:18:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:18:29 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:19:07 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:19:07 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:19:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:19:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:19:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:19:42 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:20:05 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:19:20:09 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:19:20:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:20:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4336
+::1 - - [14/Jun/2026:19:20:29 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:20:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:20:50 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4455
+::1 - - [14/Jun/2026:19:21:10 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:21:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:21:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4359
+::1 - - [14/Jun/2026:19:21:43 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1887
+::1 - - [14/Jun/2026:19:21:43 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4359
+::1 - - [14/Jun/2026:19:22:03 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:23:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/login.html HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:19:23:32 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:19:23:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:19:23:38 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:23:38 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 7423
+::1 - - [14/Jun/2026:19:23:57 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:24:33 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:19:24:33 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:19:24:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:19:25:01 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:26:10 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/ HTTP/1.1" 200 394
+::1 - - [14/Jun/2026:19:26:14 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 200 7423
+::1 - - [14/Jun/2026:19:26:30 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:26:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1905
+::1 - - [14/Jun/2026:19:26:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:27:01 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:27:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1905
+::1 - - [14/Jun/2026:19:27:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4326
+::1 - - [14/Jun/2026:19:27:32 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/Agenda-Avalia%C3%A7%C3%A3o/info.html HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:19:27:52 -0300] "-" 408 -
+::1 - - [14/Jun/2026:19:29:43 -0300] "GET / HTTP/1.1" 200 892
+::1 - - [14/Jun/2026:19:29:46 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/ HTTP/1.1" 200 431
+::1 - - [14/Jun/2026:19:30:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/info.html HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:30:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Agenda.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:19:30:12 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/cadastrar_usuario.php HTTP/1.1" 200 1905
+::1 - - [14/Jun/2026:19:30:12 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Cadastro.css HTTP/1.1" 200 4240
+::1 - - [14/Jun/2026:19:30:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/Agenda-Avalia%C3%A7%C3%A3o/info.html HTTP/1.1" 404 236
+::1 - - [14/Jun/2026:19:30:44 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:10:19 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/ HTTP/1.1" 200 448
+::1 - - [14/Jun/2026:21:10:20 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/ HTTP/1.1" 200 456
+::1 - - [14/Jun/2026:21:10:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1941
+::1 - - [14/Jun/2026:21:10:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 870
+::1 - - [14/Jun/2026:21:10:32 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:11:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1941
+::1 - - [14/Jun/2026:21:11:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 910
+::1 - - [14/Jun/2026:21:11:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1941
+::1 - - [14/Jun/2026:21:11:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 890
+::1 - - [14/Jun/2026:21:12:04 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:12:45 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1941
+::1 - - [14/Jun/2026:21:12:45 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1158
+::1 - - [14/Jun/2026:21:13:05 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:14:31 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1982
+::1 - - [14/Jun/2026:21:14:31 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1363
+::1 - - [14/Jun/2026:21:14:31 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:14:51 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:15:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1974
+::1 - - [14/Jun/2026:21:15:37 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1363
+::1 - - [14/Jun/2026:21:15:56 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:15:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1974
+::1 - - [14/Jun/2026:21:15:59 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1367
+::1 - - [14/Jun/2026:21:16:19 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:32:26 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1881
+::1 - - [14/Jun/2026:21:32:26 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:32:46 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:33:14 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1881
+::1 - - [14/Jun/2026:21:33:34 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:33:38 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1881
+::1 - - [14/Jun/2026:21:33:58 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:37:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1969
+::1 - - [14/Jun/2026:21:37:17 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1696
+::1 - - [14/Jun/2026:21:37:37 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:37:43 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1969
+::1 - - [14/Jun/2026:21:37:43 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1716
+::1 - - [14/Jun/2026:21:38:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1969
+::1 - - [14/Jun/2026:21:38:00 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1697
+::1 - - [14/Jun/2026:21:38:15 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1969
+::1 - - [14/Jun/2026:21:38:15 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1698
+::1 - - [14/Jun/2026:21:38:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1969
+::1 - - [14/Jun/2026:21:38:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:38:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1969
+::1 - - [14/Jun/2026:21:38:16 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:38:35 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:38:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1983
+::1 - - [14/Jun/2026:21:38:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1696
+::1 - - [14/Jun/2026:21:39:01 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:40:11 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1983
+::1 - - [14/Jun/2026:21:40:11 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1710
+::1 - - [14/Jun/2026:21:40:31 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:40:48 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1983
+::1 - - [14/Jun/2026:21:40:48 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1756
+::1 - - [14/Jun/2026:21:41:08 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:41:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1983
+::1 - - [14/Jun/2026:21:41:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1733
+::1 - - [14/Jun/2026:21:41:47 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1983
+::1 - - [14/Jun/2026:21:41:48 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1756
+::1 - - [14/Jun/2026:21:42:07 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:47:11 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:47:11 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:47:11 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:47:31 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:48:47 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:48:47 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1774
+::1 - - [14/Jun/2026:21:49:07 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:49:07 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:49:07 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1755
+::1 - - [14/Jun/2026:21:49:27 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:49:29 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:49:29 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1755
+::1 - - [14/Jun/2026:21:49:49 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:50:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:50:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1737
+::1 - - [14/Jun/2026:21:50:22 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:50:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:50:24 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1736
+::1 - - [14/Jun/2026:21:50:31 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:50:31 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1736
+::1 - - [14/Jun/2026:21:50:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:50:41 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1736
+::1 - - [14/Jun/2026:21:51:01 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:51:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:51:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1718
+::1 - - [14/Jun/2026:21:51:04 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:51:04 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:51:22 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:51:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:51:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1717
+::1 - - [14/Jun/2026:21:52:15 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:52:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:52:28 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1719
+::1 - - [14/Jun/2026:21:52:38 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:52:38 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1718
+::1 - - [14/Jun/2026:21:52:58 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:53:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 1981
+::1 - - [14/Jun/2026:21:53:13 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1741
+::1 - - [14/Jun/2026:21:53:33 -0300] "-" 408 -
+::1 - - [14/Jun/2026:21:58:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2158
+::1 - - [14/Jun/2026:21:58:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:58:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 200 125659
+::1 - - [14/Jun/2026:21:59:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2158
+::1 - - [14/Jun/2026:21:59:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:21:59:44 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1925
+::1 - - [14/Jun/2026:22:02:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2190
+::1 - - [14/Jun/2026:22:02:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:02:34 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:03:42 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2195
+::1 - - [14/Jun/2026:22:03:42 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:03:42 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:03:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2190
+::1 - - [14/Jun/2026:22:04:02 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2204
+::1 - - [14/Jun/2026:22:04:22 -0300] "-" 408 -
+::1 - - [14/Jun/2026:22:06:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:06:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:06:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:06:41 -0300] "-" 408 -
+::1 - - [14/Jun/2026:22:07:27 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:07:27 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:07:27 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1947
+::1 - - [14/Jun/2026:22:08:27 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:08:27 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:08:27 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1947
+::1 - - [14/Jun/2026:22:08:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:08:36 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1947
+::1 - - [14/Jun/2026:22:08:56 -0300] "-" 408 -
+::1 - - [14/Jun/2026:22:09:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:09:23 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1973
+::1 - - [14/Jun/2026:22:09:43 -0300] "-" 408 -
+::1 - - [14/Jun/2026:22:10:10 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:10:10 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:10:10 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 1972
+::1 - - [14/Jun/2026:22:11:05 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:11:05 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 2016
+::1 - - [14/Jun/2026:22:11:25 -0300] "-" 408 -
+::1 - - [14/Jun/2026:22:12:07 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:07 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:07 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 2076
+::1 - - [14/Jun/2026:22:12:08 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:08 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:08 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:08 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:08 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:08 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:09 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:09 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:09 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:21 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 2075
+::1 - - [14/Jun/2026:22:12:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2223
+::1 - - [14/Jun/2026:22:12:22 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:12:41 -0300] "-" 408 -
+::1 - - [14/Jun/2026:22:23:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2232
+::1 - - [14/Jun/2026:22:23:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/perfil.jpeg HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:23:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 2180
+::1 - - [14/Jun/2026:22:23:35 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/img/fundo-login.png HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:23:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2232
+::1 - - [14/Jun/2026:22:23:55 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 200 2180
+::1 - - [14/Jun/2026:22:24:15 -0300] "-" 408 -
+::1 - - [14/Jun/2026:22:24:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/app/views/dashboard.php HTTP/1.1" 200 2256
+::1 - - [14/Jun/2026:22:24:52 -0300] "GET /Agenda%20-%20Avalia%c3%a7%c3%a3o/public/css/Dashboard.css HTTP/1.1" 304 -
+::1 - - [14/Jun/2026:22:25:12 -0300] "-" 408 -
