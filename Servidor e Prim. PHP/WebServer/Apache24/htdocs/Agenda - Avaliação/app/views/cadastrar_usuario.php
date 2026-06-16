@@ -60,7 +60,7 @@
 
                 </form>
 
-                <p class="cadastro">Já possui uma conta? <a href="Agenda-Avaliação/info.html">Entrar</a></p>
+                <p class="cadastro">Já possui uma conta? <a href="../../info.html">Entrar</a></p>
             </div>
         </div>
     </div>
