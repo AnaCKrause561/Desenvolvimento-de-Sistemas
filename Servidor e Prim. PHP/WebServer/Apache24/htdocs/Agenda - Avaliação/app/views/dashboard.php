@@ -17,22 +17,34 @@
         <br>
 
         <ul>
-            <li>🏠 Dashboard</li>
-            <li>👥 Contatos</li>
-            <li>📅 Compromissos</li>
-            <li>👤 Perfil</li>
-            <li>⚙️ Configurações</li>
-            <li>🚪 Sair</li>
+            <li class="ativo"><a href="dashboard.php"> 🏠 Dashboard </a></li>
+            <li><a href="contatos.php">👥 Contatos </a></li>
+            <li><a href="compromissos.php">📅 Compromissos </a></li>
+            <li><a href="perfil.php">👤 Perfil </a></li>
+            <li><a href="configuracao.php">⚙️ Configurações </a></li>
+            <li><a href="sair.php">🚪 Sair </a></li>
         </ul>
     </div>
 
     <!-- CONTEÚDO -->
     <main class="conteudo">
         <div class="busca">
-            <span>🔍</span>
+            <label for="pesquisa">🔍</label>
+            <input type="button" id="pesquisa" hidden />
             <input type="text" placeholder="Buscar contatos, compromissos..." />
 
-            <div class="notificacao"><input type="text" placeholder="🔔" /></div>
+            <div class="notificacao">
+                <span class="sino">🔔</span>
+
+                <div class="menu-notificacao">
+                    <h3>Notificações</h3>
+                    <br>
+
+                    <div class="item">👥 Novo contato cadastrado</div>
+                    <div class="item">📅 Compromisso amanhã às 14h</div>
+                    <div class="item">✅ Tarefa concluída</div>
+                </div>
+            </div>
 
             <div class="usuario">
                 <img src="../../public/img/perfil.jpeg" alt="Usuário">
@@ -77,7 +89,20 @@
 
             <div class="box">
                 <h3>Próximos compromissos</h3>
+
+                <div class="compromisso">
+                    <strong>Reunião com cliente</strong>&nbsp;&nbsp;
+                    <p>20/07/2026 - 08:00</p>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="tag">Reunião</span>
+                </div>
+
+                <div class="compromisso">
+                    <strong>Entrega de projeto</strong>&nbsp;&nbsp;
+                    <p>30/07/2026 - 13:30</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="tag">Trabalho</span>
+                </div>
             </div>
+            <a href="vertodos.php">Ver Todos </a>
 
             <div class="box">
                 <h3>Contatos recentes</h3>

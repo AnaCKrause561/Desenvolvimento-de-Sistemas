@@ -23,9 +23,37 @@ body{
     border-radius: 20px;
 }
 
-.noticacao{
-    font-size: 22px;
+.notificacao {
+    position: relative;
+    display: inline-block;
+}
+
+.sino {
+    font-size: 24px;
     cursor: pointer;
+}
+
+.menu-notificacao {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 280px;
+    background: #111;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+
+.notificacao:hover .menu-notificacao {
+    display: block;
+}
+
+.item {
+    padding: 12px;
+    border-bottom: 1px solid #333;
 }
 
 .busca{
@@ -61,6 +89,8 @@ body{
 }
 
 .sidebar{
+    margin-bottom: 10px;
+    border-bottom: 10px;
     width: 250px;
     height: 100vh;
     overflow-y: auto;
@@ -74,9 +104,21 @@ body{
     list-style: none; /*?*/
 }
 
-.sidebar li{
-    padding: 15px 0; /*?*/
+.sidebar li a{
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
     cursor: pointer;
+}
+
+.sidebar li a:hover{
+    background: rgba(255,255,255,.08);
+}
+
+.sidebar li.ativo a{
+    background: rgba(255,255,255,.08);
 }
 
 .conteudo{
@@ -134,4 +176,48 @@ body{
     min-height: 250px;
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     background: #111;
+}
+
+.compromisso{
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    align-items: center;
+}
+
+.tag{
+    display: inline-block;
+    padding:5px 10px;
+    background: #4f46e5;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.ver {
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.menu-vertodos {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    width: 280px;
+    background: #111;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+
+.vertodos:hover .menu-vertodos {
+    display: block;
+}
+
+.pessoal{
+    background: #06b6d4;
 }
