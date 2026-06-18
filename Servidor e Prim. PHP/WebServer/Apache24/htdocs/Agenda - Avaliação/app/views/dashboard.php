@@ -13,8 +13,9 @@
 
     <!-- MENU -->
     <div class="sidebar">
-        <h2>Agenda</h2>
         <br>
+        <h2>Agenda</h2>
+        <br><br>
 
         <ul>
             <li class="ativo"><a href="dashboard.php"> 🏠 Dashboard </a></li>
@@ -28,16 +29,17 @@
 
     <!-- CONTEÚDO -->
     <main class="conteudo">
+        <!-- PESQUISA -->
         <div class="busca">
             <label for="pesquisa">🔍</label>
             <input type="button" id="pesquisa" hidden />
             <input type="text" placeholder="Buscar contatos, compromissos..." />
 
+            <!-- NOTIFICAÇÃO -->
             <div class="notificacao">
                 <span class="sino">🔔</span>
 
                 <div class="menu-notificacao">
-                    <h3>Notificações</h3>
                     <br>
 
                     <div class="item">👥 Novo contato cadastrado</div>
@@ -46,45 +48,49 @@
                 </div>
             </div>
 
+            <!-- IMG USUSARIO -->
             <div class="usuario">
                 <img src="../../public/img/perfil.jpeg" alt="Usuário">
             </div>
         </div>
         <br>
 
+        <!-- OLÁ -->
         <div class="cabecalho">
             <h1>Olá, Ana! 👋</h1>
             <p>Bem-vindo à sua agenda eletrônica.</p>
         </div>
 
+        <!-- CARDS -->
         <div class="cards">
 
             <div class="card">
                 <h3>👥 Contatos</h3>
-                <span>128</span>
+                <span>100</span>
                 <p>Total de contatos</p>
             </div>
 
             <div class="card">
                 <h3>📅 Compromissos</h3>
-                <span>15</span>
+                <span>10</span>
                 <p>Próximos 7 dias</p>
             </div>
 
             <div class="card">
                 <h3>📒 Tarefas</h3>
-                <span>8</span>
+                <span>5</span>
                 <p>Pendentes</p>
             </div>
 
             <div class="card">
                 <h3>✅ Concluídos</h3>
-                <span>23</span>
+                <span>20</span>
                 <p>Este mês</p>
             </div>
 
         </div>
 
+        <!-- PAINEL 1 -->
         <div class="painel">
 
             <div class="box">
@@ -98,14 +104,50 @@
 
                 <div class="compromisso">
                     <strong>Entrega de projeto</strong>&nbsp;&nbsp;
-                    <p>30/07/2026 - 13:30</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p>20/07/2026 - 13:30</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span class="tag">Trabalho</span>
                 </div>
-            </div>
-            <a href="vertodos.php">Ver Todos </a>
 
+                <div class="compromisso">
+                    <strong>Reunião de alinhamento</strong>&nbsp;&nbsp;
+                    <p>20/07/2026 - 16:00</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="tag">Reunião</span>
+                </div>
+                <br>
+
+                <!-- VER TODOS -->
+                <a href="contatos.php">Ver todos</a>
+            </div>
+
+            <!-- PAINEL 2 -->
             <div class="box">
                 <h3>Contatos recentes</h3>
+                <br>
+
+                <div class="recentes">
+                    <div class="usuario">
+                        <img src="../../public/img/perfil.jpeg" alt="Usuário"><br>
+                        <strong>Ana Maria<p>(99) 99999-9999</p></strong><br>
+                    </div>
+                    <br>
+
+                    <div class="usuario">
+                        <img src="../../public/img/perfil.jpeg" alt="Usuário"><br>
+                        <strong>Lúcio Andrade<p>(22) 92222-2222</p></strong><br>
+                    </div>
+                    <br>
+
+                    <div class="usuario">
+                        <img src="../../public/img/perfil.jpeg" alt="Usuário"><br>
+                        <strong>Carmélia Souza<p>(33) 93333-3333</p></strong><br>
+                    </div>
+                    <br>
+                </div>
+                <br>
+
+                <!-- VER TODOS -->
+                <a href="contatos.php">Ver Todos</a>
+
             </div>
 
         </div>
