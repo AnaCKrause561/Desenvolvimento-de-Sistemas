@@ -29,39 +29,33 @@
 
     <!-- CONTEÚDO -->
     <main class="conteudo">
-        <!-- PESQUISA -->
+
         <div class="busca">
             <label for="pesquisa">🔍</label>
             <input type="button" id="pesquisa" hidden />
             <input type="text" placeholder="Buscar contatos, compromissos..." />
 
-            <!-- NOTIFICAÇÃO -->
             <div class="notificacao">
                 <span class="sino">🔔</span>
 
                 <div class="menu-notificacao">
                     <br>
-
                     <div class="item">👥 Novo contato cadastrado</div>
                     <div class="item">📅 Compromisso amanhã às 14h</div>
                     <div class="item">✅ Tarefa concluída</div>
                 </div>
             </div>
 
-            <!-- IMG USUSARIO -->
             <div class="usuario">
                 <img src="../../public/img/perfil.jpeg" alt="Usuário">
             </div>
         </div>
-        <br>
 
-        <!-- OLÁ -->
         <div class="cabecalho">
             <h1>Olá, Ana! 👋</h1>
             <p>Bem-vindo à sua agenda eletrônica.</p>
         </div>
 
-        <!-- CARDS -->
         <div class="cards">
 
             <div class="card">
@@ -90,63 +84,53 @@
 
         </div>
 
-        <!-- PAINEL 1 -->
+        <!-- PAINEL -->
         <div class="painel">
 
             <div class="box">
                 <h3>Próximos compromissos</h3>
 
                 <div class="compromisso">
-                    <strong>Reunião com cliente</strong>&nbsp;&nbsp;
-                    <p>20/07/2026 - 08:00</p>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <strong>Reunião com cliente</strong>
+                    <p>20/07/2026 - 08:00</p>
                     <span class="tag">Reunião</span>
                 </div>
 
                 <div class="compromisso">
-                    <strong>Entrega de projeto</strong>&nbsp;&nbsp;
-                    <p>20/07/2026 - 13:30</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <strong>Entrega de projeto</strong>
+                    <p>20/07/2026 - 13:30</p>
                     <span class="tag">Trabalho</span>
                 </div>
 
                 <div class="compromisso">
-                    <strong>Reunião de alinhamento</strong>&nbsp;&nbsp;
-                    <p>20/07/2026 - 16:00</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <strong>Reunião de alinhamento</strong>
+                    <p>20/07/2026 - 16:00</p>
                     <span class="tag">Reunião</span>
                 </div>
-                <br>
 
-                <!-- VER TODOS -->
-                <a href="contatos.php">Ver todos</a>
             </div>
 
-            <!-- PAINEL 2 -->
             <div class="box">
                 <h3>Contatos recentes</h3>
-                <br>
 
                 <div class="recentes">
-                    <div class="usuario">
-                        <img src="../../public/img/perfil.jpeg" alt="Usuário"><br>
-                        <strong>Ana Maria<p>(99) 99999-9999</p></strong><br>
-                    </div>
-                    <br>
 
                     <div class="usuario">
-                        <img src="../../public/img/perfil.jpeg" alt="Usuário"><br>
-                        <strong>Lúcio Andrade<p>(22) 92222-2222</p></strong><br>
+                        <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                        <strong>Ana Maria <p>(99) 99999-9999</p></strong>
                     </div>
-                    <br>
 
                     <div class="usuario">
-                        <img src="../../public/img/perfil.jpeg" alt="Usuário"><br>
-                        <strong>Carmélia Souza<p>(33) 93333-3333</p></strong><br>
+                        <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                        <strong>Lúcio Andrade <p>(22) 92222-2222</p></strong>
                     </div>
-                    <br>
+
+                    <div class="usuario">
+                        <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                        <strong>Carmélia Souza <p>(33) 93333-3333</p></strong>
+                    </div>
+
                 </div>
-                <br>
-
-                <!-- VER TODOS -->
-                <a href="contatos.php">Ver Todos</a>
 
             </div>
 
