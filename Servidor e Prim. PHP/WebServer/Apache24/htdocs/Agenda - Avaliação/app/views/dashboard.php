@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -47,12 +50,12 @@
             </div>
 
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= $_SESSION["foto"]; ?>" alt="Usuário">
             </div>
         </div>
 
         <div class="cabecalho">
-            <h1>Olá, Ana! 👋</h1>
+            <h1>Olá, <?= $_SESSION["nome"]; ?>👋</h1>
             <p>Bem-vindo à sua agenda eletrônica.</p>
         </div>
 

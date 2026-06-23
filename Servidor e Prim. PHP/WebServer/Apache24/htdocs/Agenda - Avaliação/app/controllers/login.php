@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $email = $_POST["email"];
@@ -17,7 +18,7 @@
         {
             echo '<script>
                         alert("Senha ou Usuário inválido, tente novamente.");
-                        window.location.href="http://localhost/Agenda-Avaliação";
+                        window.location.href="http://localhost/Agenda%20-%20Avaliação";
                 </script>';
                 
         }

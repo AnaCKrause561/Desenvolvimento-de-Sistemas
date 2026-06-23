@@ -41,12 +41,12 @@
                     <h1>Bem vindo de volta!</h1>
                     <p>Entre com suas credenciais para acessar a conta</p>
 
-                    <form>
+                    <form action="app/controllers/login.php" method="POST">
                         <label>E-mail</label>
-                        <input type="email" placeholder="seu@email.com">
+                        <input type="email" name="email" placeholder="seu@email.com">
 
                         <label>Senha</label>
-                        <input type="password" placeholder="Digite sua senha">
+                        <input type="password" name="senha" placeholder="Digite sua senha">
 
                         <div class="opcoes">
 

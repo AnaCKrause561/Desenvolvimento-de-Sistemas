@@ -131,7 +131,7 @@ label{
 /* Todos os campos */
 input[type="text"],
 input[type="email"],
-input[type="tel"],
+input[type="password"],
 textarea{
     width: 100%;
     padding: 12px 0;
