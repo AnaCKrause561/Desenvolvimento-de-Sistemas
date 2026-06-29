@@ -265,24 +265,22 @@ body{
     font-weight: bold;
 }
 
-.reuniao{
+/* PENDENTE */
+.tag.pendente{
+    background: #fef3c7;
+    color: #b45309;
+}
+
+/* CONCLUÍDO */
+.tag.concluido{
     background: #d1fae5;
     color: #065f46;
 }
 
-.pessoal{
-    background: #dbeafe;
-    color: #1e40af;
-}
-
-.trabalho{
-    background: #ede9fe;
-    color: #6d28d9;
-}
-
-.saude{
-    background: #fef3c7;
-    color: #b45309;
+/* CANCELADO */
+.tag.cancelado{
+    background: #fee2e2;
+    color: #991b1b;
 }
 
 /* AÇÕES */
@@ -311,6 +309,7 @@ body{
     background: #dc2626;
     color: white;
 }
+
 /* RESPONSIVO */
 
 @media (max-width: 1024px){

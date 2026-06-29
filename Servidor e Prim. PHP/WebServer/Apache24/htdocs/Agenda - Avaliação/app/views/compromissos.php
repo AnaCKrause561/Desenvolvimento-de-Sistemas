@@ -1,3 +1,11 @@
+<?php
+session_start();
+include_once("../models/Compromissos.php");
+
+$obj = new Compromissos();
+$lista = $obj->ListarTodosCompromissos();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,6 +17,7 @@
 </head>
 
 <body>
+
     <div class="overlay"></div>
 
     <!-- MENU -->
@@ -18,19 +27,19 @@
         <br><br>
 
         <ul>
-            <li><a href="dashboard.php"> 🏠 Dashboard </a></li>
-            <li><a href="contatos.php">👥 Contatos </a></li>
-            <li class="ativo"><a href="compromissos.php">📅 Compromissos </a></li>
-            <li><a href="perfil.php">👤 Perfil </a></li>
-            <li><a href="configuracao.php">⚙️ Configurações </a></li>
-            <li><a href="sair.php">🚪 Sair </a></li>
+            <li><a href="dashboard.php">🏠 Dashboard</a></li>
+            <li><a href="contatos.php">👥 Contatos</a></li>
+            <li class="ativo"><a href="compromissos.php">📅 Compromissos</a></li>
+            <li><a href="perfil.php">👤 Perfil</a></li>
+            <li><a href="configuracao.php">⚙️ Configurações</a></li>
+            <li><a href="sair.php">🚪 Sair</a></li>
         </ul>
     </div>
 
     <!-- CONTEÚDO -->
     <main class="conteudo">
 
-        <!-- NOTIFICAÇÃO -->
+        <!-- TOPO -->
         <div class="topo">
 
             <div class="notificacao">
@@ -44,12 +53,12 @@
             </div>
 
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= $_SESSION["foto"]; ?>" alt="Usuário">
             </div>
 
         </div>
 
-        <!-- OLÁ -->
+        <!-- CABEÇALHO -->
         <div class="cabecalho">
             <h1>Compromissos</h1>
             <p>Gerencie todos os seus compromissos.</p>
@@ -58,11 +67,17 @@
 
         <!-- PESQUISA -->
         <div class="busca">
+
             <label for="pesquisa">🔍</label>
             <input type="button" id="pesquisa" hidden />
-            <input type="text" placeholder="Buscar contatos..." />
+            <input type="text" placeholder="Buscar compromissos..." />
 
-            <button class="btn-novo">➕ Novo Compromisso</button>
+            <a href="novo_compromisso.php">
+                <button type="button" class="btn-novo">
+                    ➕ Novo Compromisso
+                </button>
+            </a>
+
         </div>
 
         <!-- ABAS -->
@@ -76,96 +91,78 @@
         <div class="painel">
 
             <div class="box">
-                <!-- TABELA DE CONTATOS -->
+
                 <div class="compromissos">
 
-                    <!-- COMPROMISSO 1 -->
-                    <div class="compromisso">
-                        <div class="data">
-                            <h2>20</h2>
-                            <span>JUL</span>
+                    <?php if (!empty($lista)) { ?>
+
+                        <?php foreach ($lista as $compromisso) { ?>
+
+                            <div class="compromisso">
+
+                                <div class="data">
+                                    <h2><?= date("d", strtotime($compromisso["data"])) ?></h2>
+                                    <span><?= strtoupper(date("M", strtotime($compromisso["data"]))) ?></span>
+                                </div>
+
+                                <div class="info">
+
+                                    <h3><?= htmlspecialchars($compromisso["titulo"]) ?></h3>
+
+                                    <p>
+                                        <?= date("H:i", strtotime($compromisso["hora"])) ?>
+                                    </p>
+
+                                </div>
+
+                                <span class="tag">
+                                    <?= htmlspecialchars($compromisso["status"]) ?>
+                                </span>
+
+                                <div class="acoes">
+
+                                    <a href="editar_compromissos.php?id=<?= $compromisso["id"] ?>">
+                                        <button type="button" class="btn-editar">
+                                            ✏️
+                                        </button>
+                                    </a>
+
+                                    <a href="../controllers/excluir_compromisso_controller.php?id=<?= $compromisso["id"] ?>"
+                                       onclick="return confirm('Deseja realmente excluir este compromisso?')">
+
+                                        <button type="button" class="btn-excluir">
+                                            🗑️
+                                        </button>
+
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        <?php } ?>
+
+                    <?php } else { ?>
+
+                        <div class="compromisso">
+
+                            <div class="info">
+                                <h3>Nenhum compromisso cadastrado.</h3>
+                                <p>Clique em "Novo Compromisso" para adicionar um.</p>
+                            </div>
+
                         </div>
 
-                        <div class="info">
-                            <h3>Reunião com cliente</h3>
-                            <p>09:00 - 10:00</p>
-                        </div>
-
-                        <span class="reuniao">Reunião</span>
-
-                        <div class="acoes">
-                            <button class="btn-editar">✏️</button>
-                            <button class="btn-excluir">🗑️</button>
-                        </div>
-                    </div>
-
-                    <!-- COMPROMISSO 2 -->
-                    <div class="compromisso">
-                        <div class="data">
-                            <h2>21</h2>
-                            <span>JUL</span>
-                        </div>
-
-                        <div class="info">
-                            <h3>Dentista</h3>
-                            <p>14:30 - 15:30</p>
-                        </div>
-
-                        <span class="tag pessoal">Pessoal</span>
-
-                        <div class="acoes">
-                            <button class="btn-editar">✏️</button>
-                            <button class="btn-excluir">🗑️</button>
-                        </div>
-                    </div>
-
-                    <!-- COMPROMISSO 3 -->
-                    <div class="compromisso">
-
-                        <div class="data">
-                            <h2>22</h2>
-                            <span>JUL</span>
-                        </div>
-
-                        <div class="info">
-                            <h3>Entrega do projeto</h3>
-                            <p>17:00 - 18:00</p>
-                        </div>
-
-                        <span class="tag trabalho">Trabalho</span>
-
-                        <div class="acoes">
-                            <button class="btn-editar">✏️</button>
-                            <button class="btn-excluir">🗑️</button>
-                        </div>
-
-                    </div>
-
-                    <!-- COMPROMISSO 4 -->
-                    <div class="compromisso">
-
-                        <div class="data">
-                            <h2>23</h2>
-                            <span>JUL</span>
-                        </div>
-
-                        <div class="info">
-                            <h3>Academia</h3>
-                            <p>07:00 - 08:00</p>
-                        </div>
-
-                        <span class="tag saude">Saúde</span>
-
-                        <div class="acoes">
-                            <button class="btn-editar">✏️</button>
-                            <button class="btn-excluir">🗑️</button>
-                        </div>
-
-                    </div>
+                    <?php } ?>
 
                 </div>
+
             </div>
+
+        </div>
+
     </main>
+
 </body>
 
 </html>

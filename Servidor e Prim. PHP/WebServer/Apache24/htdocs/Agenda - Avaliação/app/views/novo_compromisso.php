@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -45,7 +49,7 @@
             </div>
 
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= $_SESSION["foto"]; ?>" alt="Usuário">
             </div>
 
         </div>
@@ -67,34 +71,47 @@
             <!-- FORMULÁRIO -->
             <div class="box">
 
-                <form>
+                <form method="post" action="../controllers/cadastrar_compromissos_controllers.php">
 
                     <label>Título</label>
-                    <input type="text" placeholder="Digite o título do compromisso">
+                    <input
+                        type="text"
+                        name="titulo"
+                        placeholder="Digite o título do compromisso"
+                        required>
 
                     <label>Descrição</label>
-                    <textarea placeholder="Detalhes sobre o compromisso..."></textarea>
+                    <textarea
+                        name="descricao"
+                        placeholder="Detalhes sobre o compromisso..."></textarea>
 
                     <div class="linha">
 
                         <div class="campo">
                             <label>Data</label>
-                            <input type="date">
+                            <input
+                                type="date"
+                                name="data"
+                                required>
                         </div>
 
                         <div class="campo">
                             <label>Hora</label>
-                            <input type="time">
+                            <input
+                                type="time"
+                                name="hora"
+                                required>
                         </div>
 
                     </div>
 
                     <label>Status</label>
 
-                    <select>
-                        <option>Pendente</option>
-                        <option>Concluído</option>
-                        <option>Cancelado</option>
+                    <select name="status" required>
+                        <option value="">Selecione</option>
+                        <option value="Pendente">Pendente</option>
+                        <option value="Concluído">Concluído</option>
+                        <option value="Cancelado">Cancelado</option>
                     </select>
 
                     <div class="botoes">
@@ -120,10 +137,10 @@
 
                 <div class="resumo">
 
-                    <h4>Título do compromisso</h4>
+                    <h4>Novo compromisso</h4>
 
                     <p>
-                        📅 20/05/2026 às 09:00
+                        📅 A data e hora aparecerão após o cadastro.
                     </p>
 
                     <span class="status-resumo">
@@ -131,7 +148,7 @@
                     </span>
 
                     <p class="descricao-resumo">
-                        Descrição do compromisso aparecerá aqui...
+                        Preencha o formulário ao lado para cadastrar um novo compromisso.
                     </p>
 
                 </div>
@@ -141,6 +158,7 @@
         </div>
 
     </main>
+
 </body>
 
 </html>

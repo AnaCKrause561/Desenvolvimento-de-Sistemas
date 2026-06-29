@@ -45,7 +45,7 @@
             </div>
 
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= $_SESSION["foto"]; ?>" alt="Usuário">
             </div>
 
         </div>
@@ -65,7 +65,7 @@
 
                 <div class="formulario">
 
-                    <form>
+                    <form method="post" action="../controllers/cadastrar_contato_controller.php" enctype="multipart/form-data">
 
                     <!-- ANEXAR IMG -->
                         <div class="foto_perfil">
@@ -74,22 +74,22 @@
 
                             <div class="campo_foto">
                                 <label>Foto de Perfil</label>
-                                <input type="file" accept="image/*">
+                                <input type="file" name="arquivo" accept="image/*">
                             </div>
 
                         </div>
 
                         <label>Nome Completo</label>
-                        <input type="text" placeholder="Digite seu nome">
+                        <input type="text" name="nome" placeholder="Digite seu nome">
 
                         <label>E-mail</label>
-                        <input type="email" placeholder="Digite seu e-mail">
+                        <input type="email" name="email" placeholder="Digite seu e-mail">
 
                         <label>Telefone</label>
-                        <input type="tel" placeholder="(46) 99999-9999">
+                        <input type="tel" name="telefone" placeholder="(46) 99999-9999">
 
                         <label>Observações</label>
-                        <textarea placeholder="Informações adicionais..."></textarea>
+                        <textarea name="descricao" placeholder="Informações adicionais..."></textarea>
 
                         <!-- BOTÕES -->
                         <div class="botoes">

@@ -1,3 +1,11 @@
+<?php
+session_start();
+include_once("../models/Contatos.php");
+
+$obj = new Contatos();
+$contato = $obj->ListarUmContato($_GET["id"]);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -45,7 +53,7 @@
             </div>
 
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= $_SESSION["foto"]; ?>" alt="Usuário">
             </div>
 
         </div>
@@ -58,50 +66,54 @@
         </div>
 
         <!-- PAINEL -->
-        <div class="painel">
+        <form class="painel" action="../controllers/editar_contato_controller.php" method="POST">
 
-            <!-- BOX 1 - CONTATO -->
+            <input type="hidden" name="id" value="<?= $contato["id"] ?>">
+
+            <!-- BOX 1 -->
             <div class="box">
 
                 <div class="contato-info">
 
                     <img src="../../public/img/login.png" alt="Perfil">
 
-                    <h3>Ana Maria</h3>
-                    <p>Amiga</p>
+                    <div class="card">
+                        <label>Nome</label>
+                        <input type="text" name="nome" value="<?= $contato["nome"] ?>">
+                    </div>
 
                     <div class="acoes">
-                        <button class="btn-editar">✏️ Editar</button>
-                        <button class="btn-excluir">🗑️ Excluir</button>
+                        <button type="submit" class="btn-salvar">Salvar</button>
                     </div>
 
                 </div>
 
             </div>
 
-            <!-- BOX 2 - INFORMAÇÕES -->
+            <!-- BOX 2 -->
             <div class="box">
 
                 <h2>Informações do Contato</h2>
 
                 <div class="card">
-                    <strong>📞 Telefone</strong>
-                    <p>(99) 99999-9999</p>
+                    <label>📞 Telefone</label>
+                    <input type="text" name="telefone" value="<?= $contato["telefone"] ?>">
+                </div>
+
+
+                <div class="card">
+                    <label>📧E-mail</label>
+                    <input type="email" name="email" value="<?= $contato["email"] ?>">
                 </div>
 
                 <div class="card">
-                    <strong>📧 E-mail</strong>
-                    <p>anama@gmail.com</p>
-                </div>
-
-                <div class="card">
-                    <label>Observações</label>
-                    <textarea readonly="Minha amiga do trabalho. Gosta de café e viagens."></textarea>
-                </div>
+                        <label>Descrição</label>
+                        <textarea name="descricao"><?= $contato["descricao"] ?></textarea>
+                    </div>
 
             </div>
 
-            <!-- BOX 3 - AÇÕES -->
+            <!-- BOX 3 -->
             <div class="box">
 
                 <h2>Ações Rápidas</h2>
@@ -114,7 +126,7 @@
 
             </div>
 
-        </div>
+        </form>
 
     </main>
 

@@ -31,6 +31,9 @@
             {
                 $_SESSION["foto"] = $vetor["url"];
                 $_SESSION["nome"] = $vetor["nome"];
+                $_SESSION["login"] = $vetor["email"];
+                $_SESSION["usuario_id"] = $vetor["id"];
+                
                 return (TRUE);
             }
             else
@@ -41,7 +44,7 @@
         }
         public function ListarTodosUsuarios()
         {
-            $sql= "SELECT * FROM usuarios ORDER BY id_usuarios ASC;";
+            $sql= "SELECT * FROM usuario ORDER BY id ASC;";
             $stmt= $this->pdo->prepare($sql);
             if($stmt->execute())
             {
@@ -53,11 +56,11 @@
                 return (FALSE);
             }
         }
-        public function ListarUmUsuario($id_usuarios)
+        public function ListarUmUsuario($id)
         {
-            $sql= "SELECT * FROM usuarios WHERE id_usuarios = :id;";
+            $sql= "SELECT * FROM usuario WHERE id = :id;";
             $stmt= $this->pdo->prepare($sql);
-            $stmt->bindParam(':id', $id_usuarios);
+            $stmt->bindParam(':id', $id);
             if($stmt->execute())
             {
                 $result= $stmt->fetch(PDO::FETCH_ASSOC);
@@ -69,11 +72,11 @@
             }
         }
 
-        public function EditarUsuario($id_usuario, $email)
+        public function EditarUsuario($id, $email)
         {
-            $sql="UPDATE usuarios SET email = :email WHERE id_usuarios = :id;";
+            $sql="UPDATE usuario SET email = :email WHERE id = :id;";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':id', $id_usuario);
+            $stmt->bindParam(':id', $id);
             $stmt->bindParam(':email', $email);
             if($stmt->execute())
             {
@@ -87,11 +90,11 @@
             }
         }
 
-        public function ExcluirUsuario($id_usuario)
+        public function ExcluirUsuario($id)
         {
-            $sql="DELETE FROM usuarios WHERE id_usuarios = :id;";
+            $sql="DELETE FROM usuario WHERE id = :id;";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':id', $id_usuario);
+            $stmt->bindParam(':id', $id);
             if($stmt->execute())
             {
                 echo '<script>

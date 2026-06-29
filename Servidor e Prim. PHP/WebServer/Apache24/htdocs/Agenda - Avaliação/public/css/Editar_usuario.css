@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     min-height: 100vh;
     background: #111;
@@ -16,20 +16,20 @@ body{
 }
 
 /* OVERLAY */
-.overlay{
+.overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.35);
+    background: rgba(0, 0, 0, .35);
     z-index: -1;
 }
 
-.usuario{
+.usuario {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.usuario img{
+.usuario img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
@@ -37,26 +37,43 @@ body{
 }
 
 /* SIDEBAR */
+.sidebar {
+    width: 18%;
+    min-width: 220px;
+    max-width: 280px;
+    height: 100vh;
+    background: #111;
+    padding: 20px;
+    border-radius: 20px;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
 .sidebar li a {
-    padding: 12px 18px;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+    color: white;
     border-radius: 10px;
-    transition: background 0.3s, transform 0.2s;
 }
 
 .sidebar li a:hover,
 .sidebar li.ativo a {
-    background: #6c63ff;
-    transform: translateX(6px);
+    background: rgba(255, 255, 255, .08);
 }
 
 /* CONTEÚDO */
-.conteudo{
+.conteudo {
     width: 100%;
     padding: 30px;
 }
 
 /* TOPO */
-.topo{
+.topo {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -64,16 +81,16 @@ body{
     margin-bottom: 20px;
 }
 
-.notificacao{
+.notificacao {
     position: relative;
 }
 
-.sino{
+.sino {
     font-size: 24px;
     cursor: pointer;
 }
 
-.menu-notificacao{
+.menu-notificacao {
     display: none;
     position: absolute;
     top: 35px;
@@ -81,20 +98,20 @@ body{
     width: 280px;
     background: #111;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
     font-size: 12px;
 }
 
-.notificacao:hover .menu-notificacao{
+.notificacao:hover .menu-notificacao {
     display: block;
 }
 
-.item{
+.item {
     padding: 12px;
     border-bottom: 1px solid #333;
 }
 
-* PAINEL */
+/* PAINEL */
 
 .painel{
     display: flex;
@@ -140,29 +157,6 @@ body{
 }
 
 /* FORM */
-.box {
-    flex: 1 1 300px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 25px;
-}
-
-/* Botões */
-.btn-editar, .btn-salvar {
-    background: #6c63ff;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.btn-editar:hover, .btn-salvar:hover {
-    background: #584cff;
-    transform: translateY(-2px);
-}
 
 .box_formulario {
     flex: 1;
@@ -204,6 +198,24 @@ textarea {
     resize: none;
 }
 
+/* BOX PADRÃO */
+.box{
+    background: #111;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box_formulario{
+    background: #111;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
 
 /* CONTATO INFO */
 .contato-info {
@@ -235,6 +247,23 @@ textarea {
 }
 
 .btn-foto:hover{
+    background:#584cff;
+}
+
+.btn-salvar{
+    margin-top:25px;
+    width:200px;
+    background:#6c63ff;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.btn-salvar:hover{
     background:#584cff;
 }
 
@@ -292,17 +321,4 @@ label {
     margin-bottom: 6px;
     display: block;
     color: #ddd;
-}
-
-
-/* Responsividade */
-@media (max-width: 900px) {
-    .painel {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        border-radius: 0;
-        box-shadow: none;
-    }
 }

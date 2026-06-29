@@ -181,10 +181,31 @@ main{
 }
 
 .compromisso{
-    display: flex;
+    background: #1a1a1a;
+    border: 1px solid #2b2b2b;
+    border-radius: 12px;
     padding: 15px;
-    border-bottom: 1px solid #333;
-    align-items: center;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.compromisso strong{
+    font-size: 15px;
+    color: #fff;
+}
+
+.compromisso p{
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+}
+
+.compromisso:hover{
+    background: #222;
+    transform: translateY(-2px);
+    transition: 0.2s;
 }
 
 .usuario{

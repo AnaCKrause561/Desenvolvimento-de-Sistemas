@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION["usuario_id"])) {
+    header("Location: ../../info.html");
+    exit();
+}
+
+include_once("../models/Contatos.php");
+
+$obj = new Contatos();
+
+$lista = $obj->ListarTodosContatos();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -44,7 +61,7 @@
             </div>
 
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= $_SESSION["foto"] ?>">
             </div>
 
         </div>
@@ -62,7 +79,7 @@
             <input type="button" id="pesquisa" hidden />
             <input type="text" placeholder="Buscar contatos..." />
 
-            <button class="btn-novo">➕ Novo Contato</button>
+            <a href="novo_contato.php"><button class="btn-novo">➕ Novo Contato</button></a>
         </div>
 
         <!-- PAINEL -->
@@ -84,51 +101,18 @@
                         </thead>
 
                         <tbody>
+                            <?php foreach ($lista as $contato): ?>
+                                <tr>
+                                    <td><?= $contato["nome"] ?></td>
+                                    <td><?= $contato["telefone"] ?></td>
+                                    <td><?= $contato["email"] ?></td>
 
-                            <tr>
-                                <td>Ana Maria</td>
-                                <td>(99) 99999-9999</td>
-                                <td>ana@email.com</td>
-
-                                <td class="acoes">
-                                    <button class="btn-editar">✏️</button>
-                                    <button class="btn-excluir">🗑️</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Lúcio Andrade</td>
-                                <td>(22) 92222-2222</td>
-                                <td>lucio@email.com</td>
-
-                                <td class="acoes">
-                                    <button class="btn-editar">✏️</button>
-                                    <button class="btn-excluir">🗑️</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Carmélia Souza</td>
-                                <td>(33) 93333-3333</td>
-                                <td>carmelia@email.com</td>
-
-                                <td class="acoes">
-                                    <button class="btn-editar">✏️</button>
-                                    <button class="btn-excluir">🗑️</button>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Carlos Silva</td>
-                                <td>(44) 94444-4444</td>
-                                <td>carlos@email.com</td>
-
-                                <td class="acoes">
-                                    <button class="btn-editar">✏️</button>
-                                    <button class="btn-excluir">🗑️</button>
-                                </td>
-                            </tr>
-
+                                    <td class="acoes">
+                                        <a href="editar_contato.php?id=<?= $contato["id"] ?>">✏️</a>
+                                        <a href="../controllers/excluir_contato_controller.php?id=<?= $contato["id"] ?>">🗑️</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
 
                     </table>

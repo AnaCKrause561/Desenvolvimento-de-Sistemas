@@ -1,19 +1,11 @@
-<?php
-session_start();
-include_once("../models/Usuario.php");
-
-$obj = new Usuario();
-$usuario = $obj->BuscarUsuario($_SESSION["usuario_id"]);
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../public/css/Perfil.css" />
-    <title>Perfil</title>
+    <link rel="stylesheet" type="text/css" href="../../public/css/Editar_usuario.css" />
+    <title>Editar Usuário</title>
 </head>
 
 <body>
@@ -28,9 +20,9 @@ $usuario = $obj->BuscarUsuario($_SESSION["usuario_id"]);
 
         <ul>
             <li><a href="dashboard.php">🏠 Dashboard</a></li>
-            <li><a href="contatos.php">👥 Contatos</a></li>
+            <li class="ativo"><a href="contatos.php">👥 Contatos</a></li>
             <li><a href="compromissos.php">📅 Compromissos</a></li>
-            <li class="ativo"><a href="perfil.php">👤 Perfil</a></li>
+            <li><a href="perfil.php">👤 Perfil</a></li>
             <li><a href="configuracao.php">⚙️ Configurações</a></li>
             <li><a href="sair.php">🚪 Sair</a></li>
         </ul>
@@ -53,16 +45,16 @@ $usuario = $obj->BuscarUsuario($_SESSION["usuario_id"]);
             </div>
 
             <div class="usuario">
-                <img src="<?= $_SESSION["foto"]; ?>" alt="Usuário">
+                <img src="../../public/img/perfil.jpeg" alt="Usuário">
             </div>
 
         </div>
 
         <!-- CABEÇALHO -->
         <div class="cabecalho">
-            <h1>Meu Perfil</h1>
+            <h1>Editar Usuário</h1>
             <br>
-            <a href="dashboard.php">&lt; Voltar</a><br>
+            <a href="contatos.php">&lt; Voltar</a><br>
         </div>
 
         <!-- PAINEL -->
@@ -86,24 +78,23 @@ $usuario = $obj->BuscarUsuario($_SESSION["usuario_id"]);
 
             <div class="box_formulario">
 
-                <form method="post" action="../controllers/editar_perfil.php">
-                    <input type="hidden" name="id" value="<?= $usuario["id"] ?>">
+                <form>
 
                     <label>Nome Completo</label>
 
-                    <input type="text" name="nome" value="<?= htmlspecialchars($usuario["nome"]) ?>">
+                    <input type="text" name="nome" placeholder="Digite seu nome">
 
                     <label>E-mail</label>
 
-                    <input type="email" name="email" value="<?= htmlspecialchars($usuario["email"]) ?>">
+                    <input type="email" name="email" placeholder="Digite seu e-mail">
 
                     <label>Telefone</label>
 
-                    <input type="tel" name="telefone" value="<?= htmlspecialchars($usuario["telefone"] ?? '') ?>">
+                    <input type="tel" name="telefone" placeholder="(46) 99999-9999">
 
                     <label>Descrição Pessoal</label>
 
-                    <textarea name="descricao"><?= htmlspecialchars($usuario["descricao"]) ?></textarea>
+                    <textarea placeholder="Fale um pouco sobre você"></textarea>
 
                     <button type="submit" class="btn-salvar">Salvar Alterações</button>
 
