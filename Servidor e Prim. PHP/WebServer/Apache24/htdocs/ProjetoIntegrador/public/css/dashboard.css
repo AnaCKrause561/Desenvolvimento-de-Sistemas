@@ -1,0 +1,598 @@
+/* Remove margens do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo geral da página*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #10281d;
+    background:
+        radial-gradient(circle at top left, rgba(16, 40, 29, 0.04), transparent 50%),
+        radial-gradient(circle at bottom right, rgba(143, 159, 57, 0.06), transparent 50%),
+        #f3f6ec;
+    display: flex;
+    min-height: 100vh;
+}
+
+/*Sidebar - MENU*/
+.sidebar {
+    width: 200px;
+    height: 100dvh;
+    background: #154217;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0; /* garante que sempre cole no rodapé real da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: left .35s ease;
+    z-index: 999;
+}
+
+/*Fonte menu*/
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 2px;
+}
+
+.sidebar li span {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    color: #F8F9FA;
+    text-align: center;
+    line-height: 1;
+}
+
+/*Farms*/
+.sidebar h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    letter-spacing: .03em;
+    padding-left: 10px;
+    margin-bottom: 50px;
+    color: #F8F9FA;
+    text-align: center;
+}
+
+/*Logo*/
+.logo {
+    display: flex;
+    width: 150px;
+    margin-bottom: -15px;
+    margin-top: 12px;
+}
+
+/*Ícones*/
+.sidebar ul {
+    list-style: none;
+}
+
+.icones {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: .3s;
+    margin: 0;
+}
+
+.icones:hover {
+    background: #3D7540;
+}
+
+.ativo .icones{
+    background: #3D7540;
+}
+
+/*CONTEÚDO*/
+.conteudo {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 26px 34px 50px;
+}
+
+/*Busca*/
+.busca {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    height: 60px;
+}
+
+/*Img sino*/
+.sino {
+    display: flex;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Notificação*/
+.notificacao {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #154217;
+    cursor: pointer;
+}
+
+/*Img usuário*/
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.usuario img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+.cabecalho h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 42px;
+    margin-bottom: 4px;
+    color: #154217;
+    font-weight: bold;
+}
+
+.cabecalho p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    color: #154217;
+    font-weight: bold;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 45px;
+}
+
+.card {
+    background: #154217;
+    border-radius: 18px;
+    padding: 25px;
+    transition: .3s;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #F8F9FA;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Movimento cards*/
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+}
+
+/*Letras e números cards*/
+.card span {
+    font-size: 42px;
+    display: block;
+    margin: 10px 0;
+    color: #F8F9FA;
+    text-align: center;
+    margin: 8px 0;
+}
+
+.card h3 {
+    color: #F8F9FA;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card p {
+    color: #E9ECEF;
+    text-align: center;
+    font-size: 18px;
+}
+
+/*.card .linha-valor {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.card span.valor {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 30px;
+    color: var(--text);
+}
+
+.card .delta { 
+    font-size: 12px; 
+    font-weight: bold; 
+    color: #bccc5f; 
+}
+
+.card .delta.negativo { 
+    color: #c2554a; 
+}
+
+.card p.legenda { 
+    font-size: 12px; 
+    color: #a9bba1; 
+}*/
+
+/* GRÁFICOS */
+.graficos {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+/*Auditoria por mês*/
+.painel {
+    border-radius: 18px;
+    padding: 20px;
+    background: #154217;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
+}
+
+.painel h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #F8F9FA;
+    text-align: center;
+}
+
+/*Gráfico status*/
+.painel .grafico-wrap {
+    position: relative;
+    height: 210px;
+}
+
+/*Legendas status*/
+.legenda-status {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.legenda-status li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    color: #F8F9FA;
+    font-size: 17px;
+}
+
+.legenda-status .ponto {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    color: #a9bba1;
+}
+
+/* RODAPÉ: TABELA + ATIVIDADES */
+.rodape {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 18px;
+}
+
+/*Últimas auditorias*/
+.tabela-painel,
+.atividades-painel {
+    background: #154217;
+    border: 1px solid #154217;
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.tabela-painel h3,
+.atividades-painel h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: #154217;
+    text-align: center;
+}
+
+/*Tabela auditorias*/
+table.auditorias {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+table.auditorias th {
+    text-align: center;
+    color: #154217;
+    font-weight: normal;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 9px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    font-weight: bold;
+}
+
+table.auditorias td {
+    padding: 13px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    color: #154217;
+    text-align: center;
+}
+
+table.auditorias tr:last-child td {
+    border-bottom: none;
+}
+
+table.auditorias td.muted {
+    color: #154217;
+}
+
+table tr {
+    transition: .2s;
+}
+
+table tbody tr:hover {
+    background: #154217;
+}
+
+/*Status pill*/
+.status-pill {
+    display: inline-block;
+    padding: 4px 13px;
+    border-radius: 35px;
+    font-size: 11px;
+}
+
+.status-concluida {
+    background: rgba(143, 159, 57, .18);
+    color: #bccc5f;
+}
+
+.status-pendente {
+    background: rgba(209, 168, 61, .18);
+    color: #d1a83d;
+}
+
+.status-andamento {
+    background: rgba(63, 138, 69, .2);
+    color: #3f8a45;
+}
+
+.status-atrasada {
+    background: rgba(194, 85, 74, .18);
+    color: #c2554a;
+}
+
+
+/* Atividades recentes */
+.atividade-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.atividade-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.atividade-icone {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 50%;
+    background: rgba(188, 204, 95, .15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.atividade-texto p {
+    font-size: 13px;
+    color: #F8F9FA;
+    margin-bottom: 2px;
+}
+
+.atividade-texto span {
+    font-size: 11px;
+    color: #154217;
+}
+
+
+/*Sanduiche*/
+.menu-mobile {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background: #154217;
+    color: #F8F9FA;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.sidebar-logo {
+    margin-top: 70px; /* espaço suficiente pro botão (50px) + respiro */
+}
+
+/*Esconder barra de rolagem*/
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #154217;
+    border-radius: 20px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*Escurecer menu*/
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.ativo {
+    display: block;
+}
+
+/*Conteúdo*/
+.conteudo {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+}
+
+/*Sanduiche celular*/
+@media (max-width:768px) {
+    .menu-mobile {
+        display: block;
+    }
+
+    .sidebar {
+        left: -220px;
+    }
+
+    .sidebar.abrir {
+        left: 0;
+    }
+
+    .conteudo {
+        margin-left: 0;
+        width: 100%;
+        padding: 80px 16px 30px; /* espaço pro botão sanduíche não tampar o topo */
+    }
+
+    /* Cabeçalho */
+    .cabecalho h1 {
+        font-size: 26px;
+    }
+
+    .cabecalho p {
+        font-size: 16px;
+    }
+
+    /* Busca (sino + foto) */
+    .busca {
+        padding: 5px;
+    }
+
+    /* Cards: de 4 colunas para 2 */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card span {
+        font-size: 30px;
+    }
+
+    .card h3 {
+        font-size: 15px;
+    }
+
+    /* Gráficos: empilhar em vez de lado a lado */
+    .graficos {
+        grid-template-columns: 1fr;
+    }
+
+    .painel h3 {
+        font-size: 20px;
+    }
+
+    /* Tabela: permitir rolagem horizontal em vez de espremer */
+    .tabela-painel {
+        overflow-x: auto;
+    }
+
+    table.auditorias {
+        min-width: 480px;
+        font-size: 12px;
+    }
+}
+
+/* Ajuste extra pra celulares bem pequenos */
+@media (max-width:420px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho h1 {
+        font-size: 22px;
+    }
+}
+
+/*Só o menu rola para baixo*/
+body.sem-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}

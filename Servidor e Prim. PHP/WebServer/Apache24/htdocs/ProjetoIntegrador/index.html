@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="public/css/Login.css" />
+    <title>Farms Check</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+
+            <div class="lado_esquerdo">
+
+                <svg class="onda" viewBox="0 0 180 1000" preserveAspectRatio="none">
+                    <path d="M180,0
+                    C70,170 70,330 180,500
+                    C290,670 290,830 180,1000
+                    L180,1000
+                    L180,0 Z" />
+                </svg>
+
+            </div>
+
+            <div class="lado_direito">
+                <div class="card_login">
+                    <div class="formulario">
+
+                        <h1>Bem Vindo!</h1>
+                        <p>Faça seu login para continuar.</p>
+
+                        <form action="app/controllers/login.php" method="POST">
+                            <label for="email">Usuário</label>
+                            <input type="email" id="email" name="email" placeholder="Digite seu usuário">
+
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+
+                            <div class="opcoes">
+                                <div class="lembrar">
+                                    <input type="checkbox" id="lembrar">
+                                    <label for="lembrar">Lembrar-me</label>
+                                </div>
+
+                                <a href="#">Esqueci senha</a>
+                            </div>
+
+                            <input type="submit" value="Entrar">
+
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>
