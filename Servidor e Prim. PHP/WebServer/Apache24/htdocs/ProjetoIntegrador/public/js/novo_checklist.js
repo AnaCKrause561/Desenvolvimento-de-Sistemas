@@ -145,3 +145,107 @@ if (listaItens && btnAddItem && templateItem) {
     // Começa a página já com 1 item pronto pra preencher
     criarItem();
 }
+
+// ---- Assinatura digital (Passo 6) ----
+const canvasAssinaturas = document.querySelectorAll(".assinatura-canvas");
+
+if (canvasAssinaturas.length > 0) {
+
+    const estadoAssinaturas = {}; // guarda se cada canvas tem traço ou não
+
+    function verificarAssinaturasCompletas() {
+        const todasAssinadas = Array.from(canvasAssinaturas)
+            .every((canvas) => estadoAssinaturas[canvas.id]);
+        botaoProximo.disabled = !todasAssinadas;
+    }
+
+    canvasAssinaturas.forEach((canvas) => {
+        const ctx = canvas.getContext("2d");
+        let desenhando = false;
+        let ultimoX = 0;
+        let ultimoY = 0;
+
+        estadoAssinaturas[canvas.id] = false;
+
+        // Ajusta o canvas pra resolução da tela (fica nítido em qualquer dispositivo)
+        function ajustarCanvas() {
+            const proporcao = window.devicePixelRatio || 1;
+            const retangulo = canvas.getBoundingClientRect();
+
+            canvas.width = retangulo.width * proporcao;
+            canvas.height = retangulo.height * proporcao;
+
+            ctx.scale(proporcao, proporcao);
+            ctx.lineWidth = 2.2;
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
+            ctx.strokeStyle = "#10281d";
+        }
+
+        ajustarCanvas();
+        window.addEventListener("resize", ajustarCanvas);
+
+        // Pega a posição do dedo/mouse/caneta relativa ao canvas
+        function posicaoRelativa(evento) {
+            const retangulo = canvas.getBoundingClientRect();
+            const ponto = evento.touches ? evento.touches[0] : evento;
+
+            return {
+                x: ponto.clientX - retangulo.left,
+                y: ponto.clientY - retangulo.top
+            };
+        }
+
+        function iniciarTraco(evento) {
+            evento.preventDefault();
+            desenhando = true;
+            const { x, y } = posicaoRelativa(evento);
+            ultimoX = x;
+            ultimoY = y;
+        }
+
+        function desenharTraco(evento) {
+            if (!desenhando) return;
+            evento.preventDefault();
+
+            const { x, y } = posicaoRelativa(evento);
+
+            ctx.beginPath();
+            ctx.moveTo(ultimoX, ultimoY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+
+            ultimoX = x;
+            ultimoY = y;
+
+            estadoAssinaturas[canvas.id] = true;
+            verificarAssinaturasCompletas();
+        }
+
+        function pararTraco() {
+            desenhando = false;
+        }
+
+        // Mouse (computador)
+        canvas.addEventListener("mousedown", iniciarTraco);
+        canvas.addEventListener("mousemove", desenharTraco);
+        canvas.addEventListener("mouseup", pararTraco);
+        canvas.addEventListener("mouseleave", pararTraco);
+
+        // Toque (celular/tablet - dedo ou caneta)
+        canvas.addEventListener("touchstart", iniciarTraco, { passive: false });
+        canvas.addEventListener("touchmove", desenharTraco, { passive: false });
+        canvas.addEventListener("touchend", pararTraco);
+    });
+
+    // Botões de limpar
+    document.querySelectorAll(".btn-limpar-assinatura").forEach((botao) => {
+        botao.addEventListener("click", () => {
+            const canvas = document.getElementById(botao.dataset.target);
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            estadoAssinaturas[canvas.id] = false;
+            verificarAssinaturasCompletas();
+        });
+    });
+}

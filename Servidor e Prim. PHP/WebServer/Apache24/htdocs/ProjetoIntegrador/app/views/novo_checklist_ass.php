@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../public/css/novo_checklist_check.css" />
+    <link rel="stylesheet" type="text/css" href="../../public/css/novo_checklist_ass.css" />
     <title>Novo Checklist</title>
 </head>
 
@@ -66,15 +66,15 @@
                     <span class="passo-numero">3</span>
                     <span class="passo-nome">Checklist</span>
                 </li>
-                <li class="passo">
+                <li class="passo ativo">
                     <span class="passo-numero">4</span>
                     <span class="passo-nome">Auditoria</span>
                 </li>
-                <li class="passo">
+                <li class="passo ativo">
                     <span class="passo-numero">5</span>
                     <span class="passo-nome">Fotos</span>
                 </li>
-                <li class="passo">
+                <li class="passo ativo">
                     <span class="passo-numero">6</span>
                     <span class="passo-nome">Assinatura</span>
                 </li>
@@ -84,58 +84,62 @@
                 </li>
             </ol>
 
-            <!-- SELEÇÃO DE CHECKLIST -->
             <div class="area-selecao">
-                <h2>Selecione o checklist</h2>
-                <p class="area-instrucao">Escolha um modelo ou crie um novo.</p>
+                <h2>Assinatura digital</h2>
+                <p class="area-instrucao">Assine abaixo para finalizar a auditoria.</p>
 
-                <div class="filtro-checklist">
-                    <select id="filtroModelos">
-                        <option value="">Todos modelos de auditorias</option>
-                        <option value="avicultura">Avicultura</option>
-                        <option value="agronomia">Agronomia</option>
-                        <option value="incubatório">Incubatório</option>
-                    </select>
+                <div class="assinaturas-grid">
+
+                    <!-- ASSINATURA DO AUDITOR -->
+                    <div class="assinatura-card">
+                        <p class="assinatura-rotulo">Assinatura do auditor</p>
+
+                        <div class="assinatura-canvas-wrap">
+                            <canvas id="canvasAuditor" class="assinatura-canvas"></canvas>
+                            <span class="assinatura-linha-base"></span>
+                        </div>
+
+                        <button type="button" class="btn-limpar-assinatura" data-target="canvasAuditor">
+                            Limpar assinatura
+                        </button>
+
+                        <div class="assinatura-campo">
+                            <label for="nomeAuditor">Nome</label>
+                            <input type="text" id="nomeAuditor" placeholder="Nome do auditor">
+                        </div>
+                    </div>
+
+                    <!-- ASSINATURA DO RESPONSÁVEL -->
+                    <div class="assinatura-card">
+                        <p class="assinatura-rotulo">Assinatura do responsável</p>
+
+                        <div class="assinatura-canvas-wrap">
+                            <canvas id="canvasResponsavel" class="assinatura-canvas"></canvas>
+                            <span class="assinatura-linha-base"></span>
+                        </div>
+
+                        <button type="button" class="btn-limpar-assinatura" data-target="canvasResponsavel">
+                            Limpar assinatura
+                        </button>
+
+                        <div class="assinatura-campo">
+                            <label for="nomeResponsavel">Nome</label>
+                            <input type="text" id="nomeResponsavel" placeholder="Nome do responsável">
+                        </div>
+                    </div>
+
                 </div>
-
-                <ul class="lista-checklists">
-
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="biosseguranca-avicultura" hidden>
-                        <span class="checklist-nome">Auditoria – Avicultura</span>
-                        <span class="checklist-seta">›</span>
-                    </li>
-
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="manejo-avicultura" hidden>
-                        <span class="checklist-nome">Auditoria – Agricultura</span>
-                        <span class="checklist-seta">›</span>
-                    </li>
-
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="qualidade-agua" hidden>
-                        <span class="checklist-nome">Auditoria – Incubatório</span>
-                        <span class="checklist-seta">›</span>
-                    </li>
-
-                    <li class="checklist-card checklist-card--novo">
-                        <input type="radio" name="checklist" value="novo" hidden>
-                        <span class="checklist-nome"><span class="checklist-mais">+</span> Criar novo checklist</span>
-                    </li>
-
-                </ul>
             </div>
 
             <!-- AÇÕES -->
             <div class="rodape-acoes rodape-acoes--duplo">
-                <a href="novo_checklist_empresas.php" class="btn-voltar">
+                <a href="novo_checklist_fotos.php" class="btn-voltar">
                     <span aria-hidden="true">←</span> Voltar
                 </a>
                 <button type="button" class="btn-proximo" disabled>
                     Próximo <span aria-hidden="true">→</span>
                 </button>
             </div>
-
         </section>
     </main>
 

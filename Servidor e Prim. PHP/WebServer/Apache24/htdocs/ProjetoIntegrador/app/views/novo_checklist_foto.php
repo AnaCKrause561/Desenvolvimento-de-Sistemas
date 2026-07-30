@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../public/css/novo_checklist_check.css" />
+    <link rel="stylesheet" type="text/css" href="../../public/css/novo_checklist_foto.css" />
     <title>Novo Checklist</title>
 </head>
 
@@ -66,11 +66,11 @@
                     <span class="passo-numero">3</span>
                     <span class="passo-nome">Checklist</span>
                 </li>
-                <li class="passo">
+                <li class="passo ativo">
                     <span class="passo-numero">4</span>
                     <span class="passo-nome">Auditoria</span>
                 </li>
-                <li class="passo">
+                <li class="passo ativo">
                     <span class="passo-numero">5</span>
                     <span class="passo-nome">Fotos</span>
                 </li>
@@ -84,58 +84,47 @@
                 </li>
             </ol>
 
-            <!-- SELEÇÃO DE CHECKLIST -->
             <div class="area-selecao">
-                <h2>Selecione o checklist</h2>
-                <p class="area-instrucao">Escolha um modelo ou crie um novo.</p>
+                <h2>Fotos anexadas</h2>
+                <p class="area-instrucao">Confira as fotos adicionadas durante a auditoria.</p>
 
-                <div class="filtro-checklist">
-                    <select id="filtroModelos">
-                        <option value="">Todos modelos de auditorias</option>
-                        <option value="avicultura">Avicultura</option>
-                        <option value="agronomia">Agronomia</option>
-                        <option value="incubatório">Incubatório</option>
-                    </select>
-                </div>
-
-                <ul class="lista-checklists">
-
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="biosseguranca-avicultura" hidden>
-                        <span class="checklist-nome">Auditoria – Avicultura</span>
-                        <span class="checklist-seta">›</span>
+                <ul class="galeria-fotos">
+                    <li class="foto-card">
+                        <img src="../../public/img/FarmsCheck.png" alt="Foto do item 1">
+                        <span class="foto-legenda">Limpeza das instalações</span>
                     </li>
-
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="manejo-avicultura" hidden>
-                        <span class="checklist-nome">Auditoria – Agricultura</span>
-                        <span class="checklist-seta">›</span>
+                    <li class="foto-card">
+                        <img src="../../public/img/FarmsCheck.png" alt="Foto do item 2">
+                        <span class="foto-legenda">Ventilação</span>
                     </li>
-
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="qualidade-agua" hidden>
-                        <span class="checklist-nome">Auditoria – Incubatório</span>
-                        <span class="checklist-seta">›</span>
+                    <li class="foto-card">
+                        <img src="../../public/img/FarmsCheck.png" alt="Foto do item 3">
+                        <span class="foto-legenda">Reservatório de água</span>
                     </li>
-
-                    <li class="checklist-card checklist-card--novo">
-                        <input type="radio" name="checklist" value="novo" hidden>
-                        <span class="checklist-nome"><span class="checklist-mais">+</span> Criar novo checklist</span>
+                    <li class="foto-card">
+                        <img src="../../public/img/FarmsCheck.png" alt="Foto do item 4">
+                        <span class="foto-legenda">Estrutura externa</span>
                     </li>
-
+                    <li class="foto-card">
+                        <img src="../../public/img/FarmsCheck.png" alt="Foto do item 5">
+                        <span class="foto-legenda">Estrutura externa</span>
+                    </li>
+                    <li class="foto-card">
+                        <img src="../../public/img/FarmsCheck.png" alt="Foto do item 6">
+                        <span class="foto-legenda">Comedouros</span>
+                    </li>
                 </ul>
             </div>
 
             <!-- AÇÕES -->
             <div class="rodape-acoes rodape-acoes--duplo">
-                <a href="novo_checklist_empresas.php" class="btn-voltar">
+                <a href="novo_checklist_auditoria.php" class="btn-voltar">
                     <span aria-hidden="true">←</span> Voltar
                 </a>
                 <button type="button" class="btn-proximo" disabled>
                     Próximo <span aria-hidden="true">→</span>
                 </button>
             </div>
-
         </section>
     </main>
 

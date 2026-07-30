@@ -1,0 +1,639 @@
+/* Remove margens do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo geral da página*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #10281d;
+    background:
+        radial-gradient(circle at top left, rgba(16, 40, 29, 0.04), transparent 50%),
+        radial-gradient(circle at bottom right, rgba(143, 159, 57, 0.06), transparent 50%),
+        #f3f6ec;
+    display: flex;
+    min-height: 100vh;
+}
+
+/*Sidebar - MENU*/
+.sidebar {
+    width: 200px;
+    height: 100dvh;
+    background: #154217;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /* garante que sempre cole no rodapé real da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: left .35s ease;
+    z-index: 999;
+}
+
+/*Fonte menu*/
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 2px;
+}
+
+.sidebar li span {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    color: #F8F9FA;
+    text-align: center;
+    line-height: 1;
+}
+
+/*Farms*/
+.sidebar h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    letter-spacing: .03em;
+    padding-left: 10px;
+    margin-bottom: 50px;
+    color: #F8F9FA;
+    text-align: center;
+}
+
+/*Logo*/
+.logo {
+    display: flex;
+    width: 150px;
+    margin-bottom: -15px;
+    margin-top: 12px;
+}
+
+/*Ícones*/
+.sidebar ul {
+    list-style: none;
+}
+
+.icones {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: .3s;
+    margin: 0;
+}
+
+.icones:hover {
+    background: #3D7540;
+}
+
+.ativo .icones {
+    background: #3D7540;
+}
+
+/*CONTEÚDO*/
+.conteudo {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 26px 34px 50px;
+}
+
+/*Busca*/
+.busca {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    height: 60px;
+}
+
+/*Img sino*/
+.sino {
+    display: flex;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Notificação*/
+.notificacao {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #154217;
+    cursor: pointer;
+}
+
+/*Img usuário*/
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.usuario img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
+.cabecalho h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 42px;
+    margin-bottom: 4px;
+    color: #154217;
+    font-weight: bold;
+}
+
+.cabecalho p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    color: #154217;
+    font-weight: bold;
+}
+
+/*Sanduiche*/
+.menu-mobile {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background: #154217;
+    color: #F8F9FA;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/*Esconder barra de rolagem*/
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #154217;
+    border-radius: 20px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*Escurecer menu*/
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.ativo {
+    display: block;
+}
+
+
+/*Só o menu rola para baixo*/
+body.sem-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* GALERIA DE FOTOS (Passo 5 - somente visualização) */
+.galeria-fotos {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.foto-card {
+    border: 2px solid #e4e9d8;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.foto-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+}
+
+.foto-legenda {
+    display: block;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #6b7263;
+}
+
+
+/*Título passo a passo*/
+.etapa-titulo {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 13px;
+    letter-spacing: .08em;
+    color: #8f9f39;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Indicador de passos */
+.passos {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 40px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /*esconder barra de rolagem*/
+    scrollbar-width: none;
+}
+
+/*Esconder barra de rolagem - Indicador*/
+.passos::-webkit-scrollbar {
+    display: none;
+}
+
+/*Passos do 1 ao 7*/
+.passo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 70px;
+    position: relative;
+}
+
+/*Aplique em todos, menos no último & elemento virtual*/
+.passo:not(:last-child)::after {
+    content: "";
+    /*obrigatório quando usa child e after*/
+    position: absolute;
+    top: 15px;
+    left: calc(50% + 20px);
+    /*linha começa no meio do passo atual*/
+    width: calc(100% - 20px);
+    /*e estende até quase o próximo passo*/
+    height: 2px;
+    background: #d7ddc5;
+}
+
+/*Lógica visual de uma barra de progresso em etapas*/
+.passo.ativo:not(:last-child)::after {
+    background: #8f9f39;
+}
+
+/*Passo número*/
+.passo-numero {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px solid #d7ddc5;
+    color: #9aa08a;
+    font-weight: bold;
+    font-size: 13px;
+    z-index: 1;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.passo.ativo .passo-numero {
+    background: #154217;
+    border-color: #154217;
+    color: #F8F9FA;
+    transform: scale(1.02);
+    /*não afeta o layout ao redor*/
+}
+
+/*Passo nome*/
+.passo-nome {
+    font-size: 12px;
+    color: #6b7263;
+    text-align: center;
+}
+
+.passo.ativo .passo-nome {
+    color: #154217;
+    font-weight: bold;
+}
+
+/* SELEÇÃO DA ÁREA */
+.area-selecao {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, 0.06);
+}
+
+.area-selecao h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #154217;
+    margin-bottom: 4px;
+}
+
+.area-instrucao {
+    font-size: 14px;
+    color: #6b7263;
+    margin-bottom: 26px;
+}
+
+/* ASSINATURA DIGITAL (Passo 6) */
+.assinaturas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.assinatura-card {
+    border: 2px solid #e4e9d8;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+}
+
+.assinatura-rotulo {
+    font-size: 14px;
+    font-weight: bold;
+    color: #154217;
+    margin-bottom: 14px;
+}
+
+.assinatura-canvas-wrap {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.assinatura-canvas {
+    width: 100%;
+    height: 160px;
+    background: #fbfcf8;
+    border: 2px dashed #bccc5f;
+    border-radius: 10px;
+    touch-action: none;
+    /* impede o navegador de rolar a página enquanto assina no celular */
+    cursor: crosshair;
+}
+
+.assinatura-linha-base {
+    display: none;
+    /* reservado caso queira adicionar uma linha de base visual futuramente */
+}
+
+.btn-limpar-assinatura {
+    background: transparent;
+    border: 2px solid #d7ddc5;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #6b7263;
+    cursor: pointer;
+    transition: .2s;
+    margin-bottom: 16px;
+}
+
+.btn-limpar-assinatura:hover {
+    border-color: #c0392b;
+    color: #c0392b;
+}
+
+.assinatura-campo {
+    text-align: left;
+}
+
+.assinatura-campo label {
+    display: block;
+    font-size: 13px;
+    color: #6b7263;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.assinatura-campo input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e4e9d8;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #10281d;
+    font-family: inherit;
+    transition: .2s;
+}
+
+.assinatura-campo input[type="text"]:focus {
+    outline: none;
+    border-color: #8f9f39;
+}
+
+/* Rodapé de ações */
+.rodape-acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+/* Rodapé com dois botões (Voltar + Próximo) */
+.rodape-acoes--duplo {
+    justify-content: space-between;
+}
+
+.btn-voltar {
+    background: transparent;
+    color: #154217;
+    border: 2px solid #d7ddc5;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: .2s;
+    text-decoration: none;
+    /* remove o sublinhado padrão de link */
+}
+
+.btn-voltar:hover {
+    border-color: #8f9f39;
+    background: #f3f6ec;
+}
+
+/*Botão próximo*/
+.btn-proximo {
+    background: #154217;
+    color: #F8F9FA;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+/*Sanduiche celular*/
+@media (max-width:768px) {
+    .menu-mobile {
+        display: block;
+    }
+
+    .sidebar {
+        left: -220px;
+    }
+
+    .sidebar.abrir {
+        left: 0;
+    }
+
+    .conteudo {
+        margin-left: 0;
+        width: 100%;
+        padding: 80px 16px 30px;
+        /* espaço pro botão sanduíche não tampar o topo */
+    }
+
+    /* Cabeçalho */
+    .cabecalho h1 {
+        font-size: 26px;
+    }
+
+    .cabecalho p {
+        font-size: 16px;
+    }
+
+    /* Busca (sino + foto) */
+    .busca {
+        padding: 5px;
+    }
+
+    /* Cards: de 4 colunas para 2 */
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card span {
+        font-size: 30px;
+    }
+
+    .card h3 {
+        font-size: 15px;
+    }
+
+    /* Gráficos: empilhar em vez de lado a lado */
+    .graficos {
+        grid-template-columns: 1fr;
+    }
+
+    .painel h3 {
+        font-size: 20px;
+    }
+
+    /* Tabela: permitir rolagem horizontal em vez de espremer */
+    .tabela-painel {
+        overflow-x: auto;
+    }
+
+    table.auditorias {
+        min-width: 480px;
+        font-size: 12px;
+    }
+}
+
+/* Ajuste extra pra celulares bem pequenos */
+@media (max-width:420px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho h1 {
+        font-size: 22px;
+    }
+}
+
+/* Responsivo PASSO A PASSO */
+@media (max-width:768px) {
+    .passo-nome {
+        display: none;
+    }
+
+    .areas-lista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .area-selecao {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .item-campo--linha {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .galeria-fotos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .assinaturas-grid {
+        grid-template-columns: 1fr;
+    }
+}
