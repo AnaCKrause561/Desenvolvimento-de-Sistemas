@@ -1,0 +1,457 @@
+/* Remove margens do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo geral da página*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #10281d;
+    background:
+        radial-gradient(circle at top left, rgba(16, 40, 29, 0.04), transparent 50%),
+        radial-gradient(circle at bottom right, rgba(143, 159, 57, 0.06), transparent 50%),
+        #f3f6ec;
+    display: flex;
+    min-height: 100vh;
+}
+
+/*Sidebar - MENU*/
+.sidebar {
+    width: 200px;
+    height: 100dvh;
+    background: #154217;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: left .35s ease;
+    z-index: 999;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 100%;
+}
+
+.sidebar ul li {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 2px;
+}
+
+.sidebar li span {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    color: #F8F9FA;
+    text-align: center;
+    line-height: 1;
+}
+
+.sidebar h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    letter-spacing: .03em;
+    padding-left: 10px;
+    margin-bottom: 50px;
+    color: #F8F9FA;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    width: 150px;
+    margin-bottom: -15px;
+    margin-top: 12px;
+}
+
+.icones {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: .3s;
+    margin: 0;
+}
+
+.icones:hover {
+    background: #3D7540;
+}
+
+.ativo .icones {
+    background: #3D7540;
+}
+
+/*CONTEÚDO*/
+.conteudo {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 26px 34px 50px;
+}
+
+/*Busca*/
+.busca {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    height: 60px;
+}
+
+.sino {
+    display: flex;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.notificacao {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #154217;
+    cursor: pointer;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.usuario img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/*Sanduiche*/
+.menu-mobile {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background: #154217;
+    color: #F8F9FA;
+    font-size: 26px;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/*Esconder barra de rolagem*/
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #154217;
+    border-radius: 20px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*Escurecer menu*/
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    display: none;
+    z-index: 998;
+}
+
+.overlay.ativo {
+    display: block;
+}
+
+/*Só o menu rola para baixo*/
+body.sem-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/*Título passo a passo*/
+.etapa-titulo {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 13px;
+    letter-spacing: .08em;
+    color: #8f9f39;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Indicador de passos */
+.passos {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 40px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.passos::-webkit-scrollbar {
+    display: none;
+}
+
+.passo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 70px;
+    position: relative;
+}
+
+.passo:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: calc(50% + 20px);
+    width: calc(100% - 20px);
+    height: 2px;
+    background: #d7ddc5;
+}
+
+.passo.ativo:not(:last-child)::after {
+    background: #8f9f39;
+}
+
+.passo-numero {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 2px solid #d7ddc5;
+    color: #9aa08a;
+    font-weight: bold;
+    font-size: 13px;
+    z-index: 1;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.passo.ativo .passo-numero {
+    background: #154217;
+    border-color: #154217;
+    color: #F8F9FA;
+    transform: scale(1.02);
+}
+
+.passo-nome {
+    font-size: 12px;
+    color: #6b7263;
+    text-align: center;
+}
+
+.passo.ativo .passo-nome {
+    color: #154217;
+    font-weight: bold;
+}
+
+/* SELEÇÃO DA ÁREA (caixa branca do conteúdo) */
+.area-selecao {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, 0.06);
+}
+
+.area-selecao h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #154217;
+    margin-bottom: 4px;
+}
+
+.area-instrucao {
+    font-size: 14px;
+    color: #6b7263;
+    margin-bottom: 26px;
+}
+
+/* REVISÃO DA AUDITORIA (Passo 7) */
+.revisao-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 40px;
+}
+
+.revisao-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.revisao-icone {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #eef2e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.revisao-icone svg {
+    width: 22px;
+    height: 22px;
+    stroke: #154217;
+}
+
+.revisao-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.revisao-label {
+    font-size: 13px;
+    color: #6b7263;
+    font-weight: bold;
+}
+
+.revisao-valor {
+    font-size: 15px;
+    color: #10281d;
+    font-weight: bold;
+}
+
+/* Rodapé de ações */
+.rodape-acoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.rodape-acoes--duplo {
+    justify-content: space-between;
+}
+
+.btn-voltar {
+    background: transparent;
+    color: #154217;
+    border: 2px solid #d7ddc5;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: .2s;
+    text-decoration: none;
+}
+
+.btn-voltar:hover {
+    border-color: #8f9f39;
+    background: #f3f6ec;
+}
+
+/*Botão salvar e gerar PDF*/
+.btn-salvar {
+    background: #154217;
+    color: #F8F9FA;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-salvar:hover {
+    background: #1d5a20;
+}
+
+.btn-salvar:disabled {
+    background: #9aa08a;
+    cursor: not-allowed;
+}
+
+/*Sanduiche celular*/
+@media (max-width:768px) {
+    .menu-mobile {
+        display: block;
+    }
+
+    .sidebar {
+        left: -220px;
+    }
+
+    .sidebar.abrir {
+        left: 0;
+    }
+
+    .conteudo {
+        margin-left: 0;
+        width: 100%;
+        padding: 80px 16px 30px;
+    }
+
+    .busca {
+        padding: 5px;
+    }
+}
+
+/* Responsivo PASSO A PASSO */
+@media (max-width:768px) {
+    .passo-nome {
+        display: none;
+    }
+
+    .area-selecao {
+        padding: 20px;
+    }
+}
+
+/* Responsivo REVISÃO */
+@media (max-width: 600px) {
+    .revisao-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
