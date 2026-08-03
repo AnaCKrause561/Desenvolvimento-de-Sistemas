@@ -1,0 +1,394 @@
+/* checklist.css — sidebar, topo e cabeçalho vêm do dashboard.css.
+   O card de criação (.area-selecao, itens, botões) segue o mesmo
+   padrão visual usado no passo 4 (novo_checklist_auditoria.css). */
+@import url("dashboard.css");
+
+/* ===== CARD PRINCIPAL ===== */
+.area-selecao {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, .06);
+}
+
+.area-selecao h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #154217;
+    margin-bottom: 4px;
+}
+
+.area-instrucao {
+    font-size: 14px;
+    color: #6b7263;
+    margin-bottom: 26px;
+}
+
+.area-novo {
+    margin-top: 25px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, .06);
+}
+
+.area-novo h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #154217;
+    margin-bottom: 4px;
+}
+
+
+/* ===== DADOS DO CHECKLIST (nome + área lado a lado) ===== */
+.dados-checklist {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #e4e9d8;
+}
+
+/* ===== CAMPOS (label + input/select) ===== */
+.item-campo label {
+    display: block;
+    font-size: 13px;
+    color: #6b7263;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.item-campo input[type="text"],
+.item-campo select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e4e9d8;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #10281d;
+    font-family: inherit;
+    background: #fff;
+    transition: .2s;
+}
+
+.item-campo input[type="text"]:focus,
+.item-campo select:focus {
+    outline: none;
+    border-color: #8f9f39;
+}
+
+/* ===== LISTA DE PERGUNTAS ===== */
+.lista-itens-auditoria {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.item-auditoria {
+    border: 2px solid #e4e9d8;
+    border-radius: 14px;
+    padding: 18px;
+    transition: .2s;
+}
+
+.item-auditoria:hover {
+    border-color: #bccc5f;
+}
+
+.item-auditoria__cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.item-numero {
+    background: #154217;
+    color: #F8F9FA;
+    font-weight: bold;
+    font-size: 13px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-remover {
+    background: transparent;
+    border: none;
+    color: #c0392b;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: .2s;
+}
+
+.item-remover:hover {
+    background: #fbe9e7;
+}
+
+.item-auditoria .item-campo {
+    margin-bottom: 0;
+}
+
+/* ===== BOTÃO ADICIONAR PERGUNTA ===== */
+.btn-add-item {
+    width: 100%;
+    background: transparent;
+    border: 2px dashed #8f9f39;
+    border-radius: 12px;
+    padding: 14px;
+    color: #8f9f39;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.btn-add-item:hover {
+    background: #f3f6ec;
+    border-color: #154217;
+    color: #154217;
+}
+
+/* ===== RODAPÉ DE AÇÕES ===== */
+.rodape-acoes {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-proximo {
+    background: #154217;
+    color: #F8F9FA;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-proximo:hover:not(:disabled) {
+    background: #0d2b18;
+}
+
+.btn-proximo:disabled {
+    background: #c7cfb8;
+    cursor: not-allowed;
+}
+
+/* ===== FILTROS ===== */
+.filtro-painel {
+    background: #fff;
+    border-radius: 16px;
+    padding: 26px 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, .06);
+    margin-bottom: 25px;
+}
+
+.filtro-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+.campo-busca {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 2px solid #e4e9d8;
+    border-radius: 10px;
+    padding: 10px 14px;
+    transition: .2s;
+}
+
+.campo-busca:focus-within {
+    border-color: #8f9f39;
+}
+
+.campo-busca .icone-input {
+    width: 18px;
+    height: 18px;
+    opacity: .6;
+}
+
+.campo-busca input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #154217;
+}
+
+.campo-busca input::placeholder {
+    color: #9aa08a;
+}
+
+.filtro-form select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid #e4e9d8;
+    background: #fff;
+    color: #154217;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.filtro-form select:hover,
+.filtro-form select:focus {
+    border-color: #8f9f39;
+    outline: none;
+}
+
+.btn-filtrar {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #154217;
+    color: #F8F9FA;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-filtrar:hover {
+    background: #0d2b18;
+}
+
+/* ===== PAINÉIS (tabela de auditorias e certificados) ===== */
+.tabela-painel {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, .06);
+}
+
+.tabela-painel h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    color: #154217;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.certificados-painel .subtitulo {
+    font-size: 14px;
+    color: #6b7263;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.tabela-painel > h3 {
+    margin-bottom: 20px;
+}
+
+/* ===== TABELA ===== */
+.tabela-scroll {
+    overflow-x: auto;
+}
+
+table.auditorias {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+table.auditorias th {
+    text-align: center;
+    color: #6b7263;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 10px 8px;
+    border-bottom: 2px solid #e4e9d8;
+}
+
+table.auditorias td {
+    padding: 14px 8px;
+    border-bottom: 1px solid #e4e9d8;
+    color: #154217;
+    text-align: center;
+}
+
+table.auditorias tr:last-child td {
+    border-bottom: none;
+}
+
+table.auditorias tbody tr {
+    transition: .2s;
+}
+
+table.auditorias tbody tr:hover {
+    background: #f3f6ec;
+}
+
+.tabela-vazia {
+    text-align: center;
+    padding: 25px 0;
+    color: #9aa08a;
+}
+
+/* ===== AÇÕES DA TABELA ===== */
+td.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-icone {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f3f6ec;
+    transition: .2s;
+}
+
+.btn-icone:hover {
+    background: #8f9f39;
+}
+
+.btn-icone img {
+    width: 16px;
+    height: 16px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width:768px) {
+    .area-selecao {
+        padding: 20px;
+    }
+
+    .dados-checklist {
+        grid-template-columns: 1fr;
+    }
+}

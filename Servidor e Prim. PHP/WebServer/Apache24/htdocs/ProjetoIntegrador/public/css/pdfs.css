@@ -1,0 +1,394 @@
+/* pdfs.css — sidebar, topo e cabeçalho continuam vindo do dashboard.css.
+   O CONTEÚDO (filtro, tabela, certificados) segue o estilo claro do
+   novo_checklist.css: cards brancos, bordas suaves, verde só como destaque. */
+@import url("dashboard.css");
+
+/* ===== FILTROS ===== */
+.filtro-painel {
+    background: #fff;
+    border-radius: 16px;
+    padding: 26px 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, .06);
+    margin-bottom: 25px;
+}
+
+.filtro-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+.campo-busca {
+    flex: 1;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 2px solid #e4e9d8;
+    border-radius: 10px;
+    padding: 10px 14px;
+    transition: .2s;
+}
+
+.campo-busca:focus-within {
+    border-color: #8f9f39;
+}
+
+.campo-busca .icone-input {
+    width: 18px;
+    height: 18px;
+    opacity: .6;
+}
+
+.campo-busca input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #154217;
+}
+
+.campo-busca input::placeholder {
+    color: #9aa08a;
+}
+
+.filtro-form select {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid #e4e9d8;
+    background: #fff;
+    color: #154217;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.filtro-form select:hover,
+.filtro-form select:focus {
+    border-color: #8f9f39;
+    outline: none;
+}
+
+.btn-filtrar {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #154217;
+    color: #F8F9FA;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-filtrar:hover {
+    background: #0d2b18;
+}
+
+/* ===== PAINÉIS (tabela de auditorias e certificados) ===== */
+.tabela-painel {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, .06);
+}
+
+.tabela-painel h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22px;
+    color: #154217;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.certificados-painel .subtitulo {
+    font-size: 14px;
+    color: #6b7263;
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.tabela-painel > h3 {
+    margin-bottom: 20px;
+}
+
+/* ===== TABELA ===== */
+.tabela-scroll {
+    overflow-x: auto;
+}
+
+table.auditorias {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+table.auditorias th {
+    text-align: center;
+    color: #6b7263;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 10px 8px;
+    border-bottom: 2px solid #e4e9d8;
+}
+
+table.auditorias td {
+    padding: 14px 8px;
+    border-bottom: 1px solid #e4e9d8;
+    color: #154217;
+    text-align: center;
+}
+
+table.auditorias tr:last-child td {
+    border-bottom: none;
+}
+
+table.auditorias tbody tr {
+    transition: .2s;
+}
+
+table.auditorias tbody tr:hover {
+    background: #f3f6ec;
+}
+
+.tabela-vazia {
+    text-align: center;
+    padding: 25px 0;
+    color: #9aa08a;
+}
+
+/* ===== STATUS PILL (contraste pra fundo branco) ===== */
+.status-pill {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 35px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status-concluida {
+    background: rgba(143, 159, 57, .15);
+    color: #5c6b23;
+}
+
+.status-pendente {
+    background: rgba(209, 168, 61, .15);
+    color: #a3781e;
+}
+
+.status-andamento {
+    background: rgba(63, 138, 69, .15);
+    color: #2f7334;
+}
+
+.status-atrasada {
+    background: rgba(194, 85, 74, .15);
+    color: #b03d31;
+}
+
+/* ===== AÇÕES DA TABELA ===== */
+td.acoes {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-icone {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f3f6ec;
+    transition: .2s;
+}
+
+.btn-icone:hover {
+    background: #8f9f39;
+}
+
+.btn-icone img {
+    width: 16px;
+    height: 16px;
+}
+
+/* ===== CERTIFICADOS ===== */
+.certificados-painel {
+    margin-top: 25px;
+}
+
+.form-certificado {
+    display: flex; /* alinha select, select, select, arquivo e botão lado a lado */
+    flex-wrap: nowrap; /* proíbe quebrar linha — é isso que obriga tudo caber numa linha só */
+    gap: 10px; /* espaço entre cada campo */
+    align-items: center; /* centraliza tudo verticalmente, mesmo com alturas diferentes */
+    background: #f3f6ec; /* fundo verde bem clarinho por trás dos campos */
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 28px;
+    overflow-x: auto; /* se mesmo assim não couber (tela muito estreita), rola pro lado em vez de quebrar */
+}
+
+.form-certificado select {
+    flex: 1 1 0; /* os 3 selects dividem o espaço disponível em partes IGUAIS entre si */
+    min-width: 0; /* permite encolher além do tamanho natural do texto (senão o flex não consegue apertar) */
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 2px solid #e4e9d8;
+    background: #fff;
+    color: #154217;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px; /* um pouco menor que o padrão pra caber mais coisa na linha */
+    white-space: nowrap; /* não deixa o texto da opção quebrar em 2 linhas */
+    text-overflow: ellipsis; /* se o texto for maior que o campo, corta com "..." */
+}
+
+.input-arquivo {
+    flex: 1.4 1 0; /* recebe 1.4x mais espaço que cada select (esse campo tem mais texto, então precisa de mais lugar) */
+    min-width: 0; /* mesma ideia do select: permite encolher */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 2px dashed #c7cfb8; /* borda tracejada = visual clássico de "área de upload" */
+    background: #fff;
+    color: #6b7263;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden; /* esconde o que passar da largura do campo */
+    text-overflow: ellipsis; /* e mostra "..." no lugar */
+    cursor: pointer;
+    transition: .2s;
+}
+
+.input-arquivo span {
+    overflow: hidden; /* mesmo truque do "..." aplicado só no texto (span) lá dentro do campo */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.input-arquivo:hover {
+    border-color: #8f9f39; /* borda fica verde-oliva ao passar o mouse, indicando que é clicável */
+    color: #154217;
+}
+
+.input-arquivo img {
+    width: 16px;
+    height: 16px;
+    opacity: .6;
+    flex-shrink: 0; /* o ícone nunca encolhe, só o texto ao lado dele */
+}
+
+.input-arquivo input[type="file"] {
+    display: none; /* esconde o input de arquivo feio do navegador — quem aparece é o "label" estilizado acima */
+}
+
+.btn-enviar {
+    flex-shrink: 0; /* o botão NUNCA encolhe — ele fica sempre do tamanho do texto "Enviar certificado" */
+    white-space: nowrap; /* garante que o texto do botão não quebre em 2 linhas */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #154217;
+    color: #F8F9FA;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-enviar:hover {
+    background: #0d2b18;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width:768px) {
+    .filtro-painel,
+    .tabela-painel {
+        padding: 20px;
+    }
+
+    .filtro-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-certificado {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Tabela vira cards empilhados no mobile */
+    .tabela-scroll {
+        overflow-x: visible;
+    }
+
+    table.auditorias thead {
+        display: none;
+    }
+
+    table.auditorias,
+    table.auditorias tbody,
+    table.auditorias tr,
+    table.auditorias td {
+        display: block;
+        width: 100%;
+        min-width: 0;
+    }
+
+    table.auditorias tr {
+        margin-bottom: 14px;
+        padding: 14px;
+        border-radius: 14px;
+        background: #f3f6ec;
+        border: 1px solid #e4e9d8;
+    }
+
+    table.auditorias tr:last-child {
+        margin-bottom: 0;
+    }
+
+    table.auditorias td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 8px 4px;
+        border-bottom: 1px solid #e4e9d8;
+    }
+
+    table.auditorias td:last-child {
+        border-bottom: none;
+    }
+
+    table.auditorias td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        color: #8f9f39;
+        margin-right: 10px;
+    }
+
+    table.auditorias td.acoes {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    table.auditorias td.acoes::before {
+        content: "";
+        margin: 0;
+    }
+}
