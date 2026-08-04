@@ -71,6 +71,11 @@
 
                     <!-- LIMPAR -->
                     <button type="button" class="btn-filtrar" id="btn-limpar-filtro">Limpar filtros</button>
+
+                    <!-- CRIAR NOVO CHECKLIST -->
+                    <button type="button" class="btn-criar-checklist" id="btnCriarChecklist">
+                        <span aria-hidden="true">+</span> Criar novo checklist
+                    </button>
                 </form>
             </div>
 
@@ -87,23 +92,30 @@
                                 <th>Área</th>
                                 <th>Auditoria</th>
                                 <th>Data</th>
+                                <th>Ações</th>
                             </tr>
                         </thead>
 
                         <tbody id="tabela-auditorias-corpo">
-                            <tr>
+                            <tr
+                                data-id="1"
+                                data-nome="Biosegurança"
+                                data-empresa="Granja São João"
+                                data-area="avicultura"
+                                data-area-label="Avicultura"
+                                data-data="12/06/2025"
+                                data-perguntas='["As instalações estão limpas?","Os funcionários usam EPI corretamente?","Existe controle de pragas ativo?"]'>
                                 <td data-label="ID">#1</td>
                                 <td data-label="Granja / Empresa">Granja São João</td>
                                 <td data-label="Área">Avicultura</td>
                                 <td data-label="Checklist">Biosegurança</td>
                                 <td data-label="Data">12/06/2025</td>
 
-
                                 <!-- AÇÕES -->
                                 <td class="acoes" data-label="Ações">
-                                    <a class="btn-icone" title="Visualizar" href="#"><img src="../../public/img/olho.png" alt="Ver"></a>
-                                    <a class="btn-icone" title="Baixar" href="#"><img src="../../public/img/editar.png" alt="Editar"></a>
-                                    <a class="btn-icone" title="Plano de ação" href="#"><img src="../../public/img/lixeira.png" alt="Excluir"></a>
+                                    <a class="btn-icone btn-visualizar" title="Visualizar" href="#"><img src="../../public/img/olho.png" alt="Ver"></a>
+                                    <a class="btn-icone btn-editar" title="Editar" href="#"><img src="../../public/img/editar.png" alt="Editar"></a>
+                                    <a class="btn-icone btn-excluir" title="Excluir" href="#"><img src="../../public/img/lixeira.png" alt="Excluir"></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -112,10 +124,19 @@
             </div>
         </section>
 
-        <section class="area-novo">
-            <h2>Criar novo checklist</h2>
-            <p class="area-instrucao">Dê um nome ao checklist, escolha a área e adicione as perguntas.</p>
-            
+    </main>
+
+    <!-- ===== OVERLAY DOS MODAIS ===== -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- ===== MODAL: CRIAR / EDITAR CHECKLIST ===== -->
+    <section class="modal-checklist" id="modalChecklist" aria-hidden="true">
+        <div class="modal-checklist__caixa">
+            <button type="button" class="modal-fechar" id="fecharModalChecklist" aria-label="Fechar">✕</button>
+
+            <h2 id="modalChecklistTitulo">Criar novo checklist</h2>
+            <p class="area-instrucao" id="modalChecklistInstrucao">Dê um nome ao checklist, escolha a área e adicione as perguntas.</p>
+
             <!-- DADOS DO CHECKLIST -->
             <div class="dados-checklist">
                 <div class="item-campo">
@@ -163,12 +184,28 @@
             <!-- AÇÕES -->
             <div class="rodape-acoes">
                 <button type="button" class="btn-proximo" id="btnSalvarChecklist" disabled>
-                    Salvar checklist
+                    <span id="textoBtnSalvar">Salvar checklist</span>
                 </button>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- ===== MODAL: VISUALIZAR CHECKLIST (ESTILO PDF) ===== -->
+    <section class="modal-visualizar" id="modalVisualizar" aria-hidden="true">
+        <div class="modal-visualizar__caixa">
+            <button type="button" class="modal-fechar" id="fecharModalVisualizar" aria-label="Fechar">✕</button>
+
+            <div class="modal-visualizar__topo">
+                <h2>Visualizar checklist</h2>
+                <button type="button" class="btn-baixar-pdf" id="btnImprimirPdf">Baixar / Imprimir PDF</button>
+            </div>
+
+            <!-- "Folha" que imita o layout de um PDF -->
+            <div class="folha-pdf" id="conteudoVisualizar">
+                <!-- preenchido dinamicamente via JS -->
+            </div>
+        </div>
+    </section>
 
     <script>
         const botao = document.querySelector(".menu-mobile");
@@ -190,4 +227,5 @@
 
     <script src="../../public/js/checklist.js"></script>
 </body>
+
 </html>

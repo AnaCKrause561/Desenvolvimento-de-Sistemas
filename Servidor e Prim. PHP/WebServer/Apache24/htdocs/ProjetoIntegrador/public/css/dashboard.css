@@ -116,6 +116,51 @@ body {
     padding: 26px 34px 50px;
 }
 
+/* =====================================================
+   CARD PRINCIPAL (igual às outras páginas)
+===================================================== */
+
+.conteudo-card{
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    border: 1px solid #e4e9d8;
+}
+
+/* Cabeçalho */
+
+.cabecalho{
+    margin-bottom:20px;
+}
+
+.cabecalho h1{
+    font-size:34px;
+    color:#154217;
+}
+
+.cabecalho p{
+    font-size:18px;
+    color:#61725e;
+    font-weight:normal;
+}
+
+/* Espaçamento */
+
+.cards{
+    margin-top:10px;
+}
+
+.graficos{
+    margin-top:35px;
+}
+
+.tabela-painel{
+    margin-top:35px;
+}
+
+/* ===================================================== */
+
 /*Busca*/
 .busca {
     display: flex;
@@ -191,13 +236,14 @@ body {
 }
 
 .card {
-    background: #154217;
+    background: #F8F9FA;
+    border:2px solid #e4e9d8;
     border-radius: 18px;
     padding: 25px;
-    transition: .3s;
+    transition: .25s;
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', serif;
-    color: #F8F9FA;
+    color:#154217;
 
     display: flex;
     flex-direction: column;
@@ -208,20 +254,22 @@ body {
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+    border-color:#8f9f39;
 }
 
 /*Letras e números cards*/
 .card span {
-    font-size: 42px;
+    font-size: 40px;
     display: block;
     margin: 10px 0;
-    color: #F8F9FA;
+    color: #3D7540;
     text-align: center;
     margin: 8px 0;
+    font-weight:bold;
 }
 
 .card h3 {
-    color: #F8F9FA;
+    color: #154217;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: .05em;
@@ -230,7 +278,7 @@ body {
 }
 
 .card p {
-    color: #E9ECEF;
+    color: #6f786c;
     text-align: center;
     font-size: 18px;
 }
@@ -275,7 +323,7 @@ body {
 .painel {
     border-radius: 18px;
     padding: 20px;
-    background: #154217;
+    background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .18);
 }
 
@@ -283,7 +331,7 @@ body {
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 28px;
     margin-bottom: 20px;
-    color: #F8F9FA;
+    color: #154217;
     text-align: center;
 }
 
@@ -308,8 +356,21 @@ body {
     align-items: center;
     gap: 8px;
     margin-bottom: 6px;
-    color: #F8F9FA;
+    color: #154217; /* Verde escuro */
     font-size: 17px;
+    font-weight: bold;
+}
+
+.legenda-status li:nth-child(1) {
+    color: #154217; /* Concluída */
+}
+
+.legenda-status li:nth-child(2) {
+    color: #154217; /* Pendente */
+}
+
+.legenda-status li:nth-child(3) {
+    color: #154217; /* Em andamento */
 }
 
 .legenda-status .ponto {
@@ -317,7 +378,7 @@ body {
     height: 9px;
     border-radius: 50%;
     display: inline-block;
-    color: #a9bba1;
+    color: #154217;
 }
 
 /* RODAPÉ: TABELA + ATIVIDADES */
@@ -330,10 +391,11 @@ body {
 /*Últimas auditorias*/
 .tabela-painel,
 .atividades-painel {
-    background: #154217;
-    border: 1px solid #154217;
+    background: #fff;
+    border: 1px solid #e4e9d8;
     border-radius: 16px;
     padding: 22px;
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
 }
 
 .tabela-painel h3,
@@ -367,7 +429,7 @@ table.auditorias th {
 table.auditorias td {
     padding: 13px 8px;
     border-bottom: 1px solid rgba(255, 255, 255, .08);
-    color: #154217;
+    color: #495057;
     text-align: center;
 }
 
@@ -384,7 +446,7 @@ table tr {
 }
 
 table tbody tr:hover {
-    background: #154217;
+    background: #f3f6ec;
 }
 
 /*Status pill*/

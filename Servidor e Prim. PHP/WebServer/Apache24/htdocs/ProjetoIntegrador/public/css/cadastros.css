@@ -1,0 +1,239 @@
+/* cadastros.css — sidebar, topo e cabeçalho vêm do dashboard.css.
+   Os cards de cadastro seguem o mesmo padrão visual das outras
+   páginas internas (fundo branco, cantos arredondados, sombra leve). */
+@import url("dashboard.css");
+
+/* ===== CARD DE CADASTRO ===== */
+.card-cadastro {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(21, 66, 23, .06);
+    margin-bottom: 25px;
+}
+
+.card-cadastro__cabecalho h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+    color: #154217;
+    margin-bottom: 4px;
+}
+
+.area-instrucao {
+    font-size: 14px;
+    color: #6b7263;
+    margin-bottom: 26px;
+}
+
+/* ===== GRADE DE CAMPOS (2 colunas) ===== */
+.grade-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+    margin-bottom: 22px;
+}
+
+/* ===== CAMPOS (label + input/select) ===== */
+.item-campo label {
+    display: block;
+    font-size: 13px;
+    color: #6b7263;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.item-campo input[type="text"],
+.item-campo input[type="email"],
+.item-campo input[type="password"],
+.item-campo select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #e4e9d8;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #10281d;
+    font-family: inherit;
+    background: #fff;
+    transition: .2s;
+}
+
+.item-campo input:focus,
+.item-campo select:focus {
+    outline: none;
+    border-color: #8f9f39;
+}
+
+/* ===== INPUT DE FOTO ===== */
+.item-campo input[type="file"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px dashed #e4e9d8;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #6b7263;
+    font-family: inherit;
+    background: #fff;
+    cursor: pointer;
+}
+
+.item-campo input[type="file"]:hover {
+    border-color: #8f9f39;
+}
+
+/* ===== ÁREAS DE ATUAÇÃO (checkboxes) ===== */
+.item-areas {
+    margin-bottom: 22px;
+}
+
+.grupo-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.opcao-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border: 2px solid #e4e9d8;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #10281d;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.opcao-checkbox:has(input:checked) {
+    border-color: #8f9f39;
+    background: #f3f6ec;
+    color: #154217;
+    font-weight: bold;
+}
+
+.opcao-checkbox input {
+    accent-color: #154217;
+    width: 15px;
+    height: 15px;
+}
+
+/* ===== STATUS "ATIVO" (switch) ===== */
+.item-status {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #f3f6ec;
+    border-radius: 12px;
+    margin-bottom: 22px;
+}
+
+.item-status__titulo {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #154217;
+}
+
+.item-status__legenda {
+    display: block;
+    font-size: 12px;
+    color: #6b7263;
+    margin-top: 2px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch__trilho {
+    position: absolute;
+    inset: 0;
+    background: #c7cfb8;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.switch__trilho::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: .2s;
+}
+
+.switch input:checked + .switch__trilho {
+    background: #8f9f39;
+}
+
+.switch input:checked + .switch__trilho::before {
+    transform: translateX(20px);
+}
+
+/* ===== RODAPÉ DO FORMULÁRIO ===== */
+.rodape-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.mensagem-sucesso {
+    font-size: 13px;
+    color: #4c7a2e;
+    font-weight: bold;
+    opacity: 0;
+    transition: .3s;
+}
+
+.mensagem-sucesso.visivel {
+    opacity: 1;
+}
+
+.btn-salvar {
+    background: #154217;
+    color: #F8F9FA;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-salvar:hover {
+    background: #0d2b18;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width:768px) {
+    .card-cadastro {
+        padding: 20px;
+    }
+
+    .grade-campos {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-form {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: right;
+    }
+}

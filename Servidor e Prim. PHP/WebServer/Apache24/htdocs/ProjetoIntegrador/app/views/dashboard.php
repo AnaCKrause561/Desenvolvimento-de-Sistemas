@@ -56,78 +56,80 @@
             <p>Gerencie suas auditorias de forma simples e eficientes.</p>
         </div>
 
-        <!-- CARDS -->
-        <div class="cards">
+        <div class="conteudo-card">
+            <!-- CARDS -->
+            <div class="cards">
 
-            <div class="card">
-                <h3>Auditorias</h3>
-                <span>
-                    
-                </span>
-                <p>Total de Auditorias</p>
-            </div>
+                <div class="card">
+                    <h3>Auditorias</h3>
+                    <span>
 
-            <div class="card">
-                <h3>Checklists</h3>
-                <span>
-                    
-                </span>
-                <p>Checklist cadastrados</p>
-            </div>
+                    </span>
+                    <p>Total de Auditorias</p>
+                </div>
 
-            <div class="card">
-                <h3>PDFs</h3>
-                <span>
-                    
-                </span>
-                <p>Auditorias realizadas</p>
-            </div>
+                <div class="card">
+                    <h3>Checklists</h3>
+                    <span>
 
-            <div class="card">
-                <h3>Compromissos</h3>
-                <span>
-                    
-                </span>
-                <p>Próximos 7 dias</p>
-            </div>
-        </div>
+                    </span>
+                    <p>Checklist cadastrados</p>
+                </div>
 
-        <!-- GRÁFICOS -->
-        <div class="graficos">
-            <div class="painel">
-                <h3>Auditorias por mês</h3>
-                <div class="grafico-wrap">
-                    <canvas id="graficoMes"></canvas>
+                <div class="card">
+                    <h3>PDFs</h3>
+                    <span>
+
+                    </span>
+                    <p>Auditorias realizadas</p>
+                </div>
+
+                <div class="card">
+                    <h3>Compromissos</h3>
+                    <span>
+
+                    </span>
+                    <p>Próximos 7 dias</p>
                 </div>
             </div>
 
-            <div class="painel">
-                <h3>Status</h3>
-                <div class="grafico-wrap" style="height:170px">
-                    <canvas id="graficoStatus"></canvas>
+            <!-- GRÁFICOS -->
+            <div class="graficos">
+                <div class="painel">
+                    <h3>Auditorias por mês</h3>
+                    <div class="grafico-wrap">
+                        <canvas id="graficoMes"></canvas>
+                    </div>
                 </div>
 
-                <ul class="legenda-status">
-                    <li><span class="ponto" style="background:#2f7334"></span>Concluída</li>
-                    <li><span class="ponto" style="background:#8f9f39"></span>Pendente</li>
-                    <li><span class="ponto" style="background:#bccc5f"></span>Em andamento</li>
-                </ul>
+                <div class="painel">
+                    <h3>Status</h3>
+                    <div class="grafico-wrap" style="height:170px">
+                        <canvas id="graficoStatus"></canvas>
+                    </div>
+
+                    <ul class="legenda-status">
+                        <li><span class="ponto" style="background:#2f7334"></span>Concluída</li>
+                        <li><span class="ponto" style="background:#8f9f39"></span>Pendente</li>
+                        <li><span class="ponto" style="background:#bccc5f"></span>Em andamento</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- ÚLTIMAS AUDITORIAS -->
-        <div class="tabela-painel">
-            <h3>Últimas auditorias</h3>
+            <!-- ÚLTIMAS AUDITORIAS -->
+            <div class="tabela-painel">
+                <h3>Últimas auditorias</h3>
 
-            <table class="auditorias">
-                <thead>
-                    <tr>
-                        <th>Fazenda</th>
-                        <th>Status</th>
-                        <th>Data</th>
-                    </tr>
-                </thead>
-            </table>
+                <table class="auditorias">
+                    <thead>
+                        <tr>
+                            <th>Fazenda</th>
+                            <th>Status</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
 
     </main>
