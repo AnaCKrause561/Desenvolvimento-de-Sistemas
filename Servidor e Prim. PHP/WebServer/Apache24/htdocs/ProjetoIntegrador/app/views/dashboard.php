@@ -1,3 +1,26 @@
+<?php
+session_name("ProjetoIntegrado");
+session_start();
+
+require_once("../models/CadastroUsuario.php"); 
+require_once("../models/CadastroProdutor.php"); 
+require_once("../models/CadastroEmpresa.php"); 
+require_once("../models/CadastroGranja.php"); 
+
+$modeloUsuario = new CadastroUsuario();
+$usuarios = $modeloUsuario->ListarTodosUsuarios();
+$foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
+
+$modeloProdutor = new CadastroProdutor();
+$produtores = $modeloProdutor->ListarTodosProdutores();
+
+$modeloEmpresas = new CadastroEmpresa();
+$empresas = $modeloEmpresas->ListarTodasEmpresas();
+
+$modeloGranjas = new CadastroGranja();
+$granjas = $modeloGranjas->ListarTodasGranjas();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -42,7 +65,7 @@
 
             <!-- FOTO VINDO DO BANCO -->
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= "../../".$foto["url"]; ?>" alt="Usuário">
             </div>
 
         </div>

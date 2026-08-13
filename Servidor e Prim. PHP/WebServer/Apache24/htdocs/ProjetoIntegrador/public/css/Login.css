@@ -107,7 +107,7 @@ body {
 }
 
 /*Campos login*/
-.formulario input[type=email],
+.formulario input[type=text],
 .formulario input[type=password] {
     width: 100%;
     height: 45px;
@@ -229,7 +229,7 @@ body {
         font-size: 16px;
     }
 
-    .formulario input[type=email],
+    .formulario input[type=text],
     .formulario input[type=password] {
         height: 42px;
         font-size: 16px;

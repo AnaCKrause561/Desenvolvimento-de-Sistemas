@@ -1,3 +1,15 @@
+<?php
+session_name("ProjetoIntegrado");
+session_start();
+
+require_once("../models/User.php");
+
+$modeloUsuario = new User();
+$usuarioLogado = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
+$foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -39,7 +51,7 @@
                 <span><img class="sino" src="../../public/img/sino.png"></span>
             </div>
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= $usuarioLogado["url"] ? "../../" . $usuarioLogado["url"] : "../../public/img/perfil.jpeg"; ?>" alt="Usuário">
             </div>
         </div>
 
@@ -52,12 +64,12 @@
         <!-- ===== EDIÇÃO DE PERFIL ===== -->
         <section class="card-cadastro">
 
-            <form id="formPerfil" class="form-cadastro" novalidate>
+            <form id="formPerfil" class="form-cadastro" novalidate action="../controllers/perfil_controller.php" method="POST" enctype="multipart/form-data">
 
                 <!-- FOTO -->
                 <div class="perfil-foto">
                     <div class="perfil-foto__preview">
-                        <img id="previewFoto" src="../../public/img/perfil.jpeg" alt="Foto do usuário">
+                        <img id="previewFoto" src="<?= $usuarioLogado["url"] ? "../../" . $usuarioLogado["url"] : "../../public/img/perfil.jpeg"; ?>" alt="Foto do usuário">
                     </div>
                     <div class="perfil-foto__acoes">
                         <label for="perfilFoto" class="btn-trocar-foto">Trocar foto</label>
@@ -69,62 +81,63 @@
                 <div class="grade-campos">
                     <div class="item-campo">
                         <label for="perfilNome">Nome completo</label>
-                        <input type="text" id="perfilNome" required>
+                        <input type="text" id="perfilNome" name="nome" value="<?= htmlspecialchars($usuarioLogado["nome"]) ?>" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="perfilLogin">Usuário (login)</label>
-                        <input type="text" id="perfilLogin" required>
+                        <input type="text" id="perfilLogin" name="login" value="<?= htmlspecialchars($usuarioLogado["login"]) ?>" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="perfilEmail">E-mail</label>
-                        <input type="email" id="perfilEmail" required>
+                        <input type="email" id="perfilEmail" name="email" value="<?= htmlspecialchars($usuarioLogado["email"]) ?>" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="perfilSenha">Nova senha</label>
-                        <input type="password" id="perfilSenha" placeholder="Deixe em branco para manter a atual">
+                        <input type="password" id="perfilSenha" name="senha" placeholder="Deixe em branco para manter a atual">
                     </div>
 
                     <div class="item-campo">
                         <label for="perfilCargo">Cargo</label>
-                        <input type="text" id="perfilCargo">
+                        <input type="text" id="perfilCargo" name="cargo" value="<?= htmlspecialchars($usuarioLogado["cargo"]) ?>">
                     </div>
 
                     <div class="item-campo">
                         <label for="perfilSenhaConfirma">Confirmar nova senha</label>
-                        <input type="password" id="perfilSenhaConfirma" placeholder="Repita a nova senha">
+                        <input type="password" id="perfilSenhaConfirma" name="senha_confirma" placeholder="Repita a nova senha">
                     </div>
 
                     <div class="item-campo">
                         <label for="perfilNivelAcesso">Nível de acesso</label>
-                        <select id="perfilNivelAcesso" required>
-                            <option value="administrador">Administrador</option>
-                            <option value="auditor">Auditor</option>
-                            <option value="supervisor">Supervisor</option>
-                            <option value="gerente">Gerente</option>
+                        <select id="perfilNivelAcesso" name="nivel_acesso" required>
+                            <option value="">Selecione o nível</option>
+                            <option value="1" <?= $usuarioLogado["nivel_idfk"] == 1 ? "selected" : "" ?>>Administrador</option>
+                            <option value="2" <?= $usuarioLogado["nivel_idfk"] == 2 ? "selected" : "" ?>>Auditor</option>
+                            <option value="3" <?= $usuarioLogado["nivel_idfk"] == 3 ? "selected" : "" ?>>Supervisor</option>
+                            <option value="4" <?= $usuarioLogado["nivel_idfk"] == 4 ? "selected" : "" ?>>Gerente</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="item-campo item-areas">
+                <div div class="item-campo item-areas">
                     <label>Áreas de atuação</label>
                     <div class="grupo-checkbox">
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="perfilAreas" value="avicultura">
+                            <input type="radio" name="usuarioAreas[]" value="1" <?= $usuarioLogado["area_acesso"] == 1 ? "checked" : "" ?>>
                             <span>Avicultura</span>
                         </label>
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="perfilAreas" value="agronomia">
+                            <input type="radio" name="usuarioAreas[]" value="2" <?= $usuarioLogado["area_acesso"] == 2 ? "checked" : "" ?>>
                             <span>Agronomia</span>
                         </label>
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="perfilAreas" value="incubatorio">
+                            <input type="radio" name="usuarioAreas[]" value="3" <?= $usuarioLogado["area_acesso"] == 3 ? "checked" : "" ?>>
                             <span>Incubatório</span>
                         </label>
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="perfilAreas" value="abatedouro">
+                            <input type="radio" name="usuarioAreas[]" value="4" <?= $usuarioLogado["area_acesso"] == 4 ? "checked" : "" ?>>
                             <span>Abatedouro</span>
                         </label>
                     </div>
@@ -132,12 +145,12 @@
 
                 <div class="item-status">
                     <label class="switch">
-                        <input type="checkbox" id="perfilAtivo">
+                        <input type="checkbox" id="perfilAtivo" name="ativo" <?= $usuarioLogado["ativo"] ? "checked" : "" ?>>
                         <span class="switch__trilho"></span>
                     </label>
                     <div>
                         <span class="item-status__titulo">Usuário ativo</span>
-                        <span class="item-status__legenda" id="perfilAtivoLegenda">Poderá acessar o sistema normalmente.</span>
+                        <span class="item-status__legenda" id="perfilAtivoLegenda"><?= $usuarioLogado["ativo"] ? "Poderá acessar o sistema normalmente." : "Ficará bloqueado e não conseguirá acessar o sistema." ?></span>
                     </div>
                 </div>
 

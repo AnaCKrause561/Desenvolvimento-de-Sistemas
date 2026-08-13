@@ -1,3 +1,26 @@
+<?php
+session_name("ProjetoIntegrado");
+session_start();
+
+require_once("../models/CadastroUsuario.php"); 
+require_once("../models/CadastroProdutor.php"); 
+require_once("../models/CadastroEmpresa.php"); 
+require_once("../models/CadastroGranja.php"); 
+
+$modeloUsuario = new CadastroUsuario();
+$usuarios = $modeloUsuario->ListarTodosUsuarios();
+$foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
+
+$modeloProdutor = new CadastroProdutor();
+$produtores = $modeloProdutor->ListarTodosProdutores();
+
+$modeloEmpresas = new CadastroEmpresa();
+$empresas = $modeloEmpresas->ListarTodasEmpresas();
+
+$modeloGranjas = new CadastroGranja();
+$granjas = $modeloGranjas->ListarTodasGranjas();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -39,14 +62,14 @@
                 <span><img class="sino" src="../../public/img/sino.png"></span>
             </div>
             <div class="usuario">
-                <img src="../../public/img/perfil.jpeg" alt="Usuário">
+                <img src="<?= "../../".$foto["url"]; ?>" alt="Usuário">
             </div>
         </div>
 
         <!-- CABEÇALHO -->
         <div class="cabecalho">
             <h1>Novo Cadastro</h1>
-            <p>Cadastre usuários, produtores e granjas ou empresas do sistema.</p>
+            <p>Cadastre usuários, produtores, granjas ou empresas do sistema.</p>
         </div>
 
         <!-- ===== CADASTRO DE USUÁRIO ===== -->
@@ -56,31 +79,31 @@
                 <p class="area-instrucao">Quem terá acesso ao sistema. Você decide se o acesso já entra ativo.</p>
             </div>
 
-            <form id="formUsuario" class="form-cadastro" novalidate>
+            <form  class="form-cadastro" novalidate action="../controllers/cadastro_usuario_controller.php" method="POST" enctype="multipart/form-data">
                 <div class="grade-campos">
                     <div class="item-campo">
                         <label for="usuarioNome">Nome completo</label>
-                        <input type="text" id="usuarioNome" placeholder="Ex: João Pedro Alves" required>
+                        <input type="text" id="usuarioNome" name="nome" placeholder="Ex: João Pedro Alves" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="usuarioLogin">Usuário (login)</label>
-                        <input type="text" id="usuarioLogin" placeholder="Ex: joao.alves" required>
+                        <input type="text" id="usuarioLogin" name="login" placeholder="Ex: joao.alves" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="usuarioEmail">E-mail</label>
-                        <input type="email" id="usuarioEmail" placeholder="Ex: joao@fazenda.com" required>
+                        <input type="email" id="usuarioEmail" name="email" placeholder="Ex: joao@fazenda.com" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="usuarioSenha">Senha</label>
-                        <input type="password" id="usuarioSenha" placeholder="Digite uma senha" required>
+                        <input type="password" id="usuarioSenha" name="senha" placeholder="Digite uma senha" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="usuarioCargo">Cargo</label>
-                        <input type="text" id="usuarioCargo" placeholder="Ex: Auditor de campo">
+                        <input type="text" id="usuarioCargo" name="cargo" placeholder="Ex: Auditor de campo">
                     </div>
 
                     <div class="item-campo">
@@ -90,18 +113,18 @@
 
                     <div class="item-campo">
                         <label for="usuarioNivelAcesso">Nível de acesso</label>
-                        <select id="usuarioNivelAcesso" required>
+                        <select id="usuarioNivelAcesso" name="nivel_acesso" required>
                             <option value="">Selecione o nível</option>
-                            <option value="administrador">Administrador</option>
-                            <option value="auditor">Auditor</option>
-                            <option value="supervisor">Supervisor</option>
-                            <option value="gerente">Gerente</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Auditor</option>
+                            <option value="3">Supervisor</option>
+                            <option value="4">Gerente</option>
                         </select>
                     </div>
 
                     <div class="item-campo">
                         <label for="usuarioFoto">Foto</label>
-                        <input type="file" id="usuarioFoto" accept="image/*">
+                        <input type="file" id="usuarioFoto" name="arquivo" accept="image/*">
                     </div>
                 </div>
 
@@ -109,19 +132,19 @@
                     <label>Áreas de atuação</label>
                     <div class="grupo-checkbox">
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="usuarioAreas" value="avicultura">
+                            <input type="radio" name="usuarioAreas[]" value="1">
                             <span>Avicultura</span>
                         </label>
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="usuarioAreas" value="agronomia">
+                            <input type="radio" name="usuarioAreas[]" value="2">
                             <span>Agronomia</span>
                         </label>
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="usuarioAreas" value="incubatorio">
+                            <input type="radio" name="usuarioAreas[]" value="3">
                             <span>Incubatório</span>
                         </label>
                         <label class="opcao-checkbox">
-                            <input type="checkbox" name="usuarioAreas" value="abatedouro">
+                            <input type="radio" name="usuarioAreas[]" value="4">
                             <span>Abatedouro</span>
                         </label>
                     </div>
@@ -129,7 +152,7 @@
 
                 <div class="item-status">
                     <label class="switch">
-                        <input type="checkbox" id="usuarioAtivo" checked>
+                        <input type="checkbox" name="ativo" id="usuarioAtivo" checked>
                         <span class="switch__trilho"></span>
                     </label>
                     <div>
@@ -149,33 +172,24 @@
         <section class="card-cadastro">
             <div class="card-cadastro__cabecalho">
                 <h2>Produtor</h2>
-                <p class="area-instrucao">O produtor rural vinculado a um usuário do sistema.</p>
+                <p class="area-instrucao">O produtor rural  do sistema.</p>
             </div>
 
-            <form id="formProdutor" class="form-cadastro" novalidate>
+            <form id="formProdutor" class="form-cadastro" novalidate action="../controllers/cadastro_produtor_controller.php" method="POST">
                 <div class="grade-campos">
                     <div class="item-campo">
                         <label for="produtorNome">Nome do produtor</label>
-                        <input type="text" id="produtorNome" placeholder="Ex: Antônio da Silva" required>
+                        <input type="text" id="produtorNome" name="nome" placeholder="Ex: Antônio da Silva" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="produtorCpf">CPF</label>
-                        <input type="text" id="produtorCpf" placeholder="000.000.000-00">
+                        <input type="text" id="produtorCpf" name="cpf" placeholder="000.000.000-00">
                     </div>
 
                     <div class="item-campo">
                         <label for="produtorTelefone">Telefone</label>
-                        <input type="text" id="produtorTelefone" placeholder="(00) 00000-0000">
-                    </div>
-
-                    <div class="item-campo">
-                        <label for="produtorUsuario">Vincular ao usuário</label>
-                        <select id="produtorUsuario" required>
-                            <option value="">Selecione o usuário</option>
-                            <option value="1">João Pedro Alves (joao@fazenda.com)</option>
-                            <option value="2">Marcos Vinícius (marcos@fazenda.com)</option>
-                        </select>
+                        <input type="text" id="produtorTelefone" name="telefone" placeholder="(00) 00000-0000">
                     </div>
                 </div>
 
@@ -186,32 +200,23 @@
             </form>
         </section>
 
-        <!-- ===== CADASTRO DE GRANJA / EMPRESA ===== -->
+        <!-- ===== CADASTRO DE EMPRESA ===== -->
         <section class="card-cadastro">
             <div class="card-cadastro__cabecalho">
-                <h2>Granja / Empresa</h2>
-                <p class="area-instrucao">Onde as auditorias serão realizadas. Vincule ao produtor e ao usuário responsáveis.</p>
+                <h2>Empresa</h2>
+                <p class="area-instrucao">Onde as auditorias serão realizadas. Vincule a empresa ao usuário responsável.</p>
             </div>
 
-            <form id="formGranja" class="form-cadastro" novalidate>
+            <form id="formGranja" class="form-cadastro" novalidate action="../controllers/cadastro_empresa_controller.php" method="POST">
                 <div class="grade-campos">
                     <div class="item-campo">
                         <label for="granjaNome">Nome</label>
-                        <input type="text" id="granjaNome" placeholder="Ex: Granja São João" required>
-                    </div>
-
-                    <div class="item-campo">
-                        <label for="granjaTipo">Tipo</label>
-                        <select id="granjaTipo" required>
-                            <option value="">Selecione o tipo</option>
-                            <option value="granja">Granja</option>
-                            <option value="empresa">Empresa</option>
-                        </select>
+                        <input type="text" id="granjaNome" name="nome" placeholder="Ex: Granja São João" required>
                     </div>
 
                     <div class="item-campo">
                         <label for="granjaArea">Área</label>
-                        <select id="granjaArea" required>
+                        <select id="granjaArea" name="area" required>
                             <option value="">Selecione a área</option>
                             <option value="avicultura">Avicultura</option>
                             <option value="agronomia">Agronomia</option>
@@ -222,30 +227,81 @@
 
                     <div class="item-campo">
                         <label for="granjaEndereco">Endereço</label>
-                        <input type="text" id="granjaEndereco" placeholder="Ex: Linha São José, km 4 - Dois Vizinhos/PR">
-                    </div>
-
-                    <div class="item-campo">
-                        <label for="granjaProdutor">Produtor vinculado</label>
-                        <select id="granjaProdutor">
-                            <option value="">Nenhum</option>
-                            <option value="1">Antônio da Silva</option>
-                        </select>
+                        <input type="text" id="granjaEndereco" name="endereco" placeholder="Ex: Linha São José, km 4 - Dois Vizinhos/PR">
                     </div>
 
                     <div class="item-campo">
                         <label for="granjaUsuario">Vincular ao usuário</label>
-                        <select id="granjaUsuario" required>
+                        <select id="granjaUsuario" name="usuario_id" required>
                             <option value="">Selecione o usuário</option>
-                            <option value="1">João Pedro Alves (joao@fazenda.com)</option>
-                            <option value="2">Marcos Vinícius (marcos@fazenda.com)</option>
+                            <?php foreach ($usuarios as $u): ?>
+                            <option value="<?= $u['id'] ?>"><?= htmlspecialchars($u['nome']) ?> (<?= htmlspecialchars($u['email']) ?>)</option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
 
                 <div class="rodape-form">
                     <span class="mensagem-sucesso" id="mensagemGranja"></span>
-                    <button type="submit" class="btn-salvar">Cadastrar granja/empresa</button>
+                    <button type="submit" class="btn-salvar">Cadastrar empresa</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- ===== CADASTRO DE GRANJA  ===== -->
+        <section class="card-cadastro">
+            <div class="card-cadastro__cabecalho">
+                <h2>Granja</h2>
+                <p class="area-instrucao">Onde as auditorias serão realizadas. Vincule a granja a empresa responsável.</p>
+            </div>
+
+            <form id="formGranja" class="form-cadastro" novalidate action="../controllers/cadastro_granja_controller.php" method="POST">
+                <div class="grade-campos">
+                    <div class="item-campo">
+                        <label for="granjaNome">Nome</label>
+                        <input type="text" id="granjaNome" name="nome" placeholder="Ex: Granja São João" required>
+                    </div>
+
+                    <div class="item-campo">
+                        <label for="granjaArea">Área</label>
+                        <select id="granjaArea" name="area" required>
+                            <option value="">Selecione a área</option>
+                            <option value="avicultura">Avicultura</option>
+                            <option value="agronomia">Agronomia</option>
+                            <option value="incubatorio">Incubatório</option>
+                            <option value="abatedouro">Abatedouro</option>
+                        </select>
+                    </div>
+
+                    <div class="item-campo">
+                        <label for="granjaEndereco">Endereço</label>
+                        <input type="text" id="granjaEndereco" name="endereco" placeholder="Ex: Linha São José, km 4 - Dois Vizinhos/PR">
+                    </div>
+
+                    <div class="item-campo">
+                        <label for="granjaProdutor">Produtor vinculado</label>
+                        <select id="granjaProdutor" name="produtor_id">
+                            <option value="">Nenhum</option>
+                            <?php foreach ($produtores as $p): ?>
+                            <option value="<?= $p['id'] ?>"><?= htmlspecialchars($p['nome']) ?> (<?= htmlspecialchars($p['cpf']) ?>)</option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="item-campo">
+                        <label for="granjaEmpresa">Vincular a empresa</label>
+                        <select id="granjaEmpresa" name="empresa_id" required>
+                            <option value="">Selecione a empresa</option>
+                            <?php foreach ($empresas as $e): ?>
+                            <option value="<?= $e['id'] ?>"><?= htmlspecialchars($e['nome']) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="rodape-form">
+                    <span class="mensagem-sucesso" id="mensagemGranja"></span>
+                    <button type="submit" class="btn-salvar">Cadastrar granja</button>
                 </div>
             </form>
         </section>
