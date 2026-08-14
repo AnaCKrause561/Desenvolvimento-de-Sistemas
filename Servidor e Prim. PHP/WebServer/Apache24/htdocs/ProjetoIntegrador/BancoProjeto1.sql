@@ -65,12 +65,15 @@ UPDATE  usuarios set senha = 'e10adc3949ba59abbe56e057f20f883e' where id = 1;
 
 INSERT INTO niveis (descricao) VALUES ('adminstrador'),('auditor'), ('supervisor'), ('gerente');
 
-INSERT INTO usuarios (nome, login, email, senha, cargo, area_acesso, ativo) VALUES (
+INSERT INTO usuario_areas (area) VALUES ('avicultura'),('agronomia'), ('incubatorio'), ('abatedouro');
+
+INSERT INTO usuarios (nome, login, email, senha, cargo, area_acesso, nivel_idfk, ativo) VALUES (
     'Ana Cristina',
     'admin',
     'admin@gmail.com',
     'e10adc3949ba59abbe56e057f20f883e', --123456
     'Administrador do Sistema',
+	1,
 	1,
     TRUE
 );

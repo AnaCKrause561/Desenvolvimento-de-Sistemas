@@ -31,7 +31,7 @@ class User
             $_SESSION["nome"] = $vetor["nome"];
             $_SESSION["login"] = $vetor["login"];
             $_SESSION["usuario_id"] = $vetor["id"];
-            $_SESSION["nivel_acesso"] = $vetor["nivel_acesso"];
+            $_SESSION["nivel_acesso"] = $vetor["nivel_idfk"];
 
             return (TRUE);
         } else {
@@ -65,29 +65,55 @@ class User
         }
     }
 
-    public function EditarUsuario($nome, $email, $login, $senha, $cargo, $arquivo, $nivel_acesso, $criado_em, $ativo, $areas)
+    /*Salva o arquivo de foto enviado e devolve o caminho relativo salvo no banco.
+     * Se nenhum arquivo novo foi enviado, devolve $urlAtual sem alterações.
+     */
+    private function SalvarFotoPerfil($arquivo, $login, $urlAtual)
     {
-        $sql = "UPDATE usuarios SET login = :login WHERE id = :id;";
+        if (!$arquivo || !isset($arquivo['error']) || $arquivo['error'] !== UPLOAD_ERR_OK) {
+            return $urlAtual;
+        }
+ 
+        $pastaDestino = "../../public/img/fotos_perfil/";
+ 
+        if (!is_dir($pastaDestino)) {
+            mkdir($pastaDestino, 0777, true);
+        }
+ 
+        $extensao = pathinfo($arquivo['name'], PATHINFO_EXTENSION);
+        $loginLimpo = preg_replace('/[^a-zA-Z0-9_\-]/', '', $login);
+        $novoNomeArquivo = md5($loginLimpo . time()) . "." . $extensao;
+        $url = "public/img/fotos_perfil/" . $novoNomeArquivo;
+ 
+        move_uploaded_file($arquivo['tmp_name'], $pastaDestino . $novoNomeArquivo);
+ 
+        return $url;
+    }
+
+    public function EditarUsuario($id, $nome, $email, $login, $senha, $cargo, $arquivo, $nivel_idfk, $ativo, $area_acesso, $urlAtual)
+    {
+        $url = $this->SalvarFotoPerfil($arquivo, $login, $urlAtual);
+        $trocarSenha = ($senha !== null && $senha !== '');
+ 
+        $sql = "UPDATE usuarios SET nome = :nome, email = :email, login = :login, cargo = :cargo, url = :url, nivel_idfk = :nivel_idfk, ativo = :ativo, area_acesso = :area_acesso"
+                . ($trocarSenha ? ", senha = :senha" : "") . " WHERE id = :id;";
+ 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':login', $login);
-        $stmt->bindParam(':senha', $senha);
         $stmt->bindParam(':cargo', $cargo);
-        $stmt->bindParam(':arquivo', $arquivo);
-        $stmt->bindParam(':nivel_acesso', $nivel_acesso);
-        $stmt->bindParam(':criado_em', $criado_em);
-        $stmt->bindParam(':ativo', $ativo);
-        $stmt->bindParam(':areas', $areas);
-
-        if ($stmt->execute()) {
-            echo '<script>
-                    alert("Usuário atualizado com sucesso.");
-                    window.location.href="http://localhost/ProjetoIntegrador/app/views/cadastros.php";
-                    </script>';
-        } else {
-            echo "Erro";
+        $stmt->bindParam(':url', $url);
+        $stmt->bindParam(':nivel_idfk', $nivel_idfk);
+        $stmt->bindParam(':ativo', $ativo, PDO::PARAM_BOOL);
+        $stmt->bindParam(':area_acesso', $area_acesso);
+        $stmt->bindParam(':id', $id);
+ 
+        if ($trocarSenha) {
+            $stmt->bindParam(':senha', $senha);
         }
+ 
+        return $stmt->execute();
     }
 
     public function ExcluirUsuario($id)
