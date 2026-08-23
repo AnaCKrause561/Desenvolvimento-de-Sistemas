@@ -2,6 +2,11 @@
 session_name("ProjetoIntegrado");
 session_start();
 
+if (!isset($_SESSION["usuario_id"])) {
+    header("Location: ../../index.html");
+    exit;
+}
+
 require_once("../models/CadastroUsuario.php");
 require_once("../models/CadastroProdutor.php"); 
 require_once("../models/CadastroEmpresa.php"); 
@@ -49,7 +54,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
             <li class="ativo"><a href="calendario.php"><img class="icones" src="../../public/img/calendario.png"><span>Calendário</span></a></li>
             <li><a href="perfil.php"><img class="icones" src="../../public/img/perfil.png"><span>Perfil</span></a></li>
-            <li><a href="logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
+            <li><a href="../controllers/logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
         </ul>
     </div>
 

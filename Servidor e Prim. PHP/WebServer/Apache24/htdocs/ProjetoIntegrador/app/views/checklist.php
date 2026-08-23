@@ -6,6 +6,8 @@ require_once("../models/CadastroUsuario.php");
 require_once("../models/CadastroProdutor.php"); 
 require_once("../models/CadastroEmpresa.php"); 
 require_once("../models/CadastroGranja.php"); 
+require_once("../models/CadastroArea.php");
+require_once("../models/CadastroChecklist.php");
 
 $modeloUsuario = new CadastroUsuario();
 $usuarios = $modeloUsuario->ListarTodosUsuarios();
@@ -19,6 +21,12 @@ $empresas = $modeloEmpresas->ListarTodasEmpresas();
 
 $modeloGranjas = new CadastroGranja();
 $granjas = $modeloGranjas->ListarTodasGranjas();
+
+$modeloArea = new CadastroArea();
+$areas = $modeloArea->ListarTodasAreas();
+
+$modeloChecklist = new CadastroChecklist();
+$checklists = $modeloChecklist->ListarTodosChecklists($_SESSION["usuario_id"]);
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +57,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
             <li><a href="calendario.php"><img class="icones" src="../../public/img/calendario.png"><span>Calendário</span></a></li>
             <li><a href="perfil.php"><img class="icones" src="../../public/img/perfil.png"><span>Perfil</span></a></li>
-            <li><a href="logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
+            <li><a href="../controllers/logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
         </ul>
     </div>
 
@@ -80,7 +88,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                     <!-- BUSCA -->
                     <div class="campo-busca">
                         <img class="icone-input" src="../../public/img/pesquisa.png" alt="Pesquisa">
-                        <input type="text" id="filtro-busca" placeholder="Buscar por granja ou empresa">
+                        <input type="text" id="filtro-busca" placeholder="Buscar por checklist">
                     </div>
 
                     <!-- ÁREA -->
@@ -111,7 +119,6 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Granja / Empresa</th>
                                 <th>Área</th>
                                 <th>Auditoria</th>
                                 <th>Data</th>
@@ -120,27 +127,32 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         </thead>
 
                         <tbody id="tabela-auditorias-corpo">
-                            <tr
-                                data-id="1"
-                                data-nome="Biosegurança"
-                                data-empresa="Granja São João"
-                                data-area="avicultura"
-                                data-area-label="Avicultura"
-                                data-data="12/06/2025"
-                                data-perguntas='["As instalações estão limpas?","Os funcionários usam EPI corretamente?","Existe controle de pragas ativo?"]'>
-                                <td data-label="ID">#1</td>
-                                <td data-label="Granja / Empresa">Granja São João</td>
-                                <td data-label="Área">Avicultura</td>
-                                <td data-label="Checklist">Biosegurança</td>
-                                <td data-label="Data">12/06/2025</td>
+                            <?php foreach ($checklists as $checklist): ?>
+                                <?php
+                                    $detalhe = $modeloChecklist->ListarUmChecklist($checklist["id"]);
+                                    $textosPerguntas = array_column($detalhe["perguntas"], "pergunta");
+                                    $dataFormatada = date("d/m/Y", strtotime($checklist["criado_em"]));
+                                ?>
+                                <tr
+                                    data-id="<?= $checklist["id"]; ?>"
+                                    data-nome="<?= htmlspecialchars($checklist["nome"]); ?>"
+                                    data-area="<?= $checklist["area_id"]; ?>"
+                                    data-area-label="<?= htmlspecialchars($checklist["area"]); ?>"
+                                    data-data="<?= $dataFormatada; ?>"
+                                    data-perguntas='<?= htmlspecialchars(json_encode($textosPerguntas), ENT_QUOTES); ?>'>
+                                    <td data-label="ID">#<?= $checklist["id"]; ?></td>
+                                    <td data-label="Área"><?= htmlspecialchars($checklist["area"]); ?></td>
+                                    <td data-label="Checklist"><?= htmlspecialchars($checklist["nome"]); ?></td>
+                                    <td data-label="Data"><?= $dataFormatada; ?></td>
 
-                                <!-- AÇÕES -->
-                                <td class="acoes" data-label="Ações">
-                                    <a class="btn-icone btn-visualizar" title="Visualizar" href="#"><img src="../../public/img/olho.png" alt="Ver"></a>
-                                    <a class="btn-icone btn-editar" title="Editar" href="#"><img src="../../public/img/editar.png" alt="Editar"></a>
-                                    <a class="btn-icone btn-excluir" title="Excluir" href="#"><img src="../../public/img/lixeira.png" alt="Excluir"></a>
-                                </td>
-                            </tr>
+                                    <!-- AÇÕES -->
+                                    <td class="acoes" data-label="Ações">
+                                        <a class="btn-icone btn-visualizar" title="Visualizar" href="#"><img src="../../public/img/olho.png" alt="Ver"></a>
+                                        <a class="btn-icone btn-editar" title="Editar" href="#"><img src="../../public/img/editar.png" alt="Editar"></a>
+                                        <a class="btn-icone btn-excluir" title="Excluir" href="#"><img src="../../public/img/lixeira.png" alt="Excluir"></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -152,7 +164,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
     <!-- ===== OVERLAY DOS MODAIS ===== -->
     <div class="modal-overlay" id="modalOverlay"></div>
 
-    <!-- ===== MODAL: CRIAR / EDITAR CHECKLIST ===== -->
+    <!-- ===== CRIAR / EDITAR CHECKLIST ===== -->
     <section class="modal-checklist" id="modalChecklist" aria-hidden="true">
         <div class="modal-checklist__caixa">
             <button type="button" class="modal-fechar" id="fecharModalChecklist" aria-label="Fechar">✕</button>
@@ -171,11 +183,9 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                     <label for="areaChecklist">Área</label>
                     <select id="areaChecklist">
                         <option value="">Selecione a área</option>
-                        <option value="avicultura">Avicultura</option>
-                        <option value="agronomia">Agronomia</option>
-                        <option value="incubatorio">Incubatório</option>
-                        <option value="abatedouro">Abatedouro</option>
-                        <option value="pecuaria">Pecuária</option>
+                        <?php foreach ($areas as $area): ?>
+                            <option value="<?= $area["area_id"]; ?>"><?= $area["area"]; ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>
@@ -213,15 +223,22 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
         </div>
     </section>
 
-    <!-- ===== MODAL: VISUALIZAR CHECKLIST (ESTILO PDF) ===== -->
+    <!-- ===== VISUALIZAR CHECKLIST (ESTILO PDF) ===== -->
     <section class="modal-visualizar" id="modalVisualizar" aria-hidden="true">
         <div class="modal-visualizar__caixa">
             <button type="button" class="modal-fechar" id="fecharModalVisualizar" aria-label="Fechar">✕</button>
 
             <div class="modal-visualizar__topo">
                 <h2>Visualizar checklist</h2>
-                <button type="button" class="btn-baixar-pdf" id="btnImprimirPdf">Baixar / Imprimir PDF</button>
+                <button type="button" class="btn-baixar-pdf" id="btnGerarPdf">Gerar PDF</button>
+
+                <div id="loadingPdf" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); color:white; align-items:center; justify-content:center; font-size:18px; z-index:9999;">
+                Gerando PDF, aguarde...
             </div>
+        </div>
+
+        </div>
+        <iframe id="downloadFrame" style="display:none;"></iframe>
 
             <!-- "Folha" que imita o layout de um PDF -->
             <div class="folha-pdf" id="conteudoVisualizar">

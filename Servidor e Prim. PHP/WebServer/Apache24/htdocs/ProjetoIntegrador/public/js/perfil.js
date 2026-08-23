@@ -14,11 +14,29 @@ const perfilSenha = document.getElementById("perfilSenha");
 const perfilSenhaConfirma = document.getElementById("perfilSenhaConfirma");
 
 // =======================================================
-// TROCAR FOTO (com pré-visualização)
+// TROCAR FOTO (com validação + pré-visualização)
+// Obs: essa validação é só pra dar feedback rápido ao usuário.
+// A validação que realmente protege o sistema é a do PHP (User.php),
+// porque validação só no JS pode ser burlada.
 // =======================================================
+const TAMANHO_MAXIMO_FOTO = 5 * 1024 * 1024; // 5MB
+const TIPOS_PERMITIDOS_FOTO = ["image/jpeg", "image/png"];
+
 perfilFoto.addEventListener("change", () => {
     const arquivo = perfilFoto.files[0];
     if (!arquivo) return;
+
+    if (!TIPOS_PERMITIDOS_FOTO.includes(arquivo.type)) {
+        alert("Envie apenas imagens JPG ou PNG.");
+        perfilFoto.value = "";
+        return;
+    }
+
+    if (arquivo.size > TAMANHO_MAXIMO_FOTO) {
+        alert("A imagem deve ter no máximo 5MB.");
+        perfilFoto.value = "";
+        return;
+    }
 
     // Gera uma prévia local da imagem escolhida, sem precisar subir pro servidor ainda
     const url = URL.createObjectURL(arquivo);

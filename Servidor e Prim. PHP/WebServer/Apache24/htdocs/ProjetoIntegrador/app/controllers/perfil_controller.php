@@ -19,10 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $arquivo = isset($_FILES["arquivo"]) ? $_FILES["arquivo"] : null;
 
     // só troca a senha se o campo foi preenchido, e só se as duas confirmações batem
+    $mensagemErro = null;
+
     $senha = null;
     if (!empty($_POST["senha"])) {
         if ($_POST["senha"] !== $_POST["senha_confirma"]) {
             $resp = false;
+            $mensagemErro = "As senhas não coincidem.";
         } else {
             $senha = md5($_POST["senha"]);
         }
@@ -31,8 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($resp)) {
         $obj = new User();
         $usuarioAtual = $obj->ListarUmUsuario($id);
-        $resp = $obj->EditarUsuario($id, $nome, $email, $login, $senha, $cargo, $arquivo, $nivel_idfk, $ativo, $area_acesso, $usuarioAtual["url"]);
- 
+
+        try {
+            $resp = $obj->EditarUsuario($id, $nome, $email, $login, $senha, $cargo, $arquivo, $nivel_idfk, $ativo, $area_acesso, $usuarioAtual["url"]);
+        } catch (Exception $e) {
+            // cai aqui quando a foto não passa na validação (tamanho/tipo)
+            $resp = false;
+            $mensagemErro = $e->getMessage();
+        }
+
         if ($resp) {
             // mantém a sessão em sincronia com os dados que acabaram de ser salvos
             $_SESSION["nome"] = $nome;
@@ -41,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     $resp = false;
+    $mensagemErro = null;
 }
 ?>
 
@@ -72,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Swal.fire({
                 icon: 'warning',
                 title: 'Erro!',
-                text: 'Edição não realizada.',
+                text: '<?= addslashes($mensagemErro ?? "Edição não realizada.") ?>',
                 confirmButtonColor: '#2563eb'
             }).then(() => {
                 history.back();

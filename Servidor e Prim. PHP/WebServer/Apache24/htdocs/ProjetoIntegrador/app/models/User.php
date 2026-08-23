@@ -65,13 +65,30 @@ class User
         }
     }
 
-    /*Salva o arquivo de foto enviado e devolve o caminho relativo salvo no banco.
-     * Se nenhum arquivo novo foi enviado, devolve $urlAtual sem alterações.
-     */
+    /*MUDAR FOTO; Pega a extensão do arquivo enviado → gera um nome único e seguro baseado no login + timestamp 
+    → monta o caminho final → move o arquivo da pasta temporária pra pasta definitiva 
+    → devolve o caminho pra ser salvo no banco.*/
+    
     private function SalvarFotoPerfil($arquivo, $login, $urlAtual)
     {
-        if (!$arquivo || !isset($arquivo['error']) || $arquivo['error'] !== UPLOAD_ERR_OK) {
+        // nenhum arquivo novo enviado (campo vazio) -> mantém a foto atual
+        if (!$arquivo || !isset($arquivo['error']) || $arquivo['error'] === UPLOAD_ERR_NO_FILE) {
             return $urlAtual;
+        }
+
+        if ($arquivo['error'] !== UPLOAD_ERR_OK) {
+            throw new Exception("Falha no envio do arquivo. Tente novamente.");
+        }
+
+        $tamanhoMaximo = 5 * 1024 * 1024; // 5MB
+        if ($arquivo['size'] > $tamanhoMaximo) {
+            throw new Exception("A imagem deve ter no máximo 5MB.");
+        }
+
+        $tiposPermitidos = ['image/jpeg', 'image/png'];
+        $tipoReal = mime_content_type($arquivo['tmp_name']); // valida o conteúdo real do arquivo, não só a extensão do nome
+        if (!in_array($tipoReal, $tiposPermitidos, true)) {
+            throw new Exception("Envie apenas imagens JPG ou PNG.");
         }
  
         $pastaDestino = "../../public/img/fotos_perfil/";
@@ -80,12 +97,12 @@ class User
             mkdir($pastaDestino, 0777, true);
         }
  
-        $extensao = pathinfo($arquivo['name'], PATHINFO_EXTENSION);
-        $loginLimpo = preg_replace('/[^a-zA-Z0-9_\-]/', '', $login);
-        $novoNomeArquivo = md5($loginLimpo . time()) . "." . $extensao;
-        $url = "public/img/fotos_perfil/" . $novoNomeArquivo;
+        $extensao = pathinfo($arquivo['name'], PATHINFO_EXTENSION); //nome seguro para o arquivo
+        $loginLimpo = preg_replace('/[^a-zA-Z0-9_\-]/', '', $login); //limpa o login, removendo qualquer caractere que não seja letra
+        $novoNomeArquivo = md5($loginLimpo . time()) . "." . $extensao; //gera um nome novo e único
+        $url = "public/img/fotos_perfil/" . $novoNomeArquivo; //onde fica salvo a img
  
-        move_uploaded_file($arquivo['tmp_name'], $pastaDestino . $novoNomeArquivo);
+        move_uploaded_file($arquivo['tmp_name'], $pastaDestino . $novoNomeArquivo); //onde move o arquivo do temporário para o destino final
  
         return $url;
     }

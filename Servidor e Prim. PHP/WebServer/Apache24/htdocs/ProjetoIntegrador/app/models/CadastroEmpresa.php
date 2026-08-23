@@ -51,7 +51,7 @@ class CadastroEmpresa
 
     public function ExcluirUmaEmpresa($id)
     {
-        $sql = "DELETE * FROM empresas WHERE id = :id;";
+        $sql = "DELETE id FROM empresas WHERE id = :id;";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
 

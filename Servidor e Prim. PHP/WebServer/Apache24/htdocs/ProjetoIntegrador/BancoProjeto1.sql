@@ -58,9 +58,40 @@ CREATE TABLE granjas (
     criado_em TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
-SELECT * FROM usuarios;
+--CHECKLIST
+
+-- TABELA DE CHECKLISTS
+CREATE TABLE checklists (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    area_id INT NOT NULL REFERENCES usuario_areas(area_id),
+    usuario_id INT NOT NULL REFERENCES usuarios(id),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- TABELA DE PERGUNTAS DO CHECKLIST
+CREATE TABLE checklist_perguntas (
+    id SERIAL PRIMARY KEY,
+    checklist_id INT NOT NULL REFERENCES checklists(id) ON DELETE CASCADE,
+    pergunta TEXT NOT NULL,
+    ordem INT NOT NULL
+);
+
+-- TABELA PARA HISTÓRICO DE PDFs SALVOS
+CREATE TABLE checklist_pdfs (
+    id SERIAL PRIMARY KEY,
+    checklist_id INT NOT NULL REFERENCES checklists(id) ON DELETE CASCADE,
+    arquivo_url VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+ALTER TABLE perguntas_checklist RENAME TO checklist_perguntas;
+SELECT * FROM checklist_pdfs ;
+SELECT * FROM checklist_perguntas;
 CREATE TABLE usuario_areas;
-DROP TABLE  granjas cascade;
+DROP TABLE  checklist_perguntas cascade;
 UPDATE  usuarios set senha = 'e10adc3949ba59abbe56e057f20f883e' where id = 1;
 
 INSERT INTO niveis (descricao) VALUES ('adminstrador'),('auditor'), ('supervisor'), ('gerente');

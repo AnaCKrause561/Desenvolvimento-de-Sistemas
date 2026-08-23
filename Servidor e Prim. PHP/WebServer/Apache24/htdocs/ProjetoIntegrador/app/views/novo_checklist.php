@@ -1,6 +1,12 @@
 <?php
 session_name("ProjetoIntegrado");
 session_start();
+$_SESSION["nova_auditoria"]["area"] = "avicultura";
+
+if (!isset($_SESSION["usuario_id"])) {
+    header("Location: ../../index.html");
+    exit;
+}
 
 require_once("../models/CadastroUsuario.php"); 
 require_once("../models/CadastroProdutor.php"); 
@@ -49,7 +55,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
             <li><a href="calendario.php"><img class="icones" src="../../public/img/calendario.png"><span>Calendário</span></a></li>
             <li><a href="perfil.php"><img class="icones" src="../../public/img/perfil.png"><span>Perfil</span></a></li>
-            <li><a href="logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
+            <li><a href="../controllers/logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
         </ul>
     </div>
 
@@ -112,53 +118,55 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                 <h2>Selecione a área da auditoria</h2>
                 <p class="area-instrucao">Escolha a área que deseja auditar.</p>
 
-                <div class="areas-lista">
+                <form id="formArea" method="post" action="../controllers/nova_auditoria_controller.php?etapa=area">
+                
+                    <div class="areas-lista">
 
-                    <label class="area-card">
-                        <input type="radio" name="area" value="avicultura">
-                        <span class="area-selo">✓</span>
-                        <span class="area-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/avicultura.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="area-nome">Avicultura</span>
-                    </label>
+                        <label class="area-card">
+                            <input type="radio" name="area" value="avicultura">
+                            <span class="area-selo">✓</span>
+                            <span class="area-icone">
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                    <image href="../../public/img/avicultura.png" x="0" y="0" width="64" height="64" />
+                                </svg>
+                            </span>
+                            <span class="area-nome">Avicultura</span>
+                        </label>
 
-                    <label class="area-card">
-                        <input type="radio" name="area" value="agronomia">
-                        <span class="area-selo">✓</span>
-                        <span class="area-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/agricultura.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="area-nome">Agronomia</span>
-                    </label>
+                        <label class="area-card">
+                            <input type="radio" name="area" value="agronomia">
+                            <span class="area-selo">✓</span>
+                            <span class="area-icone">
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                    <image href="../../public/img/agricultura.png" x="0" y="0" width="64" height="64" />
+                                </svg>
+                            </span>
+                            <span class="area-nome">Agronomia</span>
+                        </label>
 
-                    <label class="area-card">
-                        <input type="radio" name="area" value="incubatorio">
-                        <span class="area-selo">✓</span>
-                        <span class="area-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/incubatorio.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="area-nome">Incubatório</span>
-                    </label>
+                        <label class="area-card">
+                            <input type="radio" name="area" value="incubatorio">
+                            <span class="area-selo">✓</span>
+                            <span class="area-icone">
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                    <image href="../../public/img/incubatorio.png" x="0" y="0" width="64" height="64" />
+                                </svg>
+                            </span>
+                            <span class="area-nome">Incubatório</span>
+                        </label>
 
-                    <label class="area-card">
-                        <input type="radio" name="area" value="abatedouro">
-                        <span class="area-selo">✓</span>
-                        <span class="area-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/abatedouro.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="area-nome">Abatedouro</span>
-                    </label>
+                        <label class="area-card">
+                            <input type="radio" name="area" value="abatedouro">
+                            <span class="area-selo">✓</span>
+                            <span class="area-icone">
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                    <image href="../../public/img/abatedouro.png" x="0" y="0" width="64" height="64" />
+                                </svg>
+                            </span>
+                            <span class="area-nome">Abatedouro</span>
+                        </label>
 
-                </div>
+                    </div>
             </div>
 
             <!-- AÇÕES -->
@@ -167,9 +175,10 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                     Próximo <span aria-hidden="true">→</span>
                 </button>
             </div>
+            </form>
 
         </section>
     </main>
 
-    <script src="../../public/js/novo_checklist.js"></script>
+    <script src="../../public/js/passo1_auditoria.js"></script>
 </body>

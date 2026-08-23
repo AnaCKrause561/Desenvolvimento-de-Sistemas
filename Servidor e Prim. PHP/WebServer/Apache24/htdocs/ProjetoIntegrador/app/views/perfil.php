@@ -2,6 +2,11 @@
 session_name("ProjetoIntegrado");
 session_start();
 
+if (!isset($_SESSION["usuario_id"])) {
+    header("Location: ../../index.html");
+    exit;
+}
+
 require_once("../models/User.php");
 
 $modeloUsuario = new User();
@@ -38,7 +43,7 @@ $foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
             <li><a href="calendario.php"><img class="icones" src="../../public/img/calendario.png"><span>Calendário</span></a></li>
             <li class="ativo"><a href="perfil.php"><img class="icones" src="../../public/img/perfil.png"><span>Perfil</span></a></li>
-            <li><a href="logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
+            <li><a href="../controllers/logoff.php"><img class="icones" src="../../public/img/sair.png"><span>Sair</span></a></li>
         </ul>
     </div>
 
@@ -73,7 +78,7 @@ $foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
                     </div>
                     <div class="perfil-foto__acoes">
                         <label for="perfilFoto" class="btn-trocar-foto">Trocar foto</label>
-                        <input type="file" id="perfilFoto" accept="image/*" hidden>
+                        <input type="file" id="perfilFoto" name="arquivo" accept="image/*" hidden>
                         <span class="perfil-foto__dica">JPG ou PNG, até 5MB</span>
                     </div>
                 </div>

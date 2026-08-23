@@ -23,7 +23,6 @@ const fecharModalChecklist = document.getElementById("fecharModalChecklist");
 const modalVisualizar = document.getElementById("modalVisualizar");
 const conteudoVisualizar = document.getElementById("conteudoVisualizar");
 const fecharModalVisualizar = document.getElementById("fecharModalVisualizar");
-const btnImprimirPdf = document.getElementById("btnImprimirPdf");
 
 const tabelaCorpo = document.getElementById("tabela-auditorias-corpo");
 
@@ -146,6 +145,7 @@ function fecharModalChecklistFn() {
 // =======================================================
 // OBS: a página ainda está na fase estática. Quando a parte de PHP entrar,
 // aqui é o lugar de enviar os dados (fetch/AJAX) para salvar no banco.
+// Função para Salvar/Editar Checklist no Banco
 function salvarChecklist() {
     if (!checklistValido()) return;
 
@@ -158,17 +158,37 @@ function salvarChecklist() {
         ),
     };
 
-    console.log("Checklist salvo (exemplo, ainda sem PHP):", dados);
-
-    fecharModalChecklistFn();
+    fetch('../controllers/checklist_controller.php?acao=salvar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+    })
+    .then(res => res.json())
+    .then(resposta => {
+        if (resposta.sucesso) {
+            alert("Checklist salvo com sucesso!");
+            window.location.reload();
+        } else {
+            alert("Erro ao salvar checklist: " + (resposta.mensagem || "Erro desconhecido"));
+        }
+    })
+    .catch(erro => {
+        console.error("Falha ao salvar checklist:", erro);
+        alert("Não foi possível salvar o checklist. Veja o console (F12) para detalhes.");
+    });
 }
+
+// Guarda o ID do checklist atualmente aberto no modal de visualização,
+// usado pelo botão "Gerar PDF" para saber qual PDF gerar
+let checklistIdAtual = null;
 
 // =======================================================
 // 7) ABRIR / FECHAR MODAL "VISUALIZAR" (estilo PDF)
 // =======================================================
 function abrirModalVisualizar(linha) {
+    checklistIdAtual = linha.dataset.id;
+
     const nome = linha.dataset.nome;
-    const empresa = linha.dataset.empresa;
     const areaLabel = linha.dataset.areaLabel;
     const data = linha.dataset.data;
     const perguntas = JSON.parse(linha.dataset.perguntas || "[]");
@@ -181,7 +201,6 @@ function abrirModalVisualizar(linha) {
         <div class="folha-pdf__cabecalho">
             <div>
                 <h3>${nome}</h3>
-                <p>${empresa}</p>
                 <p>Área: ${areaLabel}</p>
             </div>
             <span class="folha-pdf__selo">Data: ${data}</span>
@@ -193,6 +212,36 @@ function abrirModalVisualizar(linha) {
 
     abrirModal(modalVisualizar);
 }
+
+// Excluir um checklist (delegação de evento na tbody)
+tabelaCorpo.addEventListener("click", (evento) => {
+    const botao = evento.target.closest(".btn-icone");
+    if (!botao) return;
+
+    evento.preventDefault();
+    const linha = botao.closest("tr");
+
+    if (botao.classList.contains("btn-excluir")) {
+        if (confirm("Tem certeza que deseja excluir este checklist?")) {
+            const id = linha.dataset.id;
+            const formData = new FormData();
+            formData.append('id', id);
+
+            fetch('../controllers/checklist_controller.php?acao=excluir', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(res => {
+                if (res.sucesso) {
+                    linha.remove();
+                } else {
+                    alert("Erro ao excluir.");
+                }
+            });
+        }
+    }
+});
 
 function fecharModalVisualizarFn() {
     fecharModal(modalVisualizar);
@@ -280,7 +329,75 @@ document.addEventListener("keydown", (evento) => {
     }
 });
 
-// Botão "Baixar / Imprimir PDF" dentro do modal de visualização
-btnImprimirPdf.addEventListener("click", () => {
-    window.print();
+// =======================================================
+// 10) GERAR PDF (com loading, sem sair da página)
+// =======================================================
+const btnGerarPdf = document.getElementById("btnGerarPdf");
+const loadingPdf = document.getElementById("loadingPdf");
+const downloadFrame = document.getElementById("downloadFrame");
+
+btnGerarPdf.addEventListener("click", () => {
+    if (!checklistIdAtual) return;
+
+    loadingPdf.style.display = "flex";
+
+    // Como o download do PDF nem sempre dispara o "onload" do iframe
+    // (depende do navegador), usamos uma trava pra garantir que o
+    // fechamento só acontece uma vez, seja pelo onload ou pelo tempo limite.
+    let jaFinalizou = false;
+
+    function finalizarGeracaoPdf() {
+        if (jaFinalizou) return;
+        jaFinalizou = true;
+
+        loadingPdf.style.display = "none";
+        fecharModalVisualizarFn(); // volta para a tela de checklists
+    }
+
+    downloadFrame.onload = finalizarGeracaoPdf;
+
+    // Tempo limite de segurança: se o onload não disparar (download),
+    // fecha sozinho depois de 3 segundos.
+    setTimeout(finalizarGeracaoPdf, 3000);
+
+    downloadFrame.src = `../controllers/gerar_pdf_controller.php?id=${checklistIdAtual}`;
+});
+
+// =======================================================
+// 11) FILTRO DE BUSCA E ÁREA (tabela de checklists)
+// =======================================================
+const filtroBusca = document.getElementById("filtro-busca");
+const filtroArea = document.getElementById("filtro-area");
+const btnLimparFiltro = document.getElementById("btn-limpar-filtro");
+
+function aplicarFiltros() {
+    // .trim() tira espaços extras, .toLowerCase() ignora maiúscula/minúscula
+    const textoBusca = filtroBusca.value.trim().toLowerCase();
+    const areaEscolhida = filtroArea.value.trim().toLowerCase();
+
+    const linhas = tabelaCorpo.querySelectorAll("tr");
+
+    linhas.forEach((linha) => {
+        const nomeChecklistLinha = (linha.dataset.nome || "").toLowerCase();
+        const areaLinha = (linha.dataset.areaLabel || "").toLowerCase();
+
+        const bateBusca = nomeChecklistLinha.includes(textoBusca);
+        const bateArea = areaEscolhida === "" || areaLinha === areaEscolhida;
+
+        // só mostra a linha se bater nos dois filtros ao mesmo tempo
+        linha.style.display = (bateBusca && bateArea) ? "" : "none";
+    });
+}
+
+// Refiltra a cada letra digitada
+filtroBusca.addEventListener("input", aplicarFiltros);
+
+// Refiltra quando troca a área selecionada
+filtroArea.addEventListener("change", aplicarFiltros);
+
+// Botão "Limpar filtros": volta tudo ao normal
+btnLimparFiltro.addEventListener("click", () => {
+    filtroBusca.value = "";
+    filtroArea.value = "";
+    aplicarFiltros();
 });
