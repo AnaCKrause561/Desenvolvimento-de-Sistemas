@@ -86,9 +86,36 @@ CREATE TABLE checklist_pdfs (
 );
 
 
+-- TABELA DE AUDITORIAS 
+CREATE TABLE auditorias (
+    id SERIAL PRIMARY KEY,
+    area_id INT NOT NULL REFERENCES usuario_areas(area_id),
+    empresa_id INTEGER REFERENCES empresas(id),
+    granja_id INTEGER REFERENCES granjas(id),
+    checklist_id INTEGER REFERENCES checklists(id),
+    usuario_id INT NOT NULL REFERENCES usuarios(id),
+    nome_auditor VARCHAR(150) NOT NULL,
+    nome_responsavel VARCHAR(150),
+    assinatura_auditor_url VARCHAR(255) NOT NULL,
+    assinatura_responsavel_url VARCHAR(255),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- TABELA DE ITENS DE CADA AUDITORIA (pergunta + resposta preenchida)
+CREATE TABLE auditoria_itens (
+    id SERIAL PRIMARY KEY,
+    auditoria_id INTEGER NOT NULL REFERENCES auditorias(id) ON DELETE CASCADE,
+    pergunta TEXT NOT NULL,
+    pontuacao VARCHAR(10),
+    observacao TEXT,
+    foto_url VARCHAR(255),
+    ordem INT NOT NULL
+);
+
+
 
 ALTER TABLE perguntas_checklist RENAME TO checklist_perguntas;
-SELECT * FROM checklist_pdfs ;
+SELECT * FROM auditoria_itens ;
 SELECT * FROM checklist_perguntas;
 CREATE TABLE usuario_areas;
 DROP TABLE  checklist_perguntas cascade;

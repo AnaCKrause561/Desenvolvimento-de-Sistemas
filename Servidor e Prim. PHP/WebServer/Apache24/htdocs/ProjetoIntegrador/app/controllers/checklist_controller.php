@@ -14,9 +14,9 @@ if ($acao === "salvar") {
     // JSON não vem em $_POST — precisa ler o corpo bruto da requisição
     $dados = json_decode(file_get_contents("php://input"), true);
 
-    $id        = $dados["id"] ?? null;
-    $nome      = $dados["nome"] ?? "";
-    $area_id   = $dados["area"] ?? null;
+    $id = $dados["id"] ?? null;
+    $nome = $dados["nome"] ?? "";
+    $area_id = $dados["area"] ?? null;
     $perguntas = $dados["perguntas"] ?? [];
     $usuario_id = $_SESSION["usuario_id"];
 

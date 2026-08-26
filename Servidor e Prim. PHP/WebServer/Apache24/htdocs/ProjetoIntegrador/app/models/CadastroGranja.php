@@ -15,7 +15,7 @@ class CadastroGranja
 
     public function ListarTodasGranjas()
     {
-        $sql = "SELECT id, nome FROM empresas ORDER BY nome ASC;";
+        $sql = "SELECT id, nome FROM granjas ORDER BY nome ASC;";
         $stmt = $this->pdo->prepare($sql);
 
         if ($stmt->execute()) {
@@ -79,4 +79,12 @@ class CadastroGranja
             return (FALSE);
         }
     }
+
+    public function ListarGranjasPorArea($area) {
+    $sql = "SELECT id, nome, endereco FROM granjas WHERE area = :area ORDER BY nome";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindParam(":area", $area);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }

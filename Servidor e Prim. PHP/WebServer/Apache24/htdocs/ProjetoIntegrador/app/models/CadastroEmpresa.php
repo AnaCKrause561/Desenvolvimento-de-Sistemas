@@ -82,4 +82,12 @@ class CadastroEmpresa
             return (FALSE);
         }
     }
+
+    public function ListarEmpresasPorArea($area) {
+    $sql = "SELECT id, nome, endereco FROM empresas WHERE area = :area ORDER BY nome";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindParam(":area", $area);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }

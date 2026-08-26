@@ -1,27 +1,41 @@
 <?php
 session_name("ProjetoIntegrado");
 session_start();
-
+ 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: ../../index.html");
     exit;
 }
-
+ 
 require_once("../models/CadastroUsuario.php"); 
 require_once("../models/CadastroProdutor.php"); 
 require_once("../models/CadastroEmpresa.php"); 
 require_once("../models/CadastroGranja.php"); 
-
+require_once("../models/CadastroChecklist.php");
+ 
+// Se pulou os passos anteriores, manda de volta
+if (!isset($_SESSION["nova_auditoria"]["area"])) {
+    header("Location: novo_checklist.php");
+    exit;
+}
+if (!isset($_SESSION["nova_auditoria"]["local_id"])) {
+    header("Location: novo_checklist_empresas.php");
+    exit;
+}
+ 
+$modeloChecklist = new CadastroChecklist();
+$checklists = $modeloChecklist->ListarTodosChecklists($_SESSION["usuario_id"]);
+ 
 $modeloUsuario = new CadastroUsuario();
 $usuarios = $modeloUsuario->ListarTodosUsuarios();
 $foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
-
+ 
 $modeloProdutor = new CadastroProdutor();
 $produtores = $modeloProdutor->ListarTodosProdutores();
-
+ 
 $modeloEmpresas = new CadastroEmpresa();
 $empresas = $modeloEmpresas->ListarTodasEmpresas();
-
+ 
 $modeloGranjas = new CadastroGranja();
 $granjas = $modeloGranjas->ListarTodasGranjas();
 ?>
@@ -48,7 +62,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
 
         <ul>
             <li><a href="dashboard.php"><img class="icones" src="../../public/img/dash.png"><span>Dashboard</span></a></li>
-            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Checklist</span></a></li>
+            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Auditoria</span></a></li>
             <li><a href="pdfs.php"><img class="icones" src="../../public/img/PDF.png"><span>PDFs</span></a></li>
             <li><a href="checklist.php"><img class="icones" src="../../public/img/checklist.png"><span>Checklists</span></a></li>
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
@@ -123,49 +137,40 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         <option value="avicultura">Avicultura</option>
                         <option value="agronomia">Agronomia</option>
                         <option value="incubatório">Incubatório</option>
+                        <option value="incubatório">Abatedouro</option>
                     </select>
                 </div>
 
-                <ul class="lista-checklists">
+                <form id="formChecklist" action="../controllers/nova_auditoria_controller.php?etapa=checklist" method="post">
+                    <ul class="lista-checklists">
+                        <?php foreach ($checklists as $c): ?>
+                        <li class="checklist-card" data-area="<?= htmlspecialchars($c['area']) ?>">
+                            <input type="radio" name="checklist" value="<?= $c['id'] ?>" hidden>
+                            <span class="checklist-nome"><?= htmlspecialchars($c['nome']) ?></span>
+                            <span class="checklist-seta">›</span>
+                        </li>
+                        <?php endforeach; ?>
 
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="biosseguranca-avicultura" hidden>
-                        <span class="checklist-nome">Auditoria – Avicultura</span>
-                        <span class="checklist-seta">›</span>
-                    </li>
+                        <li class="checklist-card checklist-card--novo">
+                            <input type="radio" name="checklist" value="novo" hidden>
+                            <span class="checklist-nome"><span class="checklist-mais">+</span> Criar novo checklist</span>
+                        </li>
 
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="manejo-avicultura" hidden>
-                        <span class="checklist-nome">Auditoria – Agricultura</span>
-                        <span class="checklist-seta">›</span>
-                    </li>
+                    </ul>
 
-                    <li class="checklist-card">
-                        <input type="radio" name="checklist" value="qualidade-agua" hidden>
-                        <span class="checklist-nome">Auditoria – Incubatório</span>
-                        <span class="checklist-seta">›</span>
-                    </li>
-
-                    <li class="checklist-card checklist-card--novo">
-                        <input type="radio" name="checklist" value="novo" hidden>
-                        <span class="checklist-nome"><span class="checklist-mais">+</span> Criar novo checklist</span>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- AÇÕES -->
-            <div class="rodape-acoes rodape-acoes--duplo">
-                <a href="novo_checklist_empresas.php" class="btn-voltar">
-                    <span aria-hidden="true">←</span> Voltar
-                </a>
-                <button type="button" class="btn-proximo" disabled>
-                    Próximo <span aria-hidden="true">→</span>
-                </button>
-            </div>
-
+                    <!-- AÇÕES -->
+                    <div class="rodape-acoes rodape-acoes--duplo">
+                        <a href="novo_checklist_empresas.php" class="btn-voltar">
+                            <span aria-hidden="true">←</span> Voltar
+                        </a>
+                        <button type="submit" class="btn-proximo" disabled>
+                            Próximo <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </form> 
+            </div>                
         </section>
     </main>
 
-    <script src="../../public/js/novo_checklist.js"></script>
+    <script src="../../public/js/passo3_auditoria.js"></script>
 </body>

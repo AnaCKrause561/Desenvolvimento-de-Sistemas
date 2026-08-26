@@ -7,10 +7,38 @@ if (!isset($_SESSION["usuario_id"])) {
     exit;
 }
 
-require_once("../models/CadastroUsuario.php"); 
-require_once("../models/CadastroProdutor.php"); 
-require_once("../models/CadastroEmpresa.php"); 
-require_once("../models/CadastroGranja.php"); 
+require_once("../models/CadastroUsuario.php");
+require_once("../models/CadastroProdutor.php");
+require_once("../models/CadastroEmpresa.php");
+require_once("../models/CadastroGranja.php");
+require_once("../models/CadastroChecklist.php");
+
+// Não deixa pular etapas anteriores
+if (!isset($_SESSION["nova_auditoria"]["area"])) {
+    header("Location: novo_checklist.php");
+    exit;
+}
+if (!isset($_SESSION["nova_auditoria"]["local_id"])) {
+    header("Location: novo_checklist_empresas.php");
+    exit;
+}
+if (!array_key_exists("checklist_id", $_SESSION["nova_auditoria"])) {
+    header("Location: novo_checklist_check.php");
+    exit;
+}
+
+// Monta a lista de itens que já entram prontos na tela (Rota B)
+$itensPreCarregados = [];
+$checklistId = $_SESSION["nova_auditoria"]["checklist_id"];
+
+if ($checklistId !== null) {
+    $modeloChecklist = new CadastroChecklist();
+    $checklist = $modeloChecklist->ListarUmChecklist($checklistId);
+
+    foreach ($checklist["perguntas"] as $p) {
+        $itensPreCarregados[] = ["pergunta" => $p["pergunta"]];
+    }
+}
 
 $modeloUsuario = new CadastroUsuario();
 $usuarios = $modeloUsuario->ListarTodosUsuarios();
@@ -48,7 +76,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
 
         <ul>
             <li><a href="dashboard.php"><img class="icones" src="../../public/img/dash.png"><span>Dashboard</span></a></li>
-            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Checklist</span></a></li>
+            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Auditoria</span></a></li>
             <li><a href="pdfs.php"><img class="icones" src="../../public/img/PDF.png"><span>PDFs</span></a></li>
             <li><a href="checklist.php"><img class="icones" src="../../public/img/checklist.png"><span>Checklists</span></a></li>
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
@@ -113,74 +141,80 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
             </ol>
 
             <!-- CRIAÇÃO DA AUDITORIA -->
-            <div class="area-selecao">
-                <h2>Monte sua auditoria</h2>
-                <p class="area-instrucao">Adicione quantos itens forem necessários.</p>
+            <form action="../controllers/nova_auditoria_controller.php?etapa=auditoria" method="POST" enctype="multipart/form-data" id="formAuditoria">
 
-                <ul class="lista-itens-auditoria" id="listaItens">
-                    <!-- itens são inseridos aqui via JS -->
-                </ul>
+                <div class="area-selecao">
+                    <h2>Monte sua auditoria</h2>
+                    <?= $itensPreCarregados ? "Revise as perguntas do checklist e preencha cada uma." : "Adicione quantos itens forem necessários." ?>
 
-                <button type="button" class="btn-add-item" id="btnAddItem">
-                    <span aria-hidden="true">+</span> Adicionar item
-                </button>
-            </div>
+                    <ul class="lista-itens-auditoria" id="listaItens">
+                        <!-- itens são inseridos aqui via JS -->
+                    </ul>
 
-            <!-- Template escondido, usado pelo JS pra clonar novos itens -->
-            <template id="templateItem">
-                <li class="item-auditoria">
-                    <div class="item-auditoria__cabecalho">
-                        <span class="item-numero"></span>
-                        <button type="button" class="item-remover" aria-label="Remover item">✕</button>
-                    </div>
+                    <button type="button" class="btn-add-item" id="btnAddItem">
+                        <span aria-hidden="true">+</span> Adicionar item
+                    </button>
+                </div>
 
-                    <div class="item-campo">
-                        <label>Pergunta</label>
-                        <input type="text" class="item-pergunta" placeholder="Ex: Limpeza das instalações">
-                    </div>
-
-                    <div class="item-campo item-campo--linha">
-                        <div>
-                            <label>Pontuação</label>
-                            <select class="item-pontuacao">
-                                <option value="">Selecione</option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="1">2</option>
-                                <option value="1">3</option>
-                                <option value="na">N/A</option>
-                            </select>
+                <!-- Template escondido, usado pelo JS pra clonar novos itens -->
+                <template id="templateItem">
+                    <li class="item-auditoria">
+                        <div class="item-auditoria__cabecalho">
+                            <span class="item-numero"></span>
+                            <button type="button" class="item-remover" aria-label="Remover item">✕</button>
                         </div>
 
-                        <div>
-                            <label>Foto</label>
-                            <label class="item-foto-botao">
-                                <input type="file" class="item-foto" accept="image/*" hidden>
-                                <span>📷 Anexar</span>
-                            </label>
+                        <div class="item-campo">
+                            <label>Pergunta</label>
+                            <input type="text" class="item-pergunta" placeholder="Ex: Limpeza das instalações">
                         </div>
-                    </div>
 
-                    <div class="item-foto-preview"></div>
+                        <div class="item-campo item-campo--linha">
+                            <div>
+                                <label>Pontuação</label>
+                                <select class="item-pontuacao">
+                                    <option value="">Selecione</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="1">2</option>
+                                    <option value="1">3</option>
+                                    <option value="na">N/A</option>
+                                </select>
+                            </div>
 
-                    <div class="item-campo">
-                        <label>Observação</label>
-                        <textarea class="item-observacao" rows="2" placeholder="O que estava incorreto? (opcional)"></textarea>
-                    </div>
-                </li>
-            </template>
+                            <div>
+                                <label>Foto</label>
+                                <label class="item-foto-botao">
+                                    <input type="file" class="item-foto" accept="image/*" capture="environment" hidden>
+                                    <span>📷 Anexar</span>
+                                </label>
+                            </div>
+                        </div>
 
-            <!-- AÇÕES -->
-            <div class="rodape-acoes rodape-acoes--duplo">
-                <a href="novo_checklist_checklist.php" class="btn-voltar">
-                    <span aria-hidden="true">←</span> Voltar
-                </a>
-                <button type="button" class="btn-proximo" disabled>
-                    Próximo <span aria-hidden="true">→</span>
-                </button>
-            </div>
+                        <div class="item-foto-preview"></div>
+
+                        <div class="item-campo">
+                            <label>Observação</label>
+                            <textarea class="item-observacao" rows="2" placeholder="O que estava incorreto? (opcional)"></textarea>
+                        </div>
+                    </li>
+                </template>
+
+                <!-- AÇÕES -->
+                <div class="rodape-acoes rodape-acoes--duplo">
+                    <a href="novo_checklist_check.php" class="btn-voltar">
+                        <span aria-hidden="true">←</span> Voltar
+                    </a>
+                    <button type="submit" class="btn-proximo" disabled>
+                        Próximo <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+            </form>
         </section>
     </main>
 
-    <script src="../../public/js/novo_checklist.js"></script>
+    <script>
+    const itensPreCarregados = <?= json_encode($itensPreCarregados, JSON_UNESCAPED_UNICODE) ?>;
+    </script>
+    <script src="../../public/js/passo4_auditoria.js"></script>
 </body>

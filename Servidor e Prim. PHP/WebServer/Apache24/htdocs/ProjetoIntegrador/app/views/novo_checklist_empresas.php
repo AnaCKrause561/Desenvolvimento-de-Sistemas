@@ -1,7 +1,7 @@
 <?php
 session_name("ProjetoIntegrado");
 session_start();
-
+ 
 if (!isset($_SESSION["usuario_id"])) {
     header("Location: ../../index.html");
     exit;
@@ -11,19 +11,40 @@ require_once("../models/CadastroUsuario.php");
 require_once("../models/CadastroProdutor.php"); 
 require_once("../models/CadastroEmpresa.php"); 
 require_once("../models/CadastroGranja.php"); 
-
+ 
+// Se não tem área escolhida, o usuário pulou o passo 1 — manda de volta
+if (!isset($_SESSION["nova_auditoria"]["area"])) {
+    header("Location: novo_checklist.php");
+    exit;
+}
+ 
+$area = $_SESSION["nova_auditoria"]["area"];
+ 
+$modeloEmpresas = new CadastroEmpresa();
+$listaEmpresas = $modeloEmpresas->ListarEmpresasPorArea($area);
+ 
+$modeloGranjas = new CadastroGranja();
+$listaGranjas = $modeloGranjas->ListarGranjasPorArea($area);
+ 
+// Junta os dois numa lista só, marcando de onde cada um veio
+$locais = [];
+foreach ($listaEmpresas as $e) {
+    $locais[] = ["tipo" => "empresa", "id" => $e["id"], "nome" => $e["nome"], "endereco" => $e["endereco"]];
+}
+foreach ($listaGranjas as $g) {
+    $locais[] = ["tipo" => "granja", "id" => $g["id"], "nome" => $g["nome"], "endereco" => $g["endereco"]];
+}
+usort($locais, fn($a, $b) => strcmp($a["nome"], $b["nome"]));
+ 
 $modeloUsuario = new CadastroUsuario();
 $usuarios = $modeloUsuario->ListarTodosUsuarios();
 $foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
-
+ 
 $modeloProdutor = new CadastroProdutor();
 $produtores = $modeloProdutor->ListarTodosProdutores();
-
-$modeloEmpresas = new CadastroEmpresa();
-$empresas = $modeloEmpresas->ListarTodasEmpresas();
-
-$modeloGranjas = new CadastroGranja();
-$granjas = $modeloGranjas->ListarTodasGranjas();
+ 
+$empresas = $listaEmpresas;
+$granjas = $listaGranjas;
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +70,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
         <ul>
             <li><a href="dashboard.php"><img class="icones" src="../../public/img/dash.png"><span>Dashboard</span></a>
             </li>
-            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Checklist</span></a></li>
+            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Auditoria</span></a></li>
             <li><a href="pdfs.php"><img class="icones" src="../../public/img/PDF.png"><span>PDFs</span></a></li>
             <li><a href="checklist.php"><img class="icones" src="../../public/img/checklist.png"><span>Checklists</span></a></li>
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
@@ -118,96 +139,42 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                 <h2>Selecione a granja / empresa</h2>
                 <p class="area-instrucao">Escolha o local que será auditado.</p>
 
-                <div class="busca-granja">
-                    <input type="text" id="buscaGranja" placeholder="Buscar granja / empresa">
-                </div>
+                <form id="formGranja" method="post" action="../controllers/nova_auditoria_controller.php?etapa=empresa">
+                    <div class="busca-granja">
+                        <input type="text" id="buscaGranja" placeholder="Buscar granja / empresa">
+                    </div>
 
-                <ul class="lista-granjas">
+                    <ul class="lista-granjas">
+                        <?php foreach ($locais as $local): ?>
+                        <li class="granja-card">
+                            <input type="radio" name="granja" value="<?= $local['tipo'] ?>_<?= $local['id'] ?>" hidden>
+                            <span class="granja-icone">
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                                    <image href="../../public/img/<?= $area ?>.png" x="0" y="0" width="64" height="64" />
+                                </svg>
+                            </span>
+                            <span class="granja-info">
+                                <strong><?= htmlspecialchars($local['nome']) ?></strong>
+                                <small><?= htmlspecialchars($local['endereco']) ?></small>
+                            </span>
+                            <span class="granja-seta">›</span>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
 
-                    <li class="granja-card">
-                        <input type="radio" name="granja" value="granja-sao-joao" hidden>
-                        <span class="granja-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/avicultura.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="granja-info">
-                            <strong>Granja São João</strong>
-                            <small>Dois Vizinhos / PR</small>
-                        </span>
-                        <span class="granja-seta">›</span>
-                    </li>
-
-                    <li class="granja-card">
-                        <input type="radio" name="granja" value="fazenda-boa-vista" hidden>
-                        <span class="granja-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/agricultura.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="granja-info">
-                            <strong>Fazenda Boa Vista</strong>
-                            <small>São Jorge d'Oeste / PR</small>
-                        </span>
-                        <span class="granja-seta">›</span>
-                    </li>
-
-                    <li class="granja-card">
-                        <input type="radio" name="granja" value="incubatorio-vida" hidden>
-                        <span class="granja-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/incubatorio.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="granja-info">
-                            <strong>Incubatório Vida</strong>
-                            <small>Dois Vizinhos / PR</small>
-                        </span>
-                        <span class="granja-seta">›</span>
-                    </li>
-
-                    <li class="granja-card">
-                        <input type="radio" name="granja" value="frigorifico-sul" hidden>
-                        <span class="granja-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/abatedouro.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="granja-info">
-                            <strong>Frigorífico Sul</strong>
-                            <small>Francisco Beltrão / PR</small>
-                        </span>
-                        <span class="granja-seta">›</span>
-                    </li>
-
-                    <li class="granja-card">
-                        <input type="radio" name="granja" value="fazenda-uniao" hidden>
-                        <span class="granja-icone">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <image href="../../public/img/agricultura.png" x="0" y="0" width="64" height="64" />
-                            </svg>
-                        </span>
-                        <span class="granja-info">
-                            <strong>Fazenda União</strong>
-                            <small>Pato Branco / PR</small>
-                        </span>
-                        <span class="granja-seta">›</span>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- AÇÕES -->
-            <div class="rodape-acoes rodape-acoes--duplo">
-                <a href="novo_checklist.php" class="btn-voltar">
-                    <span aria-hidden="true">←</span> Voltar
-                </a>
-                <button type="button" class="btn-proximo" disabled>
-                    Próximo <span aria-hidden="true">→</span>
-                </button>
+                    <!-- AÇÕES -->
+                    <div class="rodape-acoes rodape-acoes--duplo">
+                        <a href="novo_checklist.php" class="btn-voltar">
+                            <span aria-hidden="true">←</span> Voltar
+                        </a>
+                        <button type="submit" class="btn-proximo" disabled>
+                            Próximo <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
 
-    <script src="../../public/js/novo_checklist.js"></script>
+    <script src="../../public/js/passo2_auditoria.js"></script>
 </body>

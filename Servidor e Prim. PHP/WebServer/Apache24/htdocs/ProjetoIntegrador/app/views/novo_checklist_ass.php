@@ -7,23 +7,27 @@ if (!isset($_SESSION["usuario_id"])) {
     exit;
 }
 
-require_once("../models/CadastroUsuario.php"); 
-require_once("../models/CadastroProdutor.php"); 
-require_once("../models/CadastroEmpresa.php"); 
-require_once("../models/CadastroGranja.php"); 
+require_once("../models/CadastroUsuario.php");
+
+if (!isset($_SESSION["nova_auditoria"]["area"])) {
+    header("Location: novo_checklist.php");
+    exit;
+}
+if (!isset($_SESSION["nova_auditoria"]["local_id"])) {
+    header("Location: novo_checklist_empresas.php");
+    exit;
+}
+if (!array_key_exists("checklist_id", $_SESSION["nova_auditoria"])) {
+    header("Location: novo_checklist_check.php");
+    exit;
+}
+if (!isset($_SESSION["nova_auditoria"]["itens"])) {
+    header("Location: novo_checklist_auditoria.php");
+    exit;
+}
 
 $modeloUsuario = new CadastroUsuario();
-$usuarios = $modeloUsuario->ListarTodosUsuarios();
 $foto = $modeloUsuario->ListarUmUsuario($_SESSION["usuario_id"]);
-
-$modeloProdutor = new CadastroProdutor();
-$produtores = $modeloProdutor->ListarTodosProdutores();
-
-$modeloEmpresas = new CadastroEmpresa();
-$empresas = $modeloEmpresas->ListarTodasEmpresas();
-
-$modeloGranjas = new CadastroGranja();
-$granjas = $modeloGranjas->ListarTodasGranjas();
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +52,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
 
         <ul>
             <li><a href="dashboard.php"><img class="icones" src="../../public/img/dash.png"><span>Dashboard</span></a></li>
-            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Checklist</span></a></li>
+            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Auditoria</span></a></li>
             <li><a href="pdfs.php"><img class="icones" src="../../public/img/PDF.png"><span>PDFs</span></a></li>
             <li><a href="checklist.php"><img class="icones" src="../../public/img/checklist.png"><span>Checklists</span></a></li>
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
@@ -112,64 +116,75 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                 </li>
             </ol>
 
-            <div class="area-selecao">
-                <h2>Assinatura digital</h2>
-                <p class="area-instrucao">Assine abaixo para finalizar a auditoria.</p>
+            <form action="../controllers/nova_auditoria_controller.php?etapa=assinatura" method="POST" id="formAssinatura">
 
-                <div class="assinaturas-grid">
+                <div class="area-selecao">
+                    <h2>Assinatura digital</h2>
+                    <p class="area-instrucao">Assine abaixo para finalizar a auditoria.</p>
 
-                    <!-- ASSINATURA DO AUDITOR -->
-                    <div class="assinatura-card">
-                        <p class="assinatura-rotulo">Assinatura do auditor</p>
+                    <div class="assinaturas-grid">
 
-                        <div class="assinatura-canvas-wrap">
-                            <canvas id="canvasAuditor" class="assinatura-canvas"></canvas>
-                            <span class="assinatura-linha-base"></span>
+                        <!-- ASSINATURA DO AUDITOR -->
+                        <div class="assinatura-card">
+                            <p class="assinatura-rotulo">Assinatura do auditor</p>
+
+                            <div class="assinatura-canvas-wrap">
+                                <canvas id="canvasAuditor" class="assinatura-canvas"></canvas>
+                                <span class="assinatura-linha-base"></span>
+                            </div>
+
+                            <button type="button" class="btn-limpar-assinatura" data-target="canvasAuditor">
+                                Limpar assinatura
+                            </button>
+
+                            <div class="assinatura-campo">
+                                <label for="nomeAuditor">Nome</label>
+                                <input type="text" id="nomeAuditor" name="nome_auditor" placeholder="Nome do auditor">
+                            </div>
+
+                            <!-- NOVO: guarda o desenho do canvas como imagem antes de enviar -->
+                            <input type="hidden" name="assinatura_auditor" id="inputAssinaturaAuditor">
                         </div>
 
-                        <button type="button" class="btn-limpar-assinatura" data-target="canvasAuditor">
-                            Limpar assinatura
-                        </button>
+                        <!-- ASSINATURA DO RESPONSÁVEL -->
+                        <div class="assinatura-card">
+                            <p class="assinatura-rotulo">Assinatura do responsável</p>
 
-                        <div class="assinatura-campo">
-                            <label for="nomeAuditor">Nome</label>
-                            <input type="text" id="nomeAuditor" placeholder="Nome do auditor">
+                            <div class="assinatura-canvas-wrap">
+                                <canvas id="canvasResponsavel" class="assinatura-canvas"></canvas>
+                                <span class="assinatura-linha-base"></span>
+                            </div>
+
+                            <button type="button" class="btn-limpar-assinatura" data-target="canvasResponsavel">
+                                Limpar assinatura
+                            </button>
+
+                            <div class="assinatura-campo">
+                                <label for="nomeResponsavel">Nome</label>
+                                <input type="text" id="nomeResponsavel" name="nome_responsavel" placeholder="Nome do responsável">
+                            </div>
+
+                            <!-- NOVO: guarda o desenho do canvas como imagem antes de enviar -->
+                            <input type="hidden" name="assinatura_responsavel" id="inputAssinaturaResponsavel">
                         </div>
+
                     </div>
-
-                    <!-- ASSINATURA DO RESPONSÁVEL -->
-                    <div class="assinatura-card">
-                        <p class="assinatura-rotulo">Assinatura do responsável</p>
-
-                        <div class="assinatura-canvas-wrap">
-                            <canvas id="canvasResponsavel" class="assinatura-canvas"></canvas>
-                            <span class="assinatura-linha-base"></span>
-                        </div>
-
-                        <button type="button" class="btn-limpar-assinatura" data-target="canvasResponsavel">
-                            Limpar assinatura
-                        </button>
-
-                        <div class="assinatura-campo">
-                            <label for="nomeResponsavel">Nome</label>
-                            <input type="text" id="nomeResponsavel" placeholder="Nome do responsável">
-                        </div>
-                    </div>
-
                 </div>
-            </div>
 
-            <!-- AÇÕES -->
-            <div class="rodape-acoes rodape-acoes--duplo">
-                <a href="novo_checklist_fotos.php" class="btn-voltar">
-                    <span aria-hidden="true">←</span> Voltar
-                </a>
-                <button type="button" class="btn-proximo" disabled>
-                    Próximo <span aria-hidden="true">→</span>
-                </button>
-            </div>
+                <!-- AÇÕES -->
+                <div class="rodape-acoes rodape-acoes--duplo">
+                    <a href="novo_checklist_foto.php" class="btn-voltar">
+                        <span aria-hidden="true">←</span> Voltar
+                    </a>
+                    <button type="submit" class="btn-proximo" disabled>
+                        Próximo <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+
+            </form>
         </section>
     </main>
 
-    <script src="../../public/js/novo_checklist.js"></script>
+    <script src="../../public/js/passo6_auditoria.js"></script>
 </body>
+</html>

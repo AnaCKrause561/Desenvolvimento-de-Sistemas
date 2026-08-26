@@ -10,7 +10,31 @@ if (!isset($_SESSION["usuario_id"])) {
 require_once("../models/CadastroUsuario.php"); 
 require_once("../models/CadastroProdutor.php"); 
 require_once("../models/CadastroEmpresa.php"); 
-require_once("../models/CadastroGranja.php"); 
+require_once("../models/CadastroGranja.php");
+require_once("../models/CadastroChecklist.php");
+require_once("../models/CadastroAuditoria.php");
+
+// Não deixa pular etapas anteriores
+if (!isset($_SESSION["nova_auditoria"]["area"])) {
+    header("Location: novo_checklist.php");
+    exit;
+}
+if (!isset($_SESSION["nova_auditoria"]["local_id"])) {
+    header("Location: novo_checklist_empresas.php");
+    exit;
+}
+if (!array_key_exists("checklist_id", $_SESSION["nova_auditoria"])) {
+    header("Location: novo_checklist_check.php");
+    exit;
+}
+if (!isset($_SESSION["nova_auditoria"]["itens"])) {
+    header("Location: novo_checklist_auditoria.php");
+    exit;
+}
+if (!isset($_SESSION["nova_auditoria"]["assinaturas"])) {
+    header("Location: novo_checklist_ass.php");
+    exit;
+}
 
 $modeloUsuario = new CadastroUsuario();
 $usuarios = $modeloUsuario->ListarTodosUsuarios();
@@ -24,6 +48,19 @@ $empresas = $modeloEmpresas->ListarTodasEmpresas();
 
 $modeloGranjas = new CadastroGranja();
 $granjas = $modeloGranjas->ListarTodasGranjas();
+
+
+// Busca os nomes reais (área, granja/empresa, checklist) pra exibir na revisão
+$modeloAuditoria = new CadastroAuditoria();
+$resumo = $modeloAuditoria->BuscarResumoRevisao([
+    "area" => $_SESSION["nova_auditoria"]["area"],
+    "local_tipo" => $_SESSION["nova_auditoria"]["local_tipo"],
+    "local_id" => $_SESSION["nova_auditoria"]["local_id"],
+    "checklist_id" => $_SESSION["nova_auditoria"]["checklist_id"],
+]);
+
+$totalItens = count($_SESSION["nova_auditoria"]["itens"]);
+$nomeAuditor = $_SESSION["nova_auditoria"]["assinaturas"]["auditor"]["nome"];
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +85,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
 
         <ul>
             <li><a href="dashboard.php"><img class="icones" src="../../public/img/dash.png"><span>Dashboard</span></a></li>
-            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Checklist</span></a></li>
+            <li class="ativo"><a href="novo_checklist.php"><img class="icones" src="../../public/img/nova.png"><span>Novo Auditoria</span></a></li>
             <li><a href="pdfs.php"><img class="icones" src="../../public/img/PDF.png"><span>PDFs</span></a></li>
             <li><a href="checklist.php"><img class="icones" src="../../public/img/checklist.png"><span>Checklists</span></a></li>
             <li><a href="cadastros.php"><img class="icones" src="../../public/img/cadastro.png"><span>Novo Cadastro</span></a></li>
@@ -124,7 +161,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         </span>
                         <span class="revisao-texto">
                             <span class="revisao-label">Área</span>
-                            <span class="revisao-valor">Avicultura</span>
+                            <span class="revisao-valor"><?= htmlspecialchars($resumo["area"]) ?></span>
                         </span>
                     </div>
 
@@ -135,7 +172,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         </span>
                         <span class="revisao-texto">
                             <span class="revisao-label">Data</span>
-                            <span class="revisao-valor">12/06/2025</span>
+                            <span class="revisao-valor"><?= date("d/m/Y") ?></span>
                         </span>
                     </div>
 
@@ -146,7 +183,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         </span>
                         <span class="revisao-texto">
                             <span class="revisao-label">Granja / Empresa</span>
-                            <span class="revisao-valor">Granja São João</span>
+                            <span class="revisao-valor"><?= htmlspecialchars($resumo["local_nome"]) ?></span>
                         </span>
                     </div>
 
@@ -157,7 +194,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         </span>
                         <span class="revisao-texto">
                             <span class="revisao-label">Auditor</span>
-                            <span class="revisao-valor">Ana Silva</span>
+                            <span class="revisao-valor"><?= htmlspecialchars($nomeAuditor) ?></span>
                         </span>
                     </div>
 
@@ -168,7 +205,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         </span>
                         <span class="revisao-texto">
                             <span class="revisao-label">Checklist</span>
-                            <span class="revisao-valor">Auditoria - Avicultura</span>
+                            <span class="revisao-valor"><?= htmlspecialchars($resumo["checklist_nome"]) ?></span>
                         </span>
                     </div>
 
@@ -179,7 +216,7 @@ $granjas = $modeloGranjas->ListarTodasGranjas();
                         </span>
                         <span class="revisao-texto">
                             <span class="revisao-label">Total de itens</span>
-                            <span class="revisao-valor">15 itens</span>
+                            <span class="revisao-valor"><?= $totalItens ?> itens</span>
                         </span>
                     </div>
 
